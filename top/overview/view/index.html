@@ -1,0 +1,895 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<title>ananFD</title>
+	<link href="../../../common/css/style.css" media="all" rel="stylesheet" type="text/css" />
+	<script src="../../../common/js/prototype.js" type="text/javascript"></script>
+	<script src="../../../common/js/form.js" type="text/javascript"></script>
+	<script src="../../../common/js/navi.js" type="text/javascript"></script>
+	
+<!--
+	<link href="/common/css/calendar_date_select/default.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="/common/js/calendar_date_select/calendar_date_select.js" type="text/javascript"></script>
+	<script src="/common/js/calendar_date_select/locale/ja.js" type="text/javascript"></script>
+	<script src="/common/js/calendar_date_select/format_iso_date.js" type="text/javascript"></script>
+-->
+</head>
+
+
+<body>
+
+<div id="container">
+
+
+
+
+	<div id="header">
+	<div id="headerContainer">
+		
+		<h1><a href="../../..">ananFD</a></h1>
+		<div class="menu">
+		    <span class="user">FD高度化推進室　後藤田浩二（admin）</span>
+		    <!--a class="web" href="http://www3.anan-nct.ac.jp/~gotouda/" target="_blank">公開画面</a-->
+		    <a class="logout" href="../../../login">ログイン</a>
+		</div>
+		
+	<!-- /#headerContainer --></div>
+	<!-- /#header --></div>
+
+
+
+
+	<div id="banner">
+	<div id="bannerContainer">
+	
+	<!-- /#bannerContainer --></div>
+	<!-- /#banner --></div>
+
+
+
+
+	<div id="navi">
+	<div id="naviContainer">
+		
+		<table>
+		<tr>
+			<td class="selector">
+		    	<div class="site">
+				    <script type="text/javascript">
+				//<![CDATA[
+				  function submitCmsNavigationSite(value) {
+				    document.getElementById('cmsNavigationSite').submit();
+				    return false;
+				  }
+				//]]>
+					</script>
+					
+					<form id="cmsNavigationSite" method="get" action="../../../../navigationSite">
+						<select id="cms_navi_site" name="navi_site" onchange="return submitCmsNavigationSite(this.value)">
+							<option value=""></option>
+							<option value="./ananFD">【ananFD】 モックアップ</option>
+							<option value="./ananFD.doc/" selected="selected" >【ananFD】 概要説明</option>
+							<option value="http://192.168.11.102/ananfd/" >【ananFD】 デモサイト1 （xenServer）</option>
+							<option value="http://192.168.11.101/ananfd/" >【ananFD】 デモサイト2 （xenServer）</option>
+						</select>
+					</form>
+				</div>
+				
+				
+			    <div class="concept">
+			      <p id="naviConceptCurrent" onclick="Cms_Admin_Navi.showNavi();">
+			        阿南工業高等専門学校</p>
+				</div>
+			</td>
+			<td class="menu">
+			    <div class="mainMenu">
+					<div class="mainMenu">
+						<a href="../../../learning" class="learning">学習支援</a>
+						<a href="../../../student" class="student">学生指導</a>
+						<a href="../../../entrust" class="entrust">担任指導</a>
+						<a href="../../../graduate" class="graduate">卒業生支援</a>
+						<a href="../../../tp" class="tp">ＴＰ支援</a>
+						<a href="../../../ir" class="ir">ＩＲ支援</a>
+						<a href="../../../master" class="master">マスタ設定</a>
+					</div>
+				</div>
+				
+				<div class="contentMenu">
+					<a href="../../../top/password">パスワード変更</a>
+					<a href="../../../top/userinfo">ユーザ情報</a>
+					<a href="../../../top/initpass">パスワード初期化</a>
+					<a href="../../../top/overview" class="current">ZF1 Overview</a>
+					<a href="../../../top/tool">運用ツール</a>
+				</div>
+			</td>
+	  	</tr>
+		</table>
+	
+	
+	<!-- /#naviContainer --></div>
+	<!-- /#navi --></div>
+
+
+
+
+<div id="main">
+	
+	<div id="content">
+	<div id="contentContainer">
+	<div id="manual-container">
+		
+		<div id="contentHeader">
+		 	<div class="navi">
+				<a href="../../../top">TOP</a>
+					 &gt; <a href="../../../top/overview">ZF1 Overview</a>
+					 &gt; <a href="../../../top/overview/view">View</a>
+		  	</div>
+			
+			<div class="actionMenu">
+				<a href="../../../top/overview/controller">Controller</a>
+				<a href="../../../top/overview/view">View</a>
+				<a href="../../../top/overview/auth">Auth</a>
+				<a href="../../../top/overview/module">Module</a>
+				<a href="../../../top/overview/setup">Setup</a>
+			</div>
+					
+			<h2>Programmer's Reference Guide</h2>
+		</div>
+		
+		<div id="contentBody">
+			
+			
+
+
+<!-- id="maintenances" -->
+
+			<div id="maintenances" class="piace">
+
+				<div class="piaceHeader">
+			  		<div class="title">Zend_View－ビュー</div>
+				</div>
+
+
+	<!-- "piaceBody" -->
+
+				<div class="piaceBody">
+
+					<hr />
+					<div class="section">
+						<div class="info">
+							<h1 class="title">Zend_View の概要</h1>
+						</div>
+						
+					    <p class="para">
+							「Zend_View」は画面表示に関する処理を担当するコンポーネントで、ＭＶＣモデルの中で「Ｖ」の役割を担います。<br />
+							Zend_Framework では、表示に関する機能をすべて Zend_View に集約させているため。<br />
+							ほとんどのアプリケーションでこのコンポーネントを利用することになります。<br />
+							また、ＭＶＣモデルでアプリケーションを作成すると。デフォルト設定で自動的に動作するようになっています。<br />
+							<br />
+							ちなみに、Zend_View は非常に汎用的に設計されているため、「Smarty」などの外部テンプレートエンジンを代わりに利用することも可能です。
+						</p>
+						
+					</div>
+
+				    <p class="para">
+						Zend_View では、「ビュースクリプト」というファイルを作成し、そこに定義された変数に値をセットした後に<br />
+						「ビュースクリプト」を実行することにより、画面表示を実現しています。
+			    	</p>
+
+
+					<div class="section">
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">ビュースクリプトについて</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							ビュースクリプトの正体は、単なるＰＨＰファイルです。<br />
+							そのため、特に新しい知識は不要ですが、いくつかのポイントは押さえておく必要があります。
+						</p>
+						
+						<ul>
+		  				  <li><span class="classname">ＨＴＭＬにいくつかのＰＨＰコードが埋め込まれた形式であること</span></li>
+		  				  <li><span class="classname">ＰＨＰコードでは制御構造文と変数の加工と出力しか行わないこと</span></li>
+		  				  <li><span class="classname">特別な理由がない限り拡張子を「phtml」にすること</span></li>
+						</ul>
+						
+					    <p class="para">
+							つまり、ＰＨＰファイルであるといえ、表示に関する最低限のことしか行わないようにしなければなりません。
+						</p>
+					</div>
+
+
+
+
+				</div>
+
+
+	<!-- "piaceBody" -->
+				<div class="piaceBody">
+
+					<hr />
+					<div class="section">
+						<div class="info">
+							<h1 class="title">コントローラ側の処理</h1>
+						</div>
+						
+					    <p class="para">
+							ビュースクリプトだけでは画面表示できません。
+							実際にはコントローラからビュースクリプトをロードして表示させることになります。<br />
+							ビュースクリプト内の変数に文字列を代入するのもコントローラ側の役目です。<br />
+							自動レンダリングモードが有効か無効かによって処理の手順が異なりますので、それぞれの場合について説明します。
+						</p>
+						
+					</div>
+
+					<div class="section">
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">自動レンダリングモードが有効の場合</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							自動レンダリングモードが有効（デフォルト設定）になっている場合は、<br />
+							Zend_View のほとんどのパラメータが自動的に設定され、コーディングの手間がかなり軽減されるらしい？<br />
+							利用手順は次の通りです。
+						</p>
+						
+						<ol type="1">
+		  				  <li><span class="classname">決められたディレクトリ構成でビュースクリプトを設置する</span></li>
+		  				  <li><span class="classname">Zend_View の文字コードを設定する</span></li>
+		  				  <li><span class="classname">ビュースクリプト内の変数にデータを設定する</span></li>
+						</ol>
+						
+					    <p class="para">
+							自動レンダリングモードでのコントローラ側の処理は以上で完了です。<br />
+							あとはアクションの処理の終了時に Zend_View のレンダリング処理が実行されます。<br />
+							<br />
+							自動レンダリングモードが有効な場合の、コントローラとビュースクリプトのサンプルを以下に表示します。
+						</p>
+						
+					</div>
+
+
+			        <div class="programlisting php">
+					<div class="phpcode">
+					<div class="php" style="font-family: monospace;">
+					ビュースクリプト　　　（/application/<span style="color: #ff0000;">views/scripts/address</span>/list.phtml）<br /><br />
+					<ol>
+						<li style=""><div>&lt;html&gt;</div></li>
+						<li style=""><div>&nbsp; &nbsp; &lt;head&gt;</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &lt;title&gt;&lt;?php echo <span style="color: #006600;">$this->escape($this->title);</span> ?&gt;&lt;/title&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &lt;/head&gt;</div></li>
+						<li style=""><div>&nbsp; &nbsp; &lt;body&gt;</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &lt;?php <span style="color: #006600;">if ($this->person):</span> ?&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &lt;table&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &lt;tr&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &lt;th&gt; 名前&lt;/th&gt;</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &lt;th&gt; 電話番号&lt;/th&gt;</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &lt;th&gt; 住所&lt;/th&gt;</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &lt;/tr&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &lt;?php <span style="color: #006600;">foreach ($this->person as $value):</span> ?&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &lt;tr&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &lt;td&gt; &lt;?php echo <span style="color: #006600;">$this->escape($value['name']);</span> ?&gt;&lt;/td&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &lt;td&gt; &lt;?php echo <span style="color: #006600;">$this->escape($value['tel']);</span> ?&gt;&lt;/td&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &lt;td&gt; &lt;?php echo <span style="color: #006600;">$this->escape($value['address']);</span> ?&gt;&lt;/td&gt; </div></li>
+						
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &lt;/tr&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &lt;?php <span style="color: #006600;">endforforeach;</span> ?&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/table&gt; </div></li>
+						
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &lt;?php <span style="color: #006600;">else:</span> ?&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;データが見つかりません。&lt;/p&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &lt;?php <span style="color: #006600;">endif;</span> ?&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &lt;/body&gt;</div></li>
+						<li style=""><div>&lt;/html&gt;</div></li>
+					</ol>
+					</div></div></div>
+
+
+			        <div class="programlisting php">
+					<div class="phpcode">
+					<div class="php" style="font-family: monospace;">
+					アクションコントローラ　　　（/application/<span style="color: #ff0000;">controllers</span>/AddressController.php）<br /><br />
+					<ol>
+						<li style=""><div>&lt;?php</div></li>
+						<li style=""><div>
+							<span style="color: #808080; font-style: italic; color: #006600;">// コンポーネントをロードする</span></div></li>
+						<li style=""><div>require_once 'Zend/Controller/Action.php';</div></li>
+						<li style=""><div>&nbsp;</div></li>
+						<li style=""><div>
+							<span style="color: #000000; font-weight: bold;">class</span> AddressController 
+							<span style="color: #000000; font-weight: bold;">extends</span> Zend_Controller_Action</div></li>
+						<li style=""><div>
+							<span style="color: #66cc66;">&#123;</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; /**</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; * list アクション</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; * ：住所録一覧を表示する</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; */</div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #000000; font-weight: bold;">public</span> 
+							<span style="color: #000000; font-weight: bold;">function</span> <span style="color: #0000ff;">listAction </span><span style="color: #66cc66;">&#40;</span>
+							<span style="color: #66cc66;">&#41;</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #66cc66;">&#123;</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080; font-style: italic;">// タイトルを設定する</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #006600;">$this->view->title</span> = '住所録一覧';</div></li>
+						<li style=""><div>&nbsp;</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080; font-style: italic;">// 住所録一覧を設定する</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; $address = array(</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array( 'name' => '山田',</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'tel' => '01-2345-6789',</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'address' => '東京都',</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ),</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array( 'name' => '田中',</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'tel' => '01-2345-6789',</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'address' => '大阪府',</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ),</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array( 'name' => '佐藤',</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'tel' => '01-2345-6789',</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'address' => '徳島県',</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; )</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</div></li>
+						<li style=""><div>&nbsp;</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #006600;">$this->view->person</span> = $address;</div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #66cc66;">&#125;</span></div></li>
+						<li style=""><div>
+							<span style="color: #66cc66;">&#125;</span></div></li>
+						</ol>
+					</div></div></div>
+
+
+					<div class="section">
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">自動レンダリングモードが無効の場合</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							自動レンダリングモードが無効になっている場合には、他のコンポーネントを利用する場合と同様に、<br />
+							コンポーネントのロードからレンダリングの処理まで。すべての行程をプログラミングする必要があります。<br />
+							自動レンダリングモードが有効な場合と比べると手間は増えますが、細かな設定や調整を行いたい場合は逆にこちらの方が有利になります。<br />
+							利用手順は次の通りです。
+						</p>
+						
+						<ol type="1">
+		  				  <li><span class="classname">インスタンスを生成する</span></li>
+		  				  <li><span class="classname">ビュースクリプトを設置するディレクトリを設定する</span></li>
+		  				  <li><span class="classname">設定したディレクトリにビュースクリプトを設置する</span></li>
+		  				  <li><span class="classname">Zend_View の文字コードを設定する</span></li>
+		  				  <li><span class="classname">ビュースクリプト内の変数にデータを設定する</span></li>
+		  				  <li><span class="classname">レンダリング処理を行う</span></li>
+		  				  <li><span class="classname">レンダリング結果をレスポンスオブジェクトにセットする</span></li>
+						</ol>
+						
+					    <p class="para">
+							自動レンダリングモードが無効な場合の、コントローラとビュースクリプトのサンプルを以下に表示します。
+						</p>
+						
+
+
+			        <div class="programlisting php">
+					<div class="phpcode">
+					<div class="php" style="font-family: monospace;">
+					ビュースクリプト　　　（/application/<span style="color: #ff0000;">views</span>/list.phtml）<br /><br />
+					<ol>
+						<li style=""><div>&lt;html&gt;</div></li>
+						<li style=""><div>&nbsp; &nbsp; &lt;head&gt;</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &lt;title&gt;&lt;?php echo <span style="color: #006600;">$this->escape($this->title);</span> ?&gt;&lt;/title&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &lt;/head&gt;</div></li>
+						<li style=""><div>&nbsp; &nbsp; &lt;body&gt;</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &lt;?php <span style="color: #006600;">if ($this->person):</span> ?&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &lt;table&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &lt;tr&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &lt;th&gt; 名前&lt;/th&gt;</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &lt;th&gt; 電話番号&lt;/th&gt;</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &lt;th&gt; 住所&lt;/th&gt;</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &lt;/tr&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &lt;?php <span style="color: #006600;">foreach ($this->person as $value):</span> ?&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &lt;tr&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &lt;td&gt; &lt;?php echo <span style="color: #006600;">$this->escape($value['name']);</span> ?&gt;&lt;/td&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &lt;td&gt; &lt;?php echo <span style="color: #006600;">$this->escape($value['tel']);</span> ?&gt;&lt;/td&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &lt;td&gt; &lt;?php echo <span style="color: #006600;">$this->escape($value['address']);</span> ?&gt;&lt;/td&gt; </div></li>
+						
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &lt;/tr&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &lt;?php <span style="color: #006600;">endforforeach;</span> ?&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/table&gt; </div></li>
+						
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &lt;?php <span style="color: #006600;">else:</span> ?&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;データが見つかりません。&lt;/p&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &lt;?php <span style="color: #006600;">endif;</span> ?&gt; </div></li>
+						<li style=""><div>&nbsp; &nbsp; &lt;/body&gt;</div></li>
+						<li style=""><div>&lt;/html&gt;</div></li>
+					</ol>
+					</div></div></div>
+
+
+			        <div class="programlisting php">
+					<div class="phpcode">
+					<div class="php" style="font-family: monospace;">
+					アクションコントローラ　　　（/application/<span style="color: #ff0000;">controllers</span>/AddressController.php）<br /><br />
+					<ol>
+						<li style=""><div>&lt;?php</div></li>
+						<li style=""><div>
+							<span style="color: #808080; font-style: italic; color: #006600;">// コンポーネントをロードする</span></div></li>
+						<li style=""><div>require_once 'Zend/Controller/Action.php';</div></li>
+						<li style=""><div>require_once 'Zend/View.php';</div></li>
+						<li style=""><div>&nbsp;</div></li>
+						<li style=""><div>
+							<span style="color: #000000; font-weight: bold;">class</span> AddressController 
+							<span style="color: #000000; font-weight: bold;">extends</span> Zend_Controller_Action</div></li>
+						<li style=""><div>
+							<span style="color: #66cc66;">&#123;</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; /**</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; * list アクション</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; * ：住所録一覧を表示する</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; */</div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #000000; font-weight: bold;">public</span> 
+							<span style="color: #000000; font-weight: bold;">function</span> <span style="color: #0000ff;">listAction </span><span style="color: #66cc66;">&#40;</span>
+							<span style="color: #66cc66;">&#41;</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #66cc66;">&#123;</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080; font-style: italic;">// インスタンスを生成する</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #006600;">$view = new Zend_View();</span></div></li>
+						<li style=""><div>&nbsp;</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080; font-style: italic;">// ビュースクリプトのディレクトリを設定する</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #006600;">$view->setScriptPath('../application/views');</span></div></li>
+						<li style=""><div>&nbsp;</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080; font-style: italic;">// タイトルを設定する</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #006600;">$this->view->title</span> = '住所録一覧';</div></li>
+						<li style=""><div>&nbsp;</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080; font-style: italic;">// 住所録一覧を設定する</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; $address = array(</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array( 'name' => '山田',</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'tel' => '01-2345-6789',</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'address' => '東京都',</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ),</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array( 'name' => '田中',</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'tel' => '01-2345-6789',</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'address' => '大阪府',</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ),</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array( 'name' => '佐藤',</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'tel' => '01-2345-6789',</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'address' => '徳島県',</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; )</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</div></li>
+						<li style=""><div>&nbsp;</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #006600;">$this->view->person</span> = $address;</div></li>
+						<li style=""><div>&nbsp;</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080; font-style: italic;">// レンダリングする</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #006600;">$html = $view->render('list.phtml');</span></div></li>
+						<li style=""><div>&nbsp;</div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080; font-style: italic;">// レスポンスオブジェクトに設定する</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #006600;">$this->getResponse()->setBody('$html');</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #66cc66;">&#125;</span></div></li>
+						<li style=""><div>
+							<span style="color: #66cc66;">&#125;</span></div></li>
+						</ol>
+					</div></div></div>
+						
+					</div>
+
+					
+				</div>
+
+
+	<!-- "piaceBody" -->
+				<div class="piaceBody">
+
+					<hr />
+					<div class="section">
+						<div class="info">
+							<h1 class="title">ビューヘルパー</h1>
+						</div>
+						
+					    <p class="para">
+							ビューヘルパーとは、ビュースクリプトを作成する際に、便利に利用できるモジュール群です。<br />
+							通常通り記述するのは面倒なものを、自動的に出力してくれる機能や、
+							複雑な繰り返し処理などを簡単に記述できる機能など、提供されている機能は様々です。<br />
+							現在、標準で提供されているビューヘルパーは次の通りです。
+						</p>
+						
+			            <table class="index2">
+							<div class="info">
+								<caption><b>標準のヘルパー</b></caption>
+							</div>
+		                    <thead valign="middle">
+		                        <tr valign="middle">
+		                            <th style="width: 25%;">ヘルパー</th>
+		                            <th style="width: 75%;">概要</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody valign="middle" class="tbody">
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">form ヘルパー</span></td>
+		                            <td align="left">フォーム情報を埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">Action ヘルパー</span></td>
+		                            <td align="left">ビュースクリプトの中からコントロールのアクションを実行して結果を埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">Partial ヘルパー</span></td>
+		                            <td align="left">ビュースクリプトの中から別のビュースクリプトを埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">Placeholder ヘルパー</span></td>
+		                            <td align="left">指定文字列に対する置換処理を行う</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">Doctype ヘルパー</span></td>
+		                            <td align="left">Doctype 宣言を埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">HeadLink ヘルパー</span></td>
+		                            <td align="left">CSS や RSS などのリンク要素を埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">HeadMedia ヘルパー</span></td>
+		                            <td align="left">META 情報を埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">HeadScript ヘルパー</span></td>
+		                            <td align="left">JavaScript などのスクリプト情報を埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">HeadStyle ヘルパー</span></td>
+		                            <td align="left">CSS 情報を埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">HeadTitle ヘルパー</span></td>
+		                            <td align="left">タイトル情報を埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">HTML オブジェクトヘルパー</span></td>
+		                            <td align="left">Flash や動画などのオブジェクト情報を埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">inlineScript ヘルパー</span></td>
+		                            <td align="left">JavaScript などのスクリプト自体を埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">JSON ヘルパー</span></td>
+		                            <td align="left">JSON のヘッダ情報を出力する</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">翻訳ヘルパー</span></td>
+		                            <td align="left">Zend_Translate と連動して翻訳データを埋め込む</td>
+		                        </tr>
+		                    </tbody>
+		            	</table>
+						
+		
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">form ヘルパー</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							form ヘルパーは、HTML のフォーム関連のタグを埋め込んでくれるビューヘルパーです。<br />
+							これを使用するとことで、プログラムと密接に関連するフォームの記述を、分かりやすく簡潔に書けます。
+						</p>
+						
+			            <table class="index2">
+							<div class="info">
+								<caption><b>メソッド一覧</b></caption>
+							</div>
+		                    <thead valign="middle">
+		                        <tr valign="middle">
+		                            <th style="width: 25%;">メソッド</th>
+		                            <th style="width: 75%;">概要</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody valign="middle" class="tbody">
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">form()</span></td>
+		                            <td align="left">フォームの開始タグと終了タグを埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">fromText()</span></td>
+		                            <td align="left">テキストボックスを埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">formTextarea()</span></td>
+		                            <td align="left">テキストエリアを埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">formPassword</span></td>
+		                            <td align="left">パスワード入力ボックスを埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">formRadio()</span></td>
+		                            <td align="left">ラジオボタンを埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">formCheckbox()</span></td>
+		                            <td align="left">チェックボックスを埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">formMultiCheckbox()</span></td>
+		                            <td align="left">チェックボックスを配列形式で埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">formSelect()</span></td>
+		                            <td align="left">セレクトボックスを埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">formFile()</span></td>
+		                            <td align="left">ファイル選択ボックスを埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">formHidden()</span></td>
+		                            <td align="left">hidden 要素を埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">formLabel()</span></td>
+		                            <td align="left">ラベル要素を埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">formButton()</span></td>
+		                            <td align="left">ボタンを埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">formReset()</span></td>
+		                            <td align="left">リセットボタンを埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">formSubmit()</span></td>
+		                            <td align="left">送信ボタンを埋め込む</td>
+		                        </tr>
+		                    </tbody>
+		            	</table>
+						
+		
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">HTML オブジェクトヘルパー</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							HTMLファイルを作成する際、最も難解なタグの１つが「OBJECT」タグです。<br />
+							Flashや動画などを表示させるには、「OBJECT」タグを使わなくてはなりませんが、<br />
+							複雑な記述が必要になります。これを簡単に記述できるようにするのが、HTML オブジェクトヘルパーです。
+						</p>
+						
+			            <table class="index2">
+							<div class="info">
+								<caption><b>メソッド一覧</b></caption>
+							</div>
+		                    <thead valign="middle">
+		                        <tr valign="middle">
+		                            <th style="width: 25%;">メソッド</th>
+		                            <th style="width: 75%;">概要</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody valign="middle" class="tbody">
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">htmlObject()</span></td>
+		                            <td align="left">OBJECT タグを埋め込む汎用メソッド</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">htmlFlash()</span></td>
+		                            <td align="left">FLASH 表示用のタグを埋め込む</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"><span class="classname">htmlQuicktime()</span></td>
+		                            <td align="left">Quicktime形式の動画表示用のタグを埋め込む</td>
+		                        </tr>
+		                    </tbody>
+		            	</table>
+		
+					</div>
+
+
+				</div>
+
+
+
+
+				<div class="piaceFooter"></div>
+			</div>
+
+
+
+<!-- id="messages" -->
+
+
+			<div id="messages" class="piace">
+
+				<div class="piaceHeader">
+			  		<div class="title">枠タイトル</div>
+				</div>
+
+	<!-- "piaceBody" -->
+				<div class="piaceBody">
+
+					<hr />
+					<div id="learning.quickstart.create-project" class="section">
+						<div class="info">
+							<h1 class="title">タイトル</h1>
+						</div>
+				    	
+					    <p class="para">
+				        	タイトル説明
+				    	</p>
+						
+				    	<div class="section" id="learning.quickstart.create-project.install-zf" name="learning.quickstart.create-project.install-zf">
+							<div class="info">
+								<h1 class="title">サブタイトル</h1>
+							</div>
+						</div>
+					</div>
+
+
+
+			        <p class="para">
+			            The default <span class="classname">IndexController</span> is as follows:
+			        </p>
+
+			        <div class="programlisting php">
+					<div class="phpcode">
+					<div class="php" style="font-family: monospace;">
+					<ol>
+						<li style=""><div>
+							<span style="color: #808080; font-style: italic; color: #006600;">// application/controllers/IndexController.php</span></div></li>
+						<li style=""><div>&nbsp;</div></li>
+						<li style=""><div>
+							<span style="color: #000000; font-weight: bold;">class</span> IndexController 
+							<span style="color: #000000; font-weight: bold;">extends</span> Zend_Controller_Action</div></li>
+						<li style=""><div>
+							<span style="color: #66cc66;">&#123;</span></div></li>
+						<li style=""><div>&nbsp;</div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #000000; font-weight: bold;">public</span> 
+							<span style="color: #000000; font-weight: bold;">function</span><span style="color: #ff0000;"> init</span>
+							<span style="color: #66cc66;">&#40;</span>
+							<span style="color: #66cc66;">&#41;</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #66cc66;">&#123;</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; 
+							<span style="color: #808080; font-style: italic;">/* Initialize action controller here */</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #66cc66;">&#125;</span></div></li>
+						<li style=""><div>&nbsp;</div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #000000; font-weight: bold;">public</span> 
+							<span style="color: #000000; font-weight: bold;">function</span> <span style="color: #0000ff;">indexAction </span><span style="color: #66cc66;">&#40;</span>
+							<span style="color: #66cc66;">&#41;</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #66cc66;">&#123;</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; 
+							<span style="color: #808080; font-style: italic;">// action body</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #66cc66;">&#125;</span></div></li>
+						<li style=""><div>
+							<span style="color: #66cc66;">&#125;</span></div></li>
+					</ol>
+					</div></div></div>
+
+
+
+
+
+			        <div class="comments">
+			        	<h3>更新情報</h3>
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                新規作成: gotoda                on: 2012-11-08 12:00:00
+							</div>
+			            	<div class="body">
+							ドキュメント資料として作成<br />
+							</div>
+			            </div>
+						
+					</div>
+
+				</div>
+				<div class="piaceFooter"></div>
+			</div>
+		
+		
+		<!-- /#contentBody --></div>
+
+		
+		<div id="contentFooter"></div>
+		
+	<!-- /#manual-container --></div>
+	<!-- /#contentContainer --></div>
+	<!-- /#content --></div>
+
+
+
+
+
+	<div id="menu">
+	<div id="menuContainer">
+		
+		<div id="naviConcept">
+			<ul class="level_0">
+			<li><a class="mark" href="#" onclick="$('concept_1').toggle(); return false;">＋</a>
+				<a href="http://www3.anan-nct.ac.jp/~gotouda/plan/training.html">【ananFD】</a>
+				<ul id="concept_1" class="level_1">
+				
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/gp/">ＦＤ高度化推進室</a></li>
+				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/">ＦＤ高度化推進室（学内）</a></li>
+				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/ananFD/">【ananFD】 モックアップ</a></li>
+				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/ananFD.doc/">【ananFD】 概要説明</a></li>
+				<li><a class="mark" href="#" onclick="$('concept_5').toggle(); return false;">＋</a>
+					<a href="">【ananFD】 デモサイト</a>
+					<ul id="concept_5" class="level_2">
+					<li><a class="mark" href="#" onclick="$('concept_8').toggle(); return false;">＋</a>
+						<a href="">テクノセンター</a>
+						<ul id="concept_8" class="level_2">
+						<li><span class="mark">‐</span><a href="http://192.168.11.102/ananfd/">【ananFD】 デモサイト1 （xenServer）</a></li>
+						<li><span class="mark">‐</span><a href="http://192.168.11.101/ananfd/">【ananFD】 デモサイト2 （xenServer）</a></li>
+						</ul>
+					</li>
+					<li><a class="mark" href="#" onclick="$('concept_9').toggle(); return false;">＋</a>
+						<a href="">学生課</a>
+						<ul id="concept_9" class="level_2">
+						<li><span class="mark">‐</span><a href="">教務係</a></li>
+						<li><span class="mark">‐</span><a href="">学生係</a></li>
+						<li><span class="mark">‐</span><a href="">料務係</a></li>
+						</ul>
+					</li>
+					</ul>
+				</li>
+				
+				</ul>
+			</li>
+			<li><a class="mark" href="#" onclick="$('concept_2').toggle(); return false;">＋</a>
+				<a href="http://www01.anan-nct.ac.jp/">阿南工業高等専門学校</a>
+				<ul id="concept_2" class="level_1">
+				
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/">トップページ</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/introduction">学校案内</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/department">学科案内</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/educationandresearch">教育・研究</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/cooperation">産学公・地域連携</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/campuslife">キャンパスライフ</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/sisetsu">付属施設・図書館</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/entranceexam">入試情報</a></li>
+				
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/m/">機械工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/e/">電気電子工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://s.anan-nct.ac.jp/">制御情報工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/c/">建設システム工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/i/">一般教科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/senkouka/">専攻科</a></li>
+				</ul>
+			</li>
+			</ul>
+		</div>
+		
+	<!-- /#menuContainer --></div>
+	<!-- /#menu --></div>
+
+<!-- /#main --></div>
+
+<div id="footer">
+<div id="footerContainer">
+
+<!-- /#footerContainer --></div>
+<!-- /#footer --></div>
+
+<!-- /#container --></div>
+
+</body>
+</html>
+

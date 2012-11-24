@@ -1,0 +1,833 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<title>ananFD</title>
+	<link href="../../common/css/style.css" media="all" rel="stylesheet" type="text/css" />
+	<script src="../../common/js/prototype.js" type="text/javascript"></script>
+	<script src="../../common/js/form.js" type="text/javascript"></script>
+	<script src="../../common/js/navi.js" type="text/javascript"></script>
+	
+<!--
+	<link href="/common/css/calendar_date_select/default.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="/common/js/calendar_date_select/calendar_date_select.js" type="text/javascript"></script>
+	<script src="/common/js/calendar_date_select/locale/ja.js" type="text/javascript"></script>
+	<script src="/common/js/calendar_date_select/format_iso_date.js" type="text/javascript"></script>
+-->
+</head>
+
+
+<body>
+
+<div id="container">
+
+
+
+
+	<div id="header">
+	<div id="headerContainer">
+		
+		<h1><a href="../..">ananFD</a></h1>
+		<div class="menu">
+		    <span class="user">FD高度化推進室　後藤田浩二（admin）</span>
+		    <!--a class="web" href="http://www3.anan-nct.ac.jp/~gotouda/" target="_blank">公開画面</a-->
+		    <a class="logout" href="../../login">ログイン</a>
+		</div>
+		
+	<!-- /#headerContainer --></div>
+	<!-- /#header --></div>
+
+
+
+
+	<div id="banner">
+	<div id="bannerContainer">
+	
+	<!-- /#bannerContainer --></div>
+	<!-- /#banner --></div>
+
+
+
+
+	<div id="navi">
+	<div id="naviContainer">
+		
+		<table>
+		<tr>
+			<td class="selector">
+		    	<div class="site">
+				    <script type="text/javascript">
+				//<![CDATA[
+				  function submitCmsNavigationSite(value) {
+				    document.getElementById('cmsNavigationSite').submit();
+				    return false;
+				  }
+				//]]>
+					</script>
+					
+					<form id="cmsNavigationSite" method="get" action="../../../navigationSite">
+						<select id="cms_navi_site" name="navi_site" onchange="return submitCmsNavigationSite(this.value)">
+							<option value=""></option>
+							<option value="./ananFD">【ananFD】 モックアップ</option>
+							<option value="./ananFD.doc/" selected="selected" >【ananFD】 概要説明</option>
+							<option value="http://192.168.11.102/ananfd/" >【ananFD】 デモサイト1 （xenServer）</option>
+							<option value="http://192.168.11.101/ananfd/" >【ananFD】 デモサイト2 （xenServer）</option>
+						</select>
+					</form>
+				</div>
+				
+				
+			    <div class="concept">
+			      <p id="naviConceptCurrent" onclick="Cms_Admin_Navi.showNavi();">
+			        阿南工業高等専門学校</p>
+				</div>
+			</td>
+			<td class="menu">
+			    <div class="mainMenu">
+					<div class="mainMenu">
+						<a href="../../learning" class="learning">学習支援</a>
+						<a href="../../student" class="student">学生指導</a>
+						<a href="../../entrust" class="entrust">担任指導</a>
+						<a href="../../graduate" class="graduate">卒業生支援</a>
+						<a href="../../tp" class="tp">ＴＰ支援</a>
+						<a href="../../ir" class="ir">ＩＲ支援</a>
+						<a href="../../master" class="master">マスタ設定</a>
+					</div>
+				</div>
+				
+				<div class="contentMenu">
+					<a href="../../top/password">パスワード変更</a>
+					<a href="../../top/userinfo">ユーザ情報</a>
+					<a href="../../top/initpass">パスワード初期化</a>
+					<a href="../../top/setup" class="current">セットアップ</a>
+					<a href="../../top/tool">運用ツール</a>
+				</div>
+			</td>
+	  	</tr>
+		</table>
+	
+	
+	<!-- /#naviContainer --></div>
+	<!-- /#navi --></div>
+
+
+
+
+<div id="main">
+	
+	<div id="content">
+	<div id="contentContainer">
+	<div id="manual-container">
+		
+		<div id="contentHeader">
+		 	<div class="navi">
+				<a href="../../top">TOP</a>
+					 &gt; <a href="../../top/setup">セットアップ</a>
+		  	</div>
+			
+			<div class="actionMenu">
+				<!--a href="../student/new">新規作成</a-->
+			</div>
+			
+			<h2>Programmer's Reference Guide</h2>
+		</div>
+		
+		<div id="contentBody">
+			
+			
+
+
+<!-- id="maintenances" -->
+
+			<div id="maintenances" class="piace">
+
+				<div class="piaceHeader">
+			  		<div class="title">セットアップ手順</div>
+				</div>
+
+
+	<!-- "piaceBody" -->
+
+				<div class="piaceBody">
+
+<!--
+					<hr />
+					<div class="section">
+						<div class="info">
+							<h1 class="title">１．動作環境</h1>
+						</div>
+						
+					    <p class="para">
+							・Apache 2.2　　　　　　　　　　　　　　　　　　　　　動作確認＞index.html<br />
+						</p>
+					    <p class="para">
+							・PHP 5.3（PHP 5.4はサポート外）　　　　　　　　　　　動作確認＞phpInfo.php<br />
+						</p>
+					    <p class="para">
+							・MySQL 5.5（phpMyAdminを含む）　　　　　　　　　　動作確認＞phpMyadmin<br />
+						</p>
+					    <p class="para">
+							・ZendFramework 1.10〜1.12（Ver.2はサポート外）　　 動作確認＞zend.php<br />
+						</p>
+						
+					</div>
+-->
+					
+					
+					<hr />
+					<div class="section">
+						<div class="info">
+							<h1 class="title">１．動作環境</h1>
+						</div>
+						
+						<table class="index2">
+		                    <thead valign="middle">
+		                        <tr valign="middle">
+		                            <th style="width: 0%;">ソフトウェア</th>
+		                            <th style="width: 0%;">動作確認</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody valign="middle" class="tbody">
+		                        <tr valign="middle">
+		                            <td align="left">Apache 2.2</td>
+		                            <td align="left">index.html</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">PHP 5.3（PHP 5.4はサポート外）</td>
+		                            <td align="left">phpInfo.php</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">MySQL 5.5（phpMyAdminを含む）</td>
+		                            <td align="left">phpMyadmin</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">ZendFramework 1.10〜1.12（Ver.2はサポート外）</td>
+		                            <td align="left">zend.php</td>
+		                        </tr>
+		                    </tbody>
+		            	</table>
+					</div>
+	
+	
+
+
+				</div>
+
+
+	<!-- "piaceBody" -->
+				<div class="piaceBody">
+
+					<hr />
+					<div class="section">
+						<div class="info">
+							<h1 class="title">２．フォルダコピー</h1>
+						</div>
+						
+					    <p class="para">
+							ドキュメントルートのフォルダに、ananfd、application、ananfd.doc フォルダをコピーします。
+						</p>
+						
+					</div>
+					
+				</div>
+
+
+	<!-- "piaceBody" -->
+				<div class="piaceBody">
+
+					<hr />
+					<div class="section">
+						<div class="info">
+							<h1 class="title">３．DB作成</h1>
+						</div>
+						
+					    <p class="para">
+							phpMyAdmin のユーザ：root のパスワードを設定する。<br />
+							phpMyAdmin を起動して、ユーザ：<b>root</b> でログインして、<br />
+							　新しいユーザ <b>gotoda</b>【ユーザ：gotoda パスワード：gotoda】 を追加する。<br />
+							<br />
+							ユーザ：root をログアウトして、ユーザ：<b>gotoda</b> でログインする。<br />
+							<br />
+							次に、メニューからインポートを選択して、<br />
+							　application/lib/data/<b>ananfd2011.sql</b> をアップロードファイルとして選択、インポートを実行して、<br />
+							　新規データベース：<b>ananfd2011</b>の作成と各テーブル作成を確認する。<br />
+						</p>
+						
+					</div>
+					
+				</div>
+
+
+
+
+	<!-- "piaceBody" -->
+				<div class="piaceBody">
+
+					<hr />
+					<div class="section">
+						<div class="info">
+							<h1 class="title">４．DB一括読み込み</h1>
+						</div>
+						
+					    <p class="para">
+							ananfd（Webアプリ）を起動させて、マスタ設定にて各種マスタデータの一括読込を行います。<br /><br />
+							マスタ設定のユーザ管理、教務管理、学生管理、学生情報には、マスタデータが設定されていないため、<br />
+							　<b>ananfd</b>【ユーザID：ananfd　パスワード：password】でログインして、各種マスタデータの一括読込を行います。
+						</p>
+		
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">1) ユーザ管理</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							[TOP＞マスタ設定＞ユーザ管理]　において、一括読込ボタンを押下する。<br />
+							[TOP＞マスタ設定＞ユーザ管理＞一括読込]　において、ファイルを選択ボタンを押下して、CSVファイルを選択する。<br />
+							application/lib/data/<b>user_2011.csv</b> を選択して、インポートボタンを押下してインポートを実行する。
+						</p>
+		
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">2) 教務管理</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							[TOP＞マスタ設定＞教務管理＞授業科目管理]　において、一括読込ボタンを押下する。<br />
+							[TOP＞マスタ設定＞教務管理＞授業科目管理＞一括読込]　において、<br />
+							　上から順次、ファイルを選択ボタンを押下して、CSVファイルを選択してインポートを実行する。<br /><br />
+							１．授業科目をインポートのファイルを選択ボタンを押下して、CSVファイルを選択する。<br />
+							　application/lib/data/<b>subject_2011.csv</b> を選択して、インポートボタンを押下してインポートを実行する。<br /><br />
+							２．担当教員をインポートのファイルを選択ボタンを押下して、CSVファイルを選択する。<br />
+							　application/lib/data/<b>subteacher_2011.csv</b> を選択して、インポートボタンを押下してインポートを実行する。<br /><br />
+							３．シラバスをインポートのファイルを選択ボタンを押下して、CSVファイルを選択する。<br />
+							　application/lib/data/<b>subfile_2011.csv</b> を選択して、インポートボタンを押下してインポートを実行する。
+						</p>
+		
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">3) 学生管理</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							[TOP＞マスタ設定＞学生管理]　において、一括読込ボタンを押下する。<br />
+							[TOP＞マスタ設定＞学生管理＞一括読込]　において、ファイルを選択ボタンを押下して、CSVファイルを選択する。<br />
+							application/lib/data/<b>member_2011.csv</b> を選択して、インポートボタンを押下してインポートを実行する。
+						</p>
+		
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">4) 学生情報</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							[TOP＞マスタ設定＞学生情報＞就職先管理]　において、一括読込ボタンを押下する。<br />
+							[TOP＞マスタ設定＞学生情報＞就職先管理＞一括読込]　において、ファイルを選択ボタンを押下して、CSVファイルを選択する。<br />
+							application/lib/data/<b>job_2011.csv</b> を選択して、インポートボタンを押下してインポートを実行する。
+						</p>
+		
+					</div>
+
+
+				</div>
+
+				<div class="piaceFooter"></div>
+			</div>
+
+
+						<br />
+						<br />
+						
+						
+
+
+<!-- id="messages" -->
+
+
+			<div id="messages" class="piace">
+
+				<div class="piaceHeader">
+			  		<div class="title">アクセス管理設定</div>
+				</div>
+
+	<!-- "piaceBody" -->
+				<div class="piaceBody">
+				
+						
+					<div class="section">
+		
+						<p class="para">
+							今回は、平成２３年度の役職一覧表を参考にして、メンバ設定を行う。<br />
+							<br />
+							[TOP＞マスタ設定＞アクセス管理]　において、専門委員会・役職のメンバ設定を行う。<br />
+							<br />
+							アクセス管理での各メンバは、初期値ではすべて、校長に設定されているため、<br />
+							　<b>校長</b>【ユーザID：kocho　パスワード：kocho】でログインして、各メンバ設定を行い、<br />
+							　個々のメンバ設定後、校長がメンバーで無い場合は、校長自身のメンバ削除を行う。
+						</p>
+
+
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">１．専門委員会</h1>
+							</div>
+						</div>
+						
+						
+						<br />
+						
+						<p class="form">専門委員会
+			
+						</p>
+							<table style="width: 100%">
+								<tr>
+									<td style="width: 49%; vertical-align: top;">
+						  		<table class="show">
+								
+								  <tr>
+								    <th>　　管理部門</th>
+								    <td>校長　　　　　　　（kocho）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>坪井　泰士　　　　（tsuboi）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>藤居　岳人　　　　（taketo）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>西岡　守　　　　　（nishioka）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>當宮　辰美　　　　（toumiya）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>岩佐　健司　　　　（iwasa2）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>田中　達治　　　　（ttanaka）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>湯城　豊勝　　　　（yuuki）</td>
+								  </tr><tr>
+								    <th>　　校長補佐会議</th>
+								    <td>校長　　　　　　　（kocho）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>坪井　泰士　　　　（tsuboi）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>藤居　岳人　　　　（taketo）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>西岡　守　　　　　（nishioka）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>當宮　辰美　　　　（oumiya）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>岩佐　健司　　　　（iwasa2）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>田中　達治　　　　（ttanaka）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>湯城　豊勝　　　　（yuuki）</td>
+								  </tr><tr>
+								    <th>　　教務委員会</th>
+								    <td>校長</td>
+								  </tr><tr>
+								    <th>　　学生委員会</th>
+								    <td>校長</td>
+								  </tr><tr>
+								    <th>　　寮務委員会</th>
+								    <td>校長</td>
+								  </tr>
+								
+						  		</table>
+							</td>
+							
+							<td style="width: 15px;">
+								
+							</td>
+							
+							<td style="vertical-align: top;">
+						  		<table class="show">
+								
+								  <tr>
+								    <th>　　ＦＤ専門委員会</th>
+								    <td>坪井　泰士　　　　（tsuboi）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>奥本　良博　　　　（oku）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>松本　高志　　　　（matumoto）</td>
+								  </tr><tr>
+								    <th>　　キャリア支援室</th>
+								    <td>笹田　修司　　　　（sasada）</td>
+								  </tr><tr>
+								    <th>　　総合情報処理室</th>
+								    <td>後藤田　浩二　　　（gotouda）</td>
+								  </tr><tr>
+								    <th>　　ＦＤ高度化推進室</th>
+								    <td>後藤田　浩二　　　（gotouda）</td>
+								  </tr>
+								
+						  		</table>
+							</td>
+						</tr>
+						</table>
+										
+						
+						
+						
+		
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">２．役職</h1>
+							</div>
+						</div>
+						
+						
+						<br />
+						
+						<p class="form">主任</p>
+						<table style="width: 100%">
+						<tr>
+							<td style="width: 49%; vertical-align: top;">
+				<!--
+								<p class="form">主任</p>
+				-->
+						  		<table class="show">
+								
+								  <tr>
+								    <th style="white-space: nowrap;">　　学科主任【一般教科】</th>
+								    <td>錦織　浩文　　　　（nishiki）</td>
+								  </tr><tr>
+								    <th style="white-space: nowrap;">　　学科主任【機械工学科】</th>
+								    <td>西野　精一　　　　（snishino）</td>
+								  </tr><tr>
+								    <th style="white-space: nowrap;">　　学科主任【電気電子工学科】</th>
+								    <td>正木　和夫　　　　（masaki）</td>
+								  </tr><tr>
+								    <th style="white-space: nowrap;">　　学科主任【制御情報工学科】</th>
+								    <td>杉野　隆三郎　　　（sugino）</td>
+								  </tr><tr>
+								    <th style="white-space: nowrap;">　　学科主任【建設システム工学科】</th>
+								    <td>島田　富美男　　　（shimada）</td>
+								  </tr>
+								
+						  		</table>
+							</td>
+							
+							<td style="width: 15px;">
+								
+							</td>
+							
+							<td style="vertical-align: top;">
+				<!--
+						  		<p class="form">主任</p>
+				-->
+						  		<table class="show">
+								
+								  <tr>
+								    <th nowrap>　　学年主任【一年】</th>
+								    <td>川崎　敏和　　　　（kawasaki）</td>
+								  </tr><tr>
+								    <th nowrap>　　学年主任【二年】</th>
+								    <td>田上　隆徳　　　　（tagami）</td>
+								  </tr><tr>
+								    <th nowrap>　　学年主任【三年】</th>
+								    <td>中村　雄一　　　　（yuichi）</td>
+								  </tr><tr>
+								    <th nowrap>　　学年主任【四年】</th>
+								    <td>福田　耕治　　　　（fukuda）</td>
+								  </tr><tr>
+								    <th nowrap>　　学年主任【五年】</th>
+								    <td>笹田　修司　　　　（sasada）</td>
+								  </tr>
+								
+						  		</table>
+							</td>
+						</tr>
+						</table>
+				
+						<br />
+						
+						<p class="form">学級担任／学級副担任</p>
+						<table style="width: 100%">
+						<tr>
+							<td style="width: 49%; vertical-align: top;">
+				<!--
+								<p class="form">学級担任／学級副担任</p>
+				-->
+						  		<table class="show">
+								
+								  <tr>
+								    <th>　　学年担任【一年１組】</th>
+								    <td>川崎　敏和　　　　（kawasaki）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>勝藤　和子　　　　（k-katsu）</td>
+								  </tr><tr>
+								    <th>　　学年担任【一年２組】</th>
+								    <td>藤居　岳人　　　　（taketo）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>谷中　俊裕　　　　（t_tani）</td>
+								  </tr><tr>
+								    <th>　　学年担任【一年３組】</th>
+								    <td>一森　勇人　　　　（ichimori）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>中島　一　　　　　（nakashima）</td>
+								  </tr><tr>
+								    <th>　　学年担任【一年４組】</th>
+								    <td>櫛田　雅弘　　　　（kushida）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>田中　広志　　　　（htanaka）</td>
+								  </tr><tr>
+								    <th>　　学年担任【二年Ｍ組】</th>
+								    <td>田上　隆徳　　　　（tagami）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>平山　基　　　　　（hmotoi）</td>
+								  </tr><tr>
+								    <th>　　学年担任【二年Ｅ組】</th>
+								    <td>宮本　陽生　　　　（hmiya）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>釜野　勝　　　　　（kamano）</td>
+								  </tr><tr>
+								    <th>　　学年担任【二年Ｓ組】</th>
+								    <td>藤井　浩美　　　　（hiromif）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>松尾　俊寛　　　　（matsuo）</td>
+								  </tr><tr>
+								    <th>　　学年担任【二年Ｃ組】</th>
+								    <td>新井　修　　　　　（arai0731）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>山田　耕太郎　　　（kyamada）</td>
+								  </tr>
+								
+						  		</table>
+							</td>
+							
+							<td style="width: 15px;">
+								
+							</td>
+							
+							<td style="vertical-align: top;">
+				<!--
+						  		<p class="form">学級担任／学級副担任</p>
+				-->
+						  		<table class="show">
+								
+								  <tr>
+								    <th>　　学年担任【三年Ｍ組】</th>
+								    <td>原野　智哉　　　　（harano）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>西本　浩司　　　　（knishi）</td>
+								  </tr><tr>
+								    <th>　　学年担任【三年Ｅ組】</th>
+								    <td>中野　好典　　　　（nakano）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>中村　雄一　　　　（yuichi）</td>
+								  </tr><tr>
+								    <th>　　学年担任【三年Ｓ組】</th>
+								    <td>田中　達治　　　　（ttanaka）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>岡本　浩行　　　　（okamoto）</td>
+								  </tr><tr>
+								    <th>　　学年担任【三年Ｃ組】</th>
+								    <td>湯城　豊勝　　　　（yuuki）</td>
+								  </tr><tr>
+								    <th>　</th>
+								    <td>松保　重之　　　　（matsuho）</td>
+								  </tr><tr>
+								    <th>　　学年担任【四年Ｍ組】</th>
+								    <td>多田　博夫　　　　（tadahiro）</td>
+								  </tr><tr>
+								    <th>　　学年担任【四年Ｅ組】</th>
+								    <td>松本　高志　　　　（matumoto）</td>
+								  </tr><tr>
+								    <th>　　学年担任【四年Ｓ組】</th>
+								    <td>福田　耕治　　　　（fukuda）</td>
+								  </tr><tr>
+								    <th>　　学年担任【四年Ｃ組】</th>
+								    <td>堀井　克章　　　　（horii）</td>
+								  </tr><tr>
+								    <th>　　学年担任【五年Ｍ組】</th>
+								    <td>武知　英夫　　　　（takechi）</td>
+								  </tr><tr>
+								    <th>　　学年担任【五年Ｅ組】</th>
+								    <td>今田　浩之　　　　（imada）</td>
+								  </tr><tr>
+								    <th>　　学年担任【五年Ｓ組】</th>
+								    <td>杉野　隆三郎　　　（sugino）</td>
+								  </tr><tr>
+								    <th>　　学年担任【五年Ｃ組】</th>
+								    <td>笹田　修司　　　　（sasada）</td>
+								  </tr>
+								
+						  		</table>
+							</td>
+						</tr>
+						</table>
+						
+		
+						
+					</div>
+					
+				</div>
+
+
+
+
+
+
+
+
+
+
+				<div class="piaceFooter"></div>
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- id="messages" -->
+
+
+			<div id="messages" class="piace">
+
+	<!-- "piaceBody" -->
+				<div class="piaceBody">
+
+			        <div class="comments">
+			        	<h3>更新情報</h3>
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                新規作成: gotoda                on: 2012-11-08 12:00:00
+							</div>
+			            	<div class="body">
+							ドキュメント資料として作成<br />
+							</div>
+			            </div>
+						
+					</div>
+
+				</div>
+				<div class="piaceFooter"></div>
+			</div>
+		
+		
+		<!-- /#contentBody --></div>
+		
+		<div id="contentFooter"></div>
+		
+	<!-- /#manual-container --></div>
+	<!-- /#contentContainer --></div>
+	<!-- /#content --></div>
+
+
+
+
+
+	<div id="menu">
+	<div id="menuContainer">
+		
+		<div id="naviConcept">
+			<ul class="level_0">
+			<li><a class="mark" href="#" onclick="$('concept_1').toggle(); return false;">＋</a>
+				<a href="http://www3.anan-nct.ac.jp/~gotouda/plan/training.html">【ananFD】</a>
+				<ul id="concept_1" class="level_1">
+				
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/gp/">ＦＤ高度化推進室</a></li>
+				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/">ＦＤ高度化推進室（学内）</a></li>
+				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/ananFD/">【ananFD】 モックアップ</a></li>
+				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/ananFD.doc/">【ananFD】 概要説明</a></li>
+				<li><a class="mark" href="#" onclick="$('concept_5').toggle(); return false;">＋</a>
+					<a href="">【ananFD】 デモサイト</a>
+					<ul id="concept_5" class="level_2">
+					<li><a class="mark" href="#" onclick="$('concept_9').toggle(); return false;">＋</a>
+						<a href="">テクノセンター</a>
+						<ul id="concept_9" class="level_2">
+						<li><span class="mark">‐</span><a href="http://192.168.11.102/ananfd/">【ananFD】 デモサイト1 （xenServer）</a></li>
+						<li><span class="mark">‐</span><a href="http://192.168.11.101/ananfd/">【ananFD】 デモサイト2 （xenServer）</a></li>
+						</ul>
+					</li>
+					<li><a class="mark" href="#" onclick="$('concept_9').toggle(); return false;">＋</a>
+						<a href="">学生課</a>
+						<ul id="concept_9" class="level_2">
+						<li><span class="mark">‐</span><a href="">教務係</a></li>
+						<li><span class="mark">‐</span><a href="">学生係</a></li>
+						<li><span class="mark">‐</span><a href="">料務係</a></li>
+						</ul>
+					</li>
+					</ul>
+				</li>
+				
+				</ul>
+			</li>
+			<li><a class="mark" href="#" onclick="$('concept_2').toggle(); return false;">＋</a>
+				<a href="http://www01.anan-nct.ac.jp/">阿南工業高等専門学校</a>
+				<ul id="concept_2" class="level_1">
+				
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/">トップページ</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/introduction">学校案内</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/department">学科案内</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/educationandresearch">教育・研究</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/cooperation">産学公・地域連携</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/campuslife">キャンパスライフ</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/sisetsu">付属施設・図書館</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/entranceexam">入試情報</a></li>
+				
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/m/">機械工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/e/">電気電子工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://s.anan-nct.ac.jp/">制御情報工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/c/">建設システム工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/i/">一般教科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/senkouka/">専攻科</a></li>
+				</ul>
+			</li>
+			</ul>
+		</div>
+		
+	<!-- /#menuContainer --></div>
+	<!-- /#menu --></div>
+
+<!-- /#main --></div>
+
+<div id="footer">
+<div id="footerContainer">
+
+<!-- /#footerContainer --></div>
+<!-- /#footer --></div>
+
+<!-- /#container --></div>
+
+</body>
+</html>
+

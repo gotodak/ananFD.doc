@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<meta http-equiv="content-style-type" content="text/css" />
+	<title>ログイン</title>
+	<link href="../common/css/login.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+
+
+<body>
+
+	<div class="header"></div>
+
+	<form action="../cms/contents" method="post">
+		<div style="margin:0;padding:0;display:inline">
+			<input name="authenticity_token" type="hidden" value="yLkig9NvsC+FBWDPlULjKvg5PmrMh51i6VVkblzVVDM=" />
+		</div>
+		
+		<input id="uri" name="uri" type="hidden" value="/_admin" />
+		<div class="box">
+			<p>v1.1.5</p>
+			<h1>ananFD</h1>
+			<div class="notice"><br /></div>
+			<div class="fields">
+				ユーザID　　<input id="account" name="account" type="text" value="" /><br />
+			    <br style="line-height: 0.8;" />
+			    パスワード　<input id="password" name="password" type="password" value="" /><br />
+			</div>
+			<div class="submitters">
+				<input class="login" type="image" src="../common/css/images/blank.gif" alt="ログイン" value="" name="commit" />
+			</div>
+		</div>
+	</form>
+
+<div class="copyright">Powered by GOTODAK</div>
+
+</body>
+</html>

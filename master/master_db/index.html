@@ -1,0 +1,981 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<title>ananFD</title>
+	<link href="../../common/css/style.css" media="all" rel="stylesheet" type="text/css" />
+	<script src="../../common/js/prototype.js" type="text/javascript"></script>
+	<script src="../../common/js/form.js" type="text/javascript"></script>
+	<script src="../../common/js/navi.js" type="text/javascript"></script>
+	
+<!--
+	<link href="/common/css/calendar_date_select/default.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="/common/js/calendar_date_select/calendar_date_select.js" type="text/javascript"></script>
+	<script src="/common/js/calendar_date_select/locale/ja.js" type="text/javascript"></script>
+	<script src="/common/js/calendar_date_select/format_iso_date.js" type="text/javascript"></script>
+-->
+</head>
+
+
+<body>
+
+<div id="container">
+
+
+
+
+	<div id="header">
+	<div id="headerContainer">
+		
+		<h1><a href="../..">ananFD</a></h1>
+		<div class="menu">
+		    <span class="user">FD高度化推進室　後藤田浩二（admin）</span>
+		    <!--a class="web" href="http://www3.anan-nct.ac.jp/~gotouda/" target="_blank">公開画面</a-->
+		    <a class="logout" href="../../login">ログイン</a>
+		</div>
+		
+	<!-- /#headerContainer --></div>
+	<!-- /#header --></div>
+
+
+
+
+	<div id="banner">
+	<div id="bannerContainer">
+	
+	<!-- /#bannerContainer --></div>
+	<!-- /#banner --></div>
+
+
+
+
+	<div id="navi">
+	<div id="naviContainer">
+		
+		<table>
+		<tr>
+			<td class="selector">
+		    	<div class="site">
+				    <script type="text/javascript">
+				//<![CDATA[
+				  function submitCmsNavigationSite(value) {
+				    document.getElementById('cmsNavigationSite').submit();
+				    return false;
+				  }
+				//]]>
+					</script>
+					
+					<form id="cmsNavigationSite" method="get" action="../../../navigationSite">
+						<select id="cms_navi_site" name="navi_site" onchange="return submitCmsNavigationSite(this.value)">
+							<option value=""></option>
+							<option value="./ananFD">【ananFD】 モックアップ</option>
+							<option value="./ananFD.doc/" selected="selected" >【ananFD】 概要説明</option>
+							<option value="http://192.168.11.102/ananfd/" >【ananFD】 デモサイト1 （xenServer）</option>
+							<option value="http://192.168.11.101/ananfd/" >【ananFD】 デモサイト2 （xenServer）</option>
+						</select>
+					</form>
+				</div>
+				
+				
+			    <div class="concept">
+			      <p id="naviConceptCurrent" onclick="Cms_Admin_Navi.showNavi();">
+			        阿南工業高等専門学校</p>
+				</div>
+			</td>
+			<td class="menu">
+			    <div class="mainMenu">
+					<div class="mainMenu">
+						<a href="../../learning" class="learning">学習支援</a>
+						<a href="../../student" class="student">学生指導</a>
+						<a href="../../entrust" class="entrust">担任指導</a>
+						<a href="../../graduate" class="graduate">卒業生支援</a>
+						<a href="../../tp" class="tp">ＴＰ支援</a>
+						<a href="../../ir" class="ir">ＩＲ支援</a>
+						<a href="../../master" class="master current">マスタ設定</a>
+					</div>
+				</div>
+				
+				<div class="contentMenu">
+					<a href="../../master/master_student"    >学生管理</a>
+					<a href="../../master/master_information">学生情報</a>
+					<a href="../../master/master_education"  >教務管理</a>
+					<a href="../../master/master_user"       >ユーザ管理</a>
+					<a href="../../master/master_access"     >アクセス管理</a>
+					<a href="../../master/master_section"    >組織管理</a>
+					<a href="../../master/master_db"  class="current">ＤＢ</a>
+					<!--a href="../../master/master_attendance" >出欠簿管理</a-->
+				</div>
+			</td>
+	  	</tr>
+		</table>
+	
+	
+	<!-- /#naviContainer --></div>
+	<!-- /#navi --></div>
+
+
+
+
+<div id="main">
+	
+	<div id="content">
+	<div id="contentContainer">
+	<div id="manual-container">
+		
+		<div id="contentHeader">
+		 	<div class="navi">
+				<a href="../../top">TOP</a>
+					 &gt; <a href="../../master">マスタ設定</a>
+					 &gt; <a href="../../master/master_section">ＤＢ</a>
+		  	</div>
+			
+			<div class="actionMenu">
+				<a href="../../master/master_db/user">ユーザ管理</a>
+				<a href="../../master/master_db/subject">教務管理</a>
+				<a href="../../master/master_db/member">学生管理</a>
+				<a href="../../master/master_db/information">学生情報</a>
+				<a href="../../master/master_db/section">組織管理</a>
+				<a href="../../master/master_db/access">アクセス管理</a>
+				<a href="ananfd-ER.pdf" target="_blank">ＥＲ図(PDF)</a>
+				<!--a href="../../../master/master_education/subject/new">新規作成</a-->				
+				<!--input type="button" value="ananfd-ER" onclick="window.open('ananfd-ER.pdf')"-->
+			</div>
+			
+			<h2>Programmer's Reference Guide</h2>
+		</div>
+		
+		<div id="contentBody">
+			
+			
+
+
+<!-- id="maintenances" -->
+
+			<div id="maintenances" class="piace">
+
+				<div class="piaceHeader">
+			  		<div class="title">テーブル 一覧</div>
+				</div>
+
+
+	<!-- "piaceBody" -->
+
+				<div class="piaceBody">
+				
+				
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">テーブルの管理</h1>
+							</div>
+						</div>
+						
+						
+						<table class="index2">
+							<div class="info">
+								<caption><b>テーブルの管理分類</b></caption>
+							</div>
+		                    <thead valign="middle">
+		                        <tr valign="middle">
+		                            <th style="width: 40%;">管理</th>
+		                            <th style="width: 60%;">テーブル名</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody valign="middle" class="tbody">
+		                        <tr valign="middle">
+		                            <td align="left">ユーザ管理</td>
+		                            <td align="left"><a href="./user/#m_user">m_user</a>、
+		                            				<a href="./user/#t_user">t_user</a>、
+		                            				<a href="./user/#t_login">t_login</a></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">教務管理</td>
+		                            <td align="left"><a href="./subject/#m_subject">m_subject</a>、(m_cyllabus)、
+		                            				<a href="./subject/#t_subfile">t_subfile</a>、
+		                            				<a href="./subject/#t_subgroup">t_subgroup</a>、
+		                            				<a href="./subject/#t_subuser">t_subuser</a></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">組織管理</td>
+		                            <td align="left"><a href="./section/#m_class">m_class</a>、
+		                            				<a href="./section/#m_group">m_group</a>、
+		                            				<a href="./section/#m_job">m_job</a></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">学生管理</td>
+		                            <td align="left"><a href="./member/#m_member">m_member</a></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">アクセス管理</td>
+		                            <td align="left"><a href="./access/#m_acl">m_acl</a>、
+		                            				<a href="./access/#m_committee">m_committee</a>、
+		                            				<a href="./access/#t_commgroup">t_commgroup</a>、
+		                            				<a href="./access/#t_commuser">t_commuser</a></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">学生情報</td>
+		                            <td align="left"><a href="./information/#m_club">m_club</a>、
+		                            				<a href="./information/#m_employment">m_employment</a>、
+		                            				<a href="./information/#t_employgroup">t_employgroup</a></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">学習支援</td>
+		                            <td align="left"><a href="../../learning/db/#m_learning">m_learning</a>、
+		                            				<a href="../../learning/db/#t_learnsupport">t_learnsupport</a>、
+		                            				<a href="../../learning/db/#t_learnrequire">t_learnrequire</a>、
+		                            				<a href="../../learning/db/#t_learnemploy">t_learnemploy</a></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">学生指導</td>
+		                            <td align="left"><a href="../../student/db/#m_coachst">m_coachst</a>、
+		                            				<a href="../../student/db/#t_coachstmember">t_coachstmember</a>、
+		                            				<a href="../../student/db/#t_coachstgroup">t_coachstgroup</a></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">担任指導</td>
+		                            <td align="left"><a href="../../entrust/db/#m_coachen">m_coachen</a>、
+		                            				<a href="../../entrust/db/#t_coachenmember">t_coachenmember</a>、
+		                            				<a href="../../entrust/db/#t_coachengroup">t_coachengroup</a></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">卒業生支援</td>
+		                            <td align="left"><a href="../../graduate/db/#m_graduate">m_graduate</a></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">ＴＰ支援</td>
+		                            <td align="left"><a href="../../tp/db/#m_tp">m_tp</a>、
+		                            				<a href="../../tp/db/#t_tpfile">t_tpfile</a></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">ＩＲ支援</td>
+		                            <td align="left"><a href="../../ir/db/#m_ir">m_ir</a></td>
+		                        </tr>
+		                    </tbody>
+		            	</table>
+	
+	
+					<br />
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">データベースのテーブル情報</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							セットアップ終了時のデータベース<br />
+						</p>
+						
+						<table class="index2">
+							<div class="info">
+								<caption><b>テーブル情報</b></caption>
+							</div>
+		                    <thead valign="middle">
+		                        <tr valign="middle">
+		                            <th style="width: 20%;">テーブル名称</th>
+		                            <th style="width: 20%;">テーブルＩＤ</th>
+		                            <th style="width: 10%;">レコード数</th>
+		                            <th style="width: 10%;">種別</th>
+		                            <th style="width: 10%;">照合順序</th>
+		                            <th style="width: 10%;">サイズ</th>
+		                            <th style="width: 10%;">　</th>
+		                            <th style="width: 10%;">　</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody valign="middle" class="tbody">
+		                        <tr valign="middle">
+		                            <td align="left">アクセス管理マスタ</td>
+		                            <td>
+		                            	<a href="./access/#m_acl">m_acl</a></td>
+		                            <td style="text-align:right;">224</td>
+		                            <td>InnoDB</td>
+		                            <td>utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td></td>
+		                            <td></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">クラス分類マスタ</td>
+		                            <td align="left">
+		                            	<a href="./section/#m_class">m_class</a></td>
+		                            <td style="text-align:right;">25</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">クラブ分類マスタ</td>
+		                            <td align="left">
+		                            	<a href="./information/#m_club">m_club</a></td>
+		                            <td style="text-align:right;">41</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">担任指導マスタ</td>
+		                            <td align="left">
+		                            	<a href="../../entrust/db/#m_coachen">m_coachen</a></td>
+		                            <td style="text-align:right;">0</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">学生指導マスタ</td>
+		                            <td align="left">
+		                            	<a href="../../student/db/#m_coachst">m_coachst</a></td>
+		                            <td style="text-align:right;">0</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">役職グループ管理マスタ</td>
+		                            <td align="left">
+		                            	<a href="./access/#m_committee">m_committee</a></td>
+		                            <td style="text-align:right;">45</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">シラバス管理マスタ？</td>
+		                            <td align="left">m_cyllabus</td>
+		                            <td style="text-align:right;">0</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">就職先管理マスタ</td>
+		                            <td align="left">
+		                            	<a href="./information/#m_employment">m_employment</a></td>
+		                            <td style="text-align:right;">93</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">卒業生管理マスタ</td>
+		                            <td align="left">
+		                            	<a href="../../graduate/db/#m_graduate">m_graduate</a></td>
+		                            <td style="text-align:right;">0</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">組織グループ分類マスタ</td>
+		                            <td align="left">
+		                            	<a href="./section/#m_group">m_group</a></td>
+		                            <td style="text-align:right;">13</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">ＩＲ情報管理マスタ</td>
+		                            <td align="left">
+		                            	<a href="../../ir/db/#m_ir">m_ir</a></td>
+		                            <td style="text-align:right;">0</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">職名分類マスタ</td>
+		                            <td align="left">
+		                            	<a href="./section/#m_job">m_job</a></td>
+		                            <td style="text-align:right;">11</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">学習支援マスタ</td>
+		                            <td align="left">
+		                            	<a href="../../learning/db/#m_learning">m_learning</a></td>
+		                            <td style="text-align:right;">0</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">学生情報管理マスタ</td>
+		                            <td align="left">
+		                            	<a href="./member/#m_member">m_member</a></td>
+		                            <td style="text-align:right;">824</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">176.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">授業科目管理マスタ</td>
+		                            <td align="left">
+		                            	<a href="./subject/#m_subject">m_subject</a></td>
+		                            <td style="text-align:right;">245</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">48.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">ＴＰ情報管理マスタ</td>
+		                            <td align="left">
+		                            	<a href="../../tp/db/#m_tp">m_tp</a></td>
+		                            <td style="text-align:right;">0</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">教職員ユーザ管理マスタ</td>
+		                            <td align="left">
+		                            	<a href="./user/#m_user">m_user</a></td>
+		                            <td style="text-align:right;">202</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">48.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">(担任指導) 指導グループ・テーブル</td>
+		                            <td align="left">
+		                            	<a href="../../entrust/db/#t_coachengroup">t_coachengroup</a></td>
+		                            <td style="text-align:right;">0</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">(担任指導) 指導学生・テーブル</td>
+		                            <td align="left">
+		                            	<a href="../../entrust/db/#t_coachenmember">t_coachenmember</a></td>
+		                            <td style="text-align:right;">0</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">(学生指導) 指導グループ・テーブル</td>
+		                            <td align="left">
+		                            	<a href="../../student/db/#t_coachstgroup">t_coachstgroup</a></td>
+		                            <td style="text-align:right;">0</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">(学生指導) 指導学生・テーブル</td>
+		                            <td align="left">
+		                            	<a href="../../student/db/#t_coachstmember">t_coachstmember</a></td>
+		                            <td style="text-align:right;">0</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">アクセス管理グループ・テーブル</td>
+		                            <td align="left">
+		                            	<a href="./access/#t_commgroup">t_commgroup</a></td>
+		                            <td style="text-align:right;">45</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">アクセス管理ユーザ・テーブル</td>
+		                            <td align="left">
+		                            	<a href="./access/#t_commuser">t_commuser</a></td>
+		                            <td style="text-align:right;">107</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">就職先グループ・テーブル</td>
+		                            <td align="left">
+		                            	<a href="./information/#t_employgroup">t_employgroup</a></td>
+		                            <td style="text-align:right;">118</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">進路希望・テーブル</td>
+		                            <td align="left">
+		                            	<a href="../../learning/db/#t_learnemploy">t_learnemploy</a></td>
+		                            <td style="text-align:right;">0</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">授業要望・テーブル</td>
+		                            <td align="left">
+		                            	<a href="../../learning/db/#t_learnrequire">t_learnrequire</a></td>
+		                            <td style="text-align:right;">0</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">科目支援・テーブル</td>
+		                            <td align="left">
+		                            	<a href="../../learning/db/#t_learnsupport">t_learnsupport</a></td>
+		                            <td style="text-align:right;">0</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">ログインユーザ・テーブル</td>
+		                            <td align="left">
+		                            	<a href="./user/#t_login">t_login</a></td>
+		                            <td style="text-align:right;">1</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">授業科目ファイル・テーブル</td>
+		                            <td align="left">
+		                            	<a href="./subject/#t_subfile">t_subfile</a></td>
+		                            <td style="text-align:right;">1470</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">112.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">授業科目グループ・テーブル</td>
+		                            <td align="left">
+		                            	<a href="./subject/#t_subgroup">t_subgroup</a></td>
+		                            <td style="text-align:right;">257</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">授業科目ユーザ・テーブル</td>
+		                            <td align="left">
+		                            	<a href="./subject/#t_subuser">t_subuser</a></td>
+		                            <td style="text-align:right;">474</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">48.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">ＴＰファイル・テーブル</td>
+		                            <td align="left">
+		                            	<a href="../../tp/db/#t_tpfile">t_tpfile</a></td>
+		                            <td style="text-align:right;">0</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">16.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left">ユーザ情報・テーブル</td>
+		                            <td align="left">
+		                            	<a href="./user/#t_user">t_user</a></td>
+		                            <td style="text-align:right;">202</td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;">48.0 KB</td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td align="left"></td>
+		                            <td ><FONT FACE="MS Pゴシック, Arial, Geneva"><strong>33 テーブル</strong></FONT></td>
+		                            <td style="text-align:right;"><FONT FACE="MS Pゴシック, Arial, Geneva"><strong>4397</strong></FONT></td>
+		                            <td align="left">InnoDB</td>
+		                            <td align="left">utf8_general_ci</td>
+		                            <td style="text-align:right;"><FONT FACE="MS Pゴシック, Arial, Geneva"><strong>912.0 KB</strong></FONT></td>
+		                            <td align="left"></td>
+		                            <td align="left"></td>
+		                        </tr>
+		                    </tbody>
+						</table>
+						<br />
+					
+						
+				
+				
+
+					<hr />
+					<div class="section">
+						<div class="info">
+							<h1 class="title">タイトル</h1>
+						</div>
+						
+					    <p class="para">
+							タイトル説明<br />
+						</p>
+						
+					</div>
+
+				    <p class="para">
+						タイトル説明２<br />
+			    	</p>
+
+
+					<div class="section">
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">サブタイトル</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							サブタイトル説明<br />
+						</p>
+						
+					</div>
+
+				</div>
+
+
+	<!-- "piaceBody" -->
+				<div class="piaceBody">
+
+					<hr />
+					<div class="section">
+						<div class="info">
+							<h1 class="title">タイトル</h1>
+						</div>
+						
+					    <p class="para">
+							タイトル説明
+						</p>
+						
+					</div>
+
+					<div class="section">
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">サブタイトル</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							サブタイトル説明<br />
+						</p>
+						
+					</div>
+
+					<div class="section">
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">サブタイトル</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							サブタイトル説明<br />
+						</p>
+						
+					</div>
+
+					
+				</div>
+
+
+
+
+	<!-- "piaceBody" -->
+				<div class="piaceBody">
+
+					<hr />
+					<div class="section">
+						<div class="info">
+							<h1 class="title">タイトル</h1>
+						</div>
+						
+					    <p class="para">
+							タイトル説明
+						</p>
+		
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">サブタイトル</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							サブタイトル説明
+						</p>
+		
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">サブタイトル</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							サブタイトル説明
+						</p>
+		
+					</div>
+
+
+				</div>
+
+				<div class="piaceFooter"></div>
+			</div>
+
+
+
+
+<!-- id="messages" -->
+
+
+			<div id="messages" class="piace">
+
+				<div class="piaceHeader">
+			  		<div class="title">枠タイトル</div>
+				</div>
+
+	<!-- "piaceBody" -->
+				<div class="piaceBody">
+
+					<hr />
+					<div id="learning.quickstart.create-project" class="section">
+						<div class="info">
+							<h1 class="title">タイトル</h1>
+						</div>
+				    	
+					    <p class="para">
+				        	タイトル説明
+				    	</p>
+		
+				    	<div class="section" id="learning.quickstart.create-project.install-zf" name="learning.quickstart.create-project.install-zf">
+							<div class="info">
+								<h1 class="title">サブタイトル</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							サブタイトル説明
+						</p>
+					</div>
+
+
+
+			        <p class="para">
+			            The default <span class="classname">IndexController</span> is as follows:
+			        </p>
+
+			        <div class="programlisting php">
+					<div class="phpcode">
+					<div class="php" style="font-family: monospace;">
+					<ol>
+						<li style=""><div>
+							<span style="color: #808080; font-style: italic; color: #006600;">// application/controllers/IndexController.php</span></div></li>
+						<li style=""><div>&nbsp;</div></li>
+						<li style=""><div>
+							<span style="color: #000000; font-weight: bold;">class</span> IndexController 
+							<span style="color: #000000; font-weight: bold;">extends</span> Zend_Controller_Action</div></li>
+						<li style=""><div>
+							<span style="color: #66cc66;">&#123;</span></div></li>
+						<li style=""><div>&nbsp;</div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #000000; font-weight: bold;">public</span> 
+							<span style="color: #000000; font-weight: bold;">function</span><span style="color: #ff0000;"> init</span>
+							<span style="color: #66cc66;">&#40;</span>
+							<span style="color: #66cc66;">&#41;</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #66cc66;">&#123;</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; 
+							<span style="color: #808080; font-style: italic;">/* Initialize action controller here */</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #66cc66;">&#125;</span></div></li>
+						<li style=""><div>&nbsp;</div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #000000; font-weight: bold;">public</span> 
+							<span style="color: #000000; font-weight: bold;">function</span> <span style="color: #0000ff;">indexAction </span><span style="color: #66cc66;">&#40;</span>
+							<span style="color: #66cc66;">&#41;</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #66cc66;">&#123;</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; 
+							<span style="color: #808080; font-style: italic;">// action body</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #66cc66;">&#125;</span></div></li>
+						<li style=""><div>
+							<span style="color: #66cc66;">&#125;</span></div></li>
+					</ol>
+					</div></div></div>
+
+
+
+
+
+			        <div class="comments">
+			        	<h3>更新情報</h3>
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                新規作成: gotoda                on: 2012-10-18 12:00:00
+							</div>
+			            	<div class="body">
+							ドキュメント資料として作成<br />
+							</div>
+			            </div>
+						
+					</div>
+
+				</div>
+				<div class="piaceFooter"></div>
+			</div>
+		
+		
+		<!-- /#contentBody --></div>
+		
+		<div id="contentFooter"></div>
+		
+	<!-- /#manual-container --></div>
+	<!-- /#contentContainer --></div>
+	<!-- /#content --></div>
+
+
+
+
+
+	<div id="menu">
+	<div id="menuContainer">
+		
+		<div id="naviConcept">
+			<ul class="level_0">
+			<li><a class="mark" href="#" onclick="$('concept_1').toggle(); return false;">＋</a>
+				<a href="http://www3.anan-nct.ac.jp/~gotouda/plan/training.html">【ananFD】</a>
+				<ul id="concept_1" class="level_1">
+				
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/gp/">ＦＤ高度化推進室</a></li>
+				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/">ＦＤ高度化推進室（学内）</a></li>
+				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/ananFD/">【ananFD】 モックアップ</a></li>
+				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/ananFD.doc/">【ananFD】 概要説明</a></li>
+				<li><a class="mark" href="#" onclick="$('concept_5').toggle(); return false;">＋</a>
+					<a href="">【ananFD】 デモサイト</a>
+					<ul id="concept_5" class="level_2">
+					<li><a class="mark" href="#" onclick="$('concept_8').toggle(); return false;">＋</a>
+						<a href="">テクノセンター</a>
+						<ul id="concept_8" class="level_2">
+						<li><span class="mark">‐</span><a href="http://192.168.11.102/ananfd/">【ananFD】 デモサイト1 （xenServer）</a></li>
+						<li><span class="mark">‐</span><a href="http://192.168.11.101/ananfd/">【ananFD】 デモサイト2 （xenServer）</a></li>
+						</ul>
+					</li>
+					<li><a class="mark" href="#" onclick="$('concept_9').toggle(); return false;">＋</a>
+						<a href="">学生課</a>
+						<ul id="concept_9" class="level_2">
+						<li><span class="mark">‐</span><a href="">教務係</a></li>
+						<li><span class="mark">‐</span><a href="">学生係</a></li>
+						<li><span class="mark">‐</span><a href="">料務係</a></li>
+						</ul>
+					</li>
+					</ul>
+				</li>
+				
+				</ul>
+			</li>
+			<li><a class="mark" href="#" onclick="$('concept_2').toggle(); return false;">＋</a>
+				<a href="http://www01.anan-nct.ac.jp/">阿南工業高等専門学校</a>
+				<ul id="concept_2" class="level_1">
+				
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/">トップページ</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/introduction">学校案内</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/department">学科案内</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/educationandresearch">教育・研究</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/cooperation">産学公・地域連携</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/campuslife">キャンパスライフ</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/sisetsu">付属施設・図書館</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/entranceexam">入試情報</a></li>
+				
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/m/">機械工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/e/">電気電子工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://s.anan-nct.ac.jp/">制御情報工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/c/">建設システム工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/i/">一般教科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/senkouka/">専攻科</a></li>
+				</ul>
+			</li>
+			</ul>
+		</div>
+		
+	<!-- /#menuContainer --></div>
+	<!-- /#menu --></div>
+
+<!-- /#main --></div>
+
+<div id="footer">
+<div id="footerContainer">
+
+<!-- /#footerContainer --></div>
+<!-- /#footer --></div>
+
+<!-- /#container --></div>
+
+</body>
+</html>
+

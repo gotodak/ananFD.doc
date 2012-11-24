@@ -1,0 +1,649 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<title>ananFD</title>
+	<link href="../../common/css/style.css" media="all" rel="stylesheet" type="text/css" />
+	<script src="../../common/js/prototype.js" type="text/javascript"></script>
+	<script src="../../common/js/form.js" type="text/javascript"></script>
+	<script src="../../common/js/navi.js" type="text/javascript"></script>
+	
+<!--
+	<link href="/common/css/calendar_date_select/default.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="/common/js/calendar_date_select/calendar_date_select.js" type="text/javascript"></script>
+	<script src="/common/js/calendar_date_select/locale/ja.js" type="text/javascript"></script>
+	<script src="/common/js/calendar_date_select/format_iso_date.js" type="text/javascript"></script>
+-->
+</head>
+
+
+<body>
+
+<div id="container">
+
+
+
+
+	<div id="header">
+	<div id="headerContainer">
+		
+		<h1><a href="../..">ananFD</a></h1>
+		<div class="menu">
+		    <span class="user">FD高度化推進室　後藤田浩二（admin）</span>
+		    <!--a class="web" href="http://www3.anan-nct.ac.jp/~gotouda/" target="_blank">公開画面</a-->
+		    <a class="logout" href="../../login">ログイン</a>
+		</div>
+		
+	<!-- /#headerContainer --></div>
+	<!-- /#header --></div>
+
+
+
+
+	<div id="banner">
+	<div id="bannerContainer">
+	
+	<!-- /#bannerContainer --></div>
+	<!-- /#banner --></div>
+
+
+
+
+	<div id="navi">
+	<div id="naviContainer">
+		
+		<table>
+		<tr>
+			<td class="selector">
+		    	<div class="site">
+				    <script type="text/javascript">
+				//<![CDATA[
+				  function submitCmsNavigationSite(value) {
+				    document.getElementById('cmsNavigationSite').submit();
+				    return false;
+				  }
+				//]]>
+					</script>
+					
+					<form id="cmsNavigationSite" method="get" action="../../../navigationSite">
+						<select id="cms_navi_site" name="navi_site" onchange="return submitCmsNavigationSite(this.value)">
+							<option value=""></option>
+							<option value="./ananFD">【ananFD】 モックアップ</option>
+							<option value="./ananFD.doc/" selected="selected" >【ananFD】 概要説明</option>
+							<option value="http://192.168.11.102/ananfd/" >【ananFD】 デモサイト1 （xenServer）</option>
+							<option value="http://192.168.11.101/ananfd/" >【ananFD】 デモサイト2 （xenServer）</option>
+						</select>
+					</form>
+				</div>
+				
+				
+			    <div class="concept">
+			      <p id="naviConceptCurrent" onclick="Cms_Admin_Navi.showNavi();">
+			        阿南工業高等専門学校</p>
+				</div>
+			</td>
+			<td class="menu">
+			    <div class="mainMenu">
+					<div class="mainMenu">
+						<a href="../../learning" class="learning">学習支援</a>
+						<a href="../../student" class="student">学生指導</a>
+						<a href="../../entrust" class="entrust">担任指導</a>
+						<a href="../../graduate" class="graduate">卒業生支援</a>
+						<a href="../../tp" class="tp">ＴＰ支援</a>
+						<a href="../../ir" class="ir">ＩＲ支援</a>
+						<a href="../../master" class="master">マスタ設定</a>
+					</div>
+				</div>
+				
+				<div class="contentMenu">
+					<a href="../../top/password">パスワード変更</a>
+					<a href="../../top/userinfo">ユーザ情報</a>
+					<a href="../../top/initpass">パスワード初期化</a>
+					<a href="../../top/overview" class="current">ZF1 Overview</a>
+					<a href="../../top/tool">運用ツール</a>
+				</div>
+			</td>
+	  	</tr>
+		</table>
+	
+	
+	<!-- /#naviContainer --></div>
+	<!-- /#navi --></div>
+
+
+
+
+<div id="main">
+	
+	<div id="content">
+	<div id="contentContainer">
+	<div id="manual-container">
+		
+		<div id="contentHeader">
+		 	<div class="navi">
+				<a href="../../top">TOP</a>
+					 &gt; <a href="../../top/overview">ZF1 Overview</a>
+		  	</div>
+			
+			<div class="actionMenu">
+				<a href="../../top/overview/controller">Controller</a>
+				<a href="../../top/overview/view">View</a>
+				<a href="../../top/overview/auth">Auth</a>
+				<a href="../../top/overview/module">Module</a>
+				<a href="../../top/overview/setup">Setup</a>
+			</div>
+			
+			<h2>Programmer's Reference Guide</h2>
+		</div>
+		
+		<div id="contentBody">
+			
+			
+
+
+<!-- id="maintenances" -->
+			
+			
+			<div id="maintenances" class="piace">
+
+				<div class="piaceHeader">
+			  		<div class="title">フレームワークとは？</div>
+				</div>
+
+				<div class="piaceBody">
+
+					<hr />
+					<div class="section">
+						<div class="info">
+							<h1 class="title">フレームワーク</h1>
+						</div>
+						
+					    <p class="para">
+							単語の意味自体は、「枠組み、骨組み」を意味していますが、
+							システム開発におけるフレームワークとは、「アプリケーションを開発する上で、土台となる部分を提供するもの」といった意味になります。
+							具体的には、開発手順や開発規約が定められていたり、様々な機能を手軽に実装するためのライブラリ群などによって構成されています。
+							例えば、Webアプリケーションフレームワークであれば、認証／セッション管理や、データベース管理、テンプレートなどが提供されます。
+							いわば、「開発支援ツール」のようなものです。
+						</p>
+						
+					</div>
+
+
+				    <p class="para">
+				       	フレームワークを導入するメリットとデメリットを下記にまとめました。
+				   	</p>
+
+		            <!--table class="doctable table"-->
+		            <!--table class="show"-->
+		            <table class="index">
+						<!--div class="info"-->
+							<caption><b>フレームワーク導入のメリットとデメリット</b></caption>
+						<!--/div-->
+	                    <thead valign="middle">
+	                        <tr valign="middle">
+	                            <th style="width: 20%;">メリット</th>
+	                            <th style="width: 80%;">内容</th>
+	                        </tr>
+	                    </thead>
+	                    <tbody valign="middle" class="tbody">
+	                        <tr valign="middle">
+	                            <td align="left"><span class="classname">品質の均一化</span></td>
+	                            <td align="left">開発に関わる全員が同じ開発手順、同じ開発ルールに従って開発を行うため、完成物の品質を一定に保つことができます。</td>
+	                        </tr>
+	                        <tr valign="middle">
+	                            <td align="left"><span class="classname">開発効率の向上</span></td>
+	                            <td align="left">開発において最も労力が必要となる、土台部分の設計や実装が既に行われており、
+												それらが実際にテスト済みである点や、予め用意されたモジュールを活用することで、開発工程を縮小することができます。</td>
+	                        </tr>
+	                        <tr valign="middle">
+	                            <td align="left"><span class="classname">メンテナンス性の向上</span></td>
+	                            <td align="left">誰が担当した部分であっても、開発ルールが徹底されているため中身は一目瞭然であり、
+												修正や変更を行う場合も同じルールが適用できます。従って、メンテナンスにかかる労力や時間も最小限に抑えることができます。</td>
+	                        </tr>
+	                    </tbody>
+	                    <thead valign="middle">
+	                        <tr valign="middle">
+	                            <th style="width: 20%;">デメリット</th>
+	                            <th style="width: 80%;">内容</th>
+	                        </tr>
+	                    </thead>
+	                    <tbody valign="middle" class="tbody">
+	                        <tr valign="middle">
+	                            <td align="left"><span class="classname">マスターするのに時間がかかる</span></td>
+	                            <td align="left">フレームワークには、開発手順やプログラムの書き方など細かな決まりがたくさんあり、
+												それら全てを理解することが必要不可欠です。一度マスターしてしまえば簡単ですが、最初は時間と労力を要します。</td>
+	                        </tr>
+	                        <tr valign="middle">
+	                            <td align="left"><span class="classname">ライセンス問題</span></td>
+	                            <td align="left">フレームワークの多くはオープンソースで提供されていますが、
+												中には特定の人物がライセンスをもつモジュールが含まれていたり、突然ライセンスを主張して一部が有料化されることがあります。
+												いつ何がそのようになるか予測不可能なのが難点です。</td>
+	                        </tr>
+	                        <tr valign="middle">
+	                            <td align="left"><span class="classname">フレームワーク自体のメンテナンス</span></td>
+	                            <td align="left">フレームワーク自体にセキュリティホールやバグが見つかった場合、通常はフレームワークの開発に携わる技術者たちによって改修が行われる。
+												しかし、無料である以上改修の義務はありません。
+												フレームワークの開発プロジェクトが突然解散になることもあります。それ以降全て自力でメンテナンスしなければならなくなります。</td>
+	                        </tr>
+	                    </tbody>
+	            	</table>
+
+
+				</div>
+				<div class="piaceFooter"></div>
+			</div>
+			
+			
+			<div id="messages" class="piace">
+
+
+				<div class="piaceHeader">
+				  	<div class="title">Zend Framework の基本</div>
+				</div>
+				<div class="piaceBody">
+
+
+					<hr />
+					<div class="section">
+						<div class="info">
+							<h1 class="title">Zend Framework</h1>
+						</div>
+						
+					    <p class="para">
+							使用している Zend Framework の特徴について、以下にまとめました。
+						</p>
+						
+					</div>
+
+
+			        <div class="comments">
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                開発者
+							</div>
+			            	<div class="body">
+							Zend Framework は、PHP5 のコアエンジンである Zend Engine 2 を開発している ZendTechnogies 社が中心となり、
+							IBM、Google などの法人や270を超える開発者によってかいはつされています。
+							PHP の中身を知り尽くした Zend が中心となって開発しているので、非常に品質が高いものになっている。<br />
+							</div>
+			            </div>
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                目的
+							</div>
+			            	<div class="body">
+							Zend Framework は、PHP5 専用です。全てオブジェクト指向で設計されています。
+							PHP5 の実力をアピールすると共に、大規模システムや商用システムでも積極的に採用してもらい、
+							PHP5 をより普及させることを目的としています。<br />
+							<br />
+							<b class="note">注意</b>： <span class="info"><b>Zend Framework で動作可能なＰＨＰの最低バージョンは、「５．１．４」です。</b></span>
+							</div>
+			            </div>
+
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                商用利用
+							</div>
+			            	<div class="body">
+							Zend Framework は、商用システムでの利用を想定して設計されています。
+							大規模システムでの運用にも十分耐えられるものです。
+							また、Zend Framework の開発には、IBM や Google といった有名企業も参加し、有用なライブラリを多数提供しています。<br />
+							</div>
+			            </div>
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                ライセンス
+							</div>
+			            	<div class="body">
+							Zend Framework は。商用システムでの利用に支障が出ないよう、細心の注意が払われています。
+							例えば、Zend Framework 自体のライセンス形態は、「ＢＳＤライセンス」が採用され、
+							他でよく採用されている「ＧＰＬライセンス」のように。ソースコードの公開の義務付けられることもありません。<br />
+							また、Zend Framework のソースコードは、全てスクラッチから書かれており、
+							Zend Technologies 社以外の著作権者は存在しません。
+							よくあるライセンス上のトラブルも、安心できます。<br />
+							</div>
+			            </div>
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                導入
+							</div>
+			            	<div class="body">
+							Zend Framework の導入は非常に簡単です。
+							特別な外部ライブラリなどは必要とせず、最小限の構成で導入が可能です。
+							例えばレンタルサーバのように、比較的自由度の低い環境でも、インストールが可能です。<br />
+							</div>
+			            </div>
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                メンテナンス
+							</div>
+			            	<div class="body">
+							Zend Framework は、Zend Technologies 社が企業として開発に取り組んでいます。
+							Zend ブランドとして、高品質で信頼性の高いものである続けることが必要不可欠です。
+							Zend Technologies 社が存在する限り、Zend Framework が無くなることはないでしょう。<br />
+							</div>
+			            </div>
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                柔軟性
+							</div>
+			            	<div class="body">
+							Zend Framework は、他のフレームワークと異なり、各コンポーネントの独立性を高めた設計になっています。
+							そのため、Zend Framework の一部のコンポーネントのみをロードして利用することができます。<br />
+							非常に高機能で信頼性の高い多種多様なライブラリが、Zend Framework だけで手に入るのも大きな魅力の一つです。<br />
+							</div>
+			            </div>
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                情報
+							</div>
+			            	<div class="body">
+							Zend Framework のオフィシャルサイトで、様々な情報が提供されています。
+							最新の情報を入手するために、オフィシャルサイトは定期的に参照してください。<br />
+							<a href="http://framework.zend.com/manual/ja/index.html" target="_blank">日本語のマニュアルページ</a><br />
+							</div>
+			            </div>
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                安定して使い続けられる
+							</div>
+			            	<div class="body">
+							フレームワークは、「一度導入すると。使い続けるしかない」というものです。
+							フレームワークを導入して作られたものから、フレームワークを取り除くのはかなり大変ですが、
+							Zend Framework は、フレームワークをライブラリ（コンポーネント）で実装しているために、比較的柔軟に対応できる。<br />
+							他のフレームワーク（ CakePHP、symfony ）と比較しても、
+							独自フレームワークとして全体が統一された構造（「がちっ！」とした構造）になっておらず、
+							「様々な機能を組み合わせられたライブラリ的な構造」になっている。<br />
+							幅広い機能を提供しながら習得が比較的楽であり、動作も高速です。<br />
+							Zend Framework はこれまで開発してきた既存のPHPコードも活用しやすいですし、他のライブラリ（ Ajax、テンプレートエンジン）との併用も可能です。<br />
+							</div>
+			            </div>
+					</div>
+
+
+
+					<hr />
+					<div class="section">
+						
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">Zend Framework で提供されるコンポーネント</h1>
+							</div>
+							
+						    <p class="para">
+					        	Zend Framework は非常にシンプルな構造をしていて、すべて PHP5 のオブジェクト指向を用いて設計されています。
+								一つ一つのクラスライブラリは「コンポーネント」と呼ばれ、それぞれを単独で呼び出すことができます。
+								Zend Framework は MVC モデルに基づいて設計されていますが、その MVC もコンポーネント群として提供されていますので、
+								Zend Framework のコンポーネントは用いるが MVC は使わないといったこともありえます。<br />
+					    	</p>
+							
+						    <p class="para">
+					        	以下、Zend Framework で提供されるコンポーネントについて表でまとめます。<br />
+								<br />
+								Zend Framework には、この他にも多数の機能が容易されています。
+								ここで表示しているのは、ほんの一部でしかありません。<br />
+					    	</p>
+						
+						</div>
+					</div>
+
+		            <table class="index">
+						<!--div class="info"-->
+							<caption><b>Zend Frameworkで提供されるコンポーネント</b></caption>
+						<!--/div-->
+	                    <thead valign="middle">
+	                        <tr valign="middle">
+	                            <th style="width: 25%;">コンポーネント</th>
+	                            <th style="width: 75%;">概要</th>
+	                        </tr>
+	                    </thead>
+	                    <tbody valign="middle" class="tbody">
+	                        <tr valign="middle">
+	                            <td align="left"><span class="classname">Zend_Acl</span></td>
+	                            <td align="left">軽量で柔軟なアクセス制御リスト(ACL)機能と権限管理機能</td>
+	                        </tr>
+	                        <tr valign="middle">
+	                            <td align="left"><span class="classname">Zend_Auth</span></td>
+	                            <td align="left">認証のためのAPI</td>
+	                        </tr>
+	                        <tr valign="middle">
+	                            <td align="left"><span class="classname">Zend_Config</span></td>
+	                            <td align="left">アプリケーションの設定データを使用するためのコンポーネント</td>
+	                        </tr>
+	                        <tr valign="middle">
+	                            <td align="left"><span class="classname">Zend_Controller</span></td>
+	                            <td align="left">MVCシステムの中心で「コントローラ」の部分</td>
+	                        </tr>
+	                        <tr valign="middle">
+	                            <td align="left"><span class="classname">Zend_Db</span></td>
+	                            <td align="left">SQLデータベースアクセス関連コンポーネント</td>
+	                        </tr>
+	                        <tr valign="middle">
+	                            <td align="left"><span class="classname">Zend_Debug</span></td>
+	                            <td align="left">デバッグ関連コンポーネント</td>
+	                        </tr>
+	                        <tr valign="middle">
+	                            <td align="left"><span class="classname">Zend_Exception</span></td>
+	                            <td align="left">例外クラス関連コンポーネント</td>
+	                        </tr>
+	                        <tr valign="middle">
+	                            <td align="left"><span class="classname">Zend_Log</span></td>
+	                            <td align="left">ログ出力用の汎用コンポーネント</td>
+	                        </tr>
+	                        <tr valign="middle">
+	                            <td align="left"><span class="classname">Zend_Paginator</span></td>
+	                            <td align="left">レコードをページ分けして表示するためのコンポーネント</td>
+	                        </tr>
+	                        <tr valign="middle">
+	                            <td align="left"><span class="classname">Zend_Pdf</span></td>
+	                            <td align="left">PDF操作エンジン</td>
+	                        </tr>
+	                        <tr valign="middle">
+	                            <td align="left"><span class="classname">Zend_Registry</span></td>
+	                            <td align="left">アプリケーション用のレジストリ関連コンポーネント</td>
+	                        </tr>
+	                        <tr valign="middle">
+	                            <td align="left"><span class="classname">Zend_Session</span></td>
+	                            <td align="left">セッションデータ管理関連コンポーネント</td>
+	                        </tr>
+	                        <tr valign="middle">
+	                            <td align="left"><span class="classname">Zend_Validate</span></td>
+	                            <td align="left">	一般的に必要となるバリデータを提供</td>
+	                        </tr>
+	                        <tr valign="middle">
+	                            <td align="left"><span class="classname">Zend_View</span></td>
+	                            <td align="left">MVCパターンにおける 「ビュー」として働くクラス</td>
+	                        </tr>
+	                    </tbody>
+	            	</table>
+
+
+			       <blockquote><p>
+						<b class="note">Note</b>: <span class="info"><b>More Information</b><br /></span>
+			            
+							<div class="imageobject">
+							<img src="../../images/component.png" alt="component.png" width="521" />
+							</div>
+						
+			        </p></blockquote>
+
+
+			       <blockquote><p>
+						<b class="note">Note</b>: <span class="info"><b>More Information</b><br /></span>
+						
+			            <br />
+			             アプリケーションをM（モデル）、V（ビュー）、C（コントローラ）、の組み合わせで開発するモデルを <b class="note">MVC</b> と言います。<br />
+			           	
+			            <div class="inlinemediaobject">
+							<div class="imageobject">
+								<img src="../../images/mvc2.png" alt="mvc.png" width="400" />
+							</div>
+						</div>
+						
+			           	<br />
+			            <ul class="itemizedlist">
+			                <li class="listitem">
+			                    <p class="para">
+			                        <b class="note">Model</b> - ビジネスロジックを指し、「データを管理する手段」を担当する部分で、
+									具体的には、「データ保存や読込を行う関数やクラス」のことです。（プログラマーが担当）
+			                    </p>
+			                </li>
+			                <li class="listitem">
+			                    <p class="para">
+			                        <b class="note">View</b> - 画面表示を担当する部分です。画面表示に関する処理は全てビューが担当します。（デザイナーが担当）
+			                    </p>
+			                </li>
+			                <li class="listitem">
+			                    <p class="para">
+			                        <b class="note">Controller</b> - モデルとビューとが連携する橋渡しです。
+									すなわち、ユーザからのリクエストを受けて行うべき処理を判断し、
+									必要なデータ処理をモデルに依頼し、モデルからの処理結果を受け取って、ビューに画面表示を依頼します。
+									システムの処理の大部分は、コントローラが担当することになります。
+			                    </p>
+			                </li>
+			            </ul>
+			            
+			        </p></blockquote>
+
+
+
+
+
+				</div>
+				<div class="piaceFooter"></div>
+			</div>
+
+
+
+
+
+
+
+<!-- id="messages" -->
+
+
+			<div id="messages" class="piace">
+
+	<!-- "piaceBody" -->
+				<div class="piaceBody">
+
+			        <div class="comments">
+			        	<h3>更新情報</h3>
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                新規作成: gotoda                on: 2012-11-08 12:00:00
+							</div>
+			            	<div class="body">
+							ドキュメント資料として作成<br />
+							</div>
+			            </div>
+						
+					</div>
+
+				</div>
+				<div class="piaceFooter"></div>
+			</div>
+		
+		
+		<!-- /#contentBody --></div>
+		
+		<div id="contentFooter"></div>
+		
+	<!-- /#manual-container --></div>
+	<!-- /#contentContainer --></div>
+	<!-- /#content --></div>
+
+
+
+
+
+	<div id="menu">
+	<div id="menuContainer">
+		
+		<div id="naviConcept">
+			<ul class="level_0">
+			<li><a class="mark" href="#" onclick="$('concept_1').toggle(); return false;">＋</a>
+				<a href="http://www3.anan-nct.ac.jp/~gotouda/plan/training.html">【ananFD】</a>
+				<ul id="concept_1" class="level_1">
+				
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/gp/">ＦＤ高度化推進室</a></li>
+				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/">ＦＤ高度化推進室（学内）</a></li>
+				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/ananFD/">【ananFD】 モックアップ</a></li>
+				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/ananFD.doc/">【ananFD】 概要説明</a></li>
+				<li><a class="mark" href="#" onclick="$('concept_5').toggle(); return false;">＋</a>
+					<a href="">【ananFD】 デモサイト</a>
+					<ul id="concept_5" class="level_2">
+					<li><a class="mark" href="#" onclick="$('concept_8').toggle(); return false;">＋</a>
+						<a href="">テクノセンター</a>
+						<ul id="concept_8" class="level_2">
+						<li><span class="mark">‐</span><a href="http://192.168.11.102/ananfd/">【ananFD】 デモサイト1 （xenServer）</a></li>
+						<li><span class="mark">‐</span><a href="http://192.168.11.101/ananfd/">【ananFD】 デモサイト2 （xenServer）</a></li>
+						</ul>
+					</li>
+					<li><a class="mark" href="#" onclick="$('concept_9').toggle(); return false;">＋</a>
+						<a href="">学生課</a>
+						<ul id="concept_9" class="level_2">
+						<li><span class="mark">‐</span><a href="">教務係</a></li>
+						<li><span class="mark">‐</span><a href="">学生係</a></li>
+						<li><span class="mark">‐</span><a href="">料務係</a></li>
+						</ul>
+					</li>
+					</ul>
+				</li>
+				
+				</ul>
+			</li>
+			<li><a class="mark" href="#" onclick="$('concept_2').toggle(); return false;">＋</a>
+				<a href="http://www01.anan-nct.ac.jp/">阿南工業高等専門学校</a>
+				<ul id="concept_2" class="level_1">
+				
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/">トップページ</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/introduction">学校案内</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/department">学科案内</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/educationandresearch">教育・研究</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/cooperation">産学公・地域連携</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/campuslife">キャンパスライフ</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/sisetsu">付属施設・図書館</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/entranceexam">入試情報</a></li>
+				
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/m/">機械工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/e/">電気電子工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://s.anan-nct.ac.jp/">制御情報工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/c/">建設システム工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/i/">一般教科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/senkouka/">専攻科</a></li>
+				</ul>
+			</li>
+			</ul>
+		</div>
+		
+	<!-- /#menuContainer --></div>
+	<!-- /#menu --></div>
+
+<!-- /#main --></div>
+
+<div id="footer">
+<div id="footerContainer">
+
+<!-- /#footerContainer --></div>
+<!-- /#footer --></div>
+
+<!-- /#container --></div>
+
+</body>
+</html>
+

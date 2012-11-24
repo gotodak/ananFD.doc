@@ -1,0 +1,1462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<title>ananFD</title>
+	<link href="../../../common/css/style.css" media="all" rel="stylesheet" type="text/css" />
+	<script src="../../../common/js/prototype.js" type="text/javascript"></script>
+	<script src="../../../common/js/form.js" type="text/javascript"></script>
+	<script src="../../../common/js/navi.js" type="text/javascript"></script>
+	
+<!--
+	<link href="/common/css/calendar_date_select/default.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="/common/js/calendar_date_select/calendar_date_select.js" type="text/javascript"></script>
+	<script src="/common/js/calendar_date_select/locale/ja.js" type="text/javascript"></script>
+	<script src="/common/js/calendar_date_select/format_iso_date.js" type="text/javascript"></script>
+-->
+</head>
+
+
+<body>
+
+<div id="container">
+
+
+
+
+	<div id="header">
+	<div id="headerContainer">
+		
+		<h1><a href="../../..">ananFD</a></h1>
+		<div class="menu">
+		    <span class="user">FD高度化推進室　後藤田浩二（admin）</span>
+		    <!--a class="web" href="http://www3.anan-nct.ac.jp/~gotouda/" target="_blank">公開画面</a-->
+		    <a class="logout" href="../../../login">ログイン</a>
+		</div>
+		
+	<!-- /#headerContainer --></div>
+	<!-- /#header --></div>
+
+
+
+
+	<div id="banner">
+	<div id="bannerContainer">
+	
+	<!-- /#bannerContainer --></div>
+	<!-- /#banner --></div>
+
+
+
+
+	<div id="navi">
+	<div id="naviContainer">
+		
+		<table>
+		<tr>
+			<td class="selector">
+		    	<div class="site">
+				    <script type="text/javascript">
+				//<![CDATA[
+				  function submitCmsNavigationSite(value) {
+				    document.getElementById('cmsNavigationSite').submit();
+				    return false;
+				  }
+				//]]>
+					</script>
+					
+					<form id="cmsNavigationSite" method="get" action="../../../../navigationSite">
+						<select id="cms_navi_site" name="navi_site" onchange="return submitCmsNavigationSite(this.value)">
+							<option value=""></option>
+							<option value="./ananFD">【ananFD】 モックアップ</option>
+							<option value="./ananFD.doc/" selected="selected" >【ananFD】 概要説明</option>
+							<option value="http://192.168.11.102/ananfd/" >【ananFD】 デモサイト1 （xenServer）</option>
+							<option value="http://192.168.11.101/ananfd/" >【ananFD】 デモサイト2 （xenServer）</option>
+						</select>
+					</form>
+				</div>
+				
+				
+			    <div class="concept">
+			      <p id="naviConceptCurrent" onclick="Cms_Admin_Navi.showNavi();">
+			        阿南工業高等専門学校</p>
+				</div>
+			</td>
+			<td class="menu">
+			    <div class="mainMenu">
+					<div class="mainMenu">
+						<a href="../../../learning" class="learning">学習支援</a>
+						<a href="../../../student" class="student">学生指導</a>
+						<a href="../../../entrust" class="entrust">担任指導</a>
+						<a href="../../../graduate" class="graduate">卒業生支援</a>
+						<a href="../../../tp" class="tp">ＴＰ支援</a>
+						<a href="../../../ir" class="ir">ＩＲ支援</a>
+						<a href="../../../master" class="master current">マスタ設定</a>
+					</div>
+				</div>
+				
+				<div class="contentMenu">
+					<a href="../../../master/master_student"    >学生管理</a>
+					<a href="../../../master/master_information">学生情報</a>
+					<a href="../../../master/master_education"  >教務管理</a>
+					<a href="../../../master/master_user"       >ユーザ管理</a>
+					<a href="../../../master/master_access"     >アクセス管理</a>
+					<a href="../../../master/master_section"    >組織管理</a>
+					<a href="../../../master/master_db"  class="current">ＤＢ</a>
+					<!--a href="../../../master/master_attendance" >出欠簿管理</a-->
+				</div>
+			</td>
+	  	</tr>
+		</table>
+	
+	
+	<!-- /#naviContainer --></div>
+	<!-- /#navi --></div>
+
+
+
+
+<div id="main">
+	
+	<div id="content">
+	<div id="contentContainer">
+	<div id="manual-container">
+		
+		<div id="contentHeader">
+		 	<div class="navi">
+				<a href="../../../top">TOP</a>
+					 &gt; <a href="../../../master">マスタ設定</a>
+					 &gt; <a href="../../../master/master_db">ＤＢ</a>
+					 &gt; <a href="../../../master/master_db/section">組織管理</a>
+		  	</div>
+			
+			<div class="actionMenu">
+				<a href="../../../master/master_db/user">ユーザ管理</a>
+				<a href="../../../master/master_db/subject">教務管理</a>
+				<a href="../../../master/master_db/member">学生管理</a>
+				<a href="../../../master/master_db/information">学生情報</a>
+				<a href="../../../master/master_db/section">組織管理</a>
+				<a href="../../../master/master_db/access">アクセス管理</a>
+				<!--a href="../../../master/master_education/subject/new">新規作成</a-->
+			</div>
+			
+			<h2>Programmer's Reference Guide</h2>
+		</div>
+		
+		<div id="contentBody">
+			
+			
+
+
+<!-- id="maintenances" -->
+
+			<div id="maintenances" class="piace">
+
+				<div class="piaceHeader">
+			  		<div class="title">テーブル 構造</div>
+				</div>
+
+
+	<!-- "piaceBody" -->
+
+				<div class="piaceBody">
+
+						<a name="m_class"></a>
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">テーブル：m_class 
+									<BUTTON  onclick="hist('back'); return false;">back</BUTTON>
+								</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							セットアップ終了時のデータベース<br />
+						</p>
+						
+						<table class="index2">
+							<div class="info">
+								<caption><b>テーブル構造</b></caption>
+							</div>
+		                    <thead valign="middle">
+		                        <tr valign="middle">
+		                            <th style="width: 20%;">フィールド名称</th>
+		                            <th style="width: 20%;">フィールドＩＤ</th>
+		                            <th style="width: 8%;">種別</th>
+		                            <th style="width: 8%;">照合順序</th>
+		                            <th style="width: 8%;">属性</th>
+		                            <th style="width: 8%;">ヌル</th>
+		                            <th style="width: 8%;">デフォルト値</th>
+		                            <th style="width: 8%;">その他</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody valign="middle" class="tbody">
+		                        <tr valign="middle">
+		                            <td>クラスＩＤ</td>
+		                            <td><FONT FACE="Arial, Geneva" SIZE=3><strong>class_id</strong></FONT></td>
+		                            <td>int (11)</td>
+		                            <td></td>
+		                            <td></td>
+		                            <td>いいえ</td>
+		                            <td>None</td>
+		                            <td>auto_increment、PRIMARY KEY</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td>クラス名称</td>
+		                            <td><FONT FACE="Arial, Geneva" SIZE=3><strong>class_name</strong></FONT></td>
+		                            <td>varchar (10)</td>
+		                            <td>utf8_general_ci</td>
+		                            <td></td>
+		                            <td>いいえ</td>
+		                            <td>None</td>
+		                            <td></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td>教育課程グループＩＤ</td>
+		                            <td><FONT FACE="Arial, Geneva" SIZE=3><strong>group_id</strong></FONT></td>
+		                            <td>int (11)</td>
+		                            <td></td>
+		                            <td></td>
+		                            <td>いいえ</td>
+		                            <td>None</td>
+		                            <td></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td>学年</td>
+		                            <td><FONT FACE="Arial, Geneva" SIZE=3><strong>grade</strong></FONT></td>
+		                            <td>int (11)</td>
+		                            <td></td>
+		                            <td></td>
+		                            <td>いいえ</td>
+		                            <td>None</td>
+		                            <td></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td>削除フラグ</td>
+		                            <td><FONT FACE="Arial, Geneva" SIZE=3><strong>delete_flg</strong></FONT></td>
+		                            <td>char (1)</td>
+		                            <td>utf8_general_ci</td>
+		                            <td></td>
+		                            <td>いいえ</td>
+		                            <td>0</td>
+		                            <td></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td>更新日時</td>
+		                            <td><FONT FACE="Arial, Geneva" SIZE=3><strong>modified_date</strong></FONT></td>
+		                            <td>timestamp</td>
+		                            <td></td>
+		                            <td></td>
+		                            <td>はい</td>
+		                            <td>CURRENT_TIMESTAMP</td>
+		                            <td>on update CURRENT_TIMESTAMP</td>
+		                        </tr>
+		                    </tbody>
+						</table>
+						<br />
+						
+
+
+						<a name="m_group"></a>
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">テーブル：m_group 
+									<BUTTON  onclick="hist('back'); return false;">back</BUTTON>
+								</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							セットアップ終了時のデータベース<br />
+						</p>
+						
+						<table class="index2">
+							<div class="info">
+								<caption><b>テーブル構造</b></caption>
+							</div>
+		                    <thead valign="middle">
+		                        <tr valign="middle">
+		                            <th style="width: 20%;">フィールド名称</th>
+		                            <th style="width: 20%;">フィールドＩＤ</th>
+		                            <th style="width: 8%;">種別</th>
+		                            <th style="width: 8%;">照合順序</th>
+		                            <th style="width: 8%;">属性</th>
+		                            <th style="width: 8%;">ヌル</th>
+		                            <th style="width: 8%;">デフォルト値</th>
+		                            <th style="width: 8%;">その他</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody valign="middle" class="tbody">
+		                        <tr valign="middle">
+		                            <td>教育課程グループ</td>
+		                            <td><FONT FACE="Arial, Geneva" SIZE=3><strong>group_id</strong></FONT></td>
+		                            <td>int (11)</td>
+		                            <td></td>
+		                            <td></td>
+		                            <td>いいえ</td>
+		                            <td>None</td>
+		                            <td>auto_increment、PRIMARY KEY</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td>教育課程グループ名称</td>
+		                            <td><FONT FACE="Arial, Geneva" SIZE=3><strong>group_name</strong></FONT></td>
+		                            <td>varchar (16)</td>
+		                            <td>utf8_general_ci</td>
+		                            <td></td>
+		                            <td>いいえ</td>
+		                            <td>None</td>
+		                            <td></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td>グループ区分</td>
+		                            <td><FONT FACE="Arial, Geneva" SIZE=3><strong>group_kind</strong></FONT></td>
+		                            <td>char (1)</td>
+		                            <td>utf8_general_ci</td>
+		                            <td></td>
+		                            <td>いいえ</td>
+		                            <td>None</td>
+		                            <td></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td>適応開始年度</td>
+		                            <td><FONT FACE="Arial, Geneva" SIZE=3><strong>start_year</strong></FONT></td>
+		                            <td>date</td>
+		                            <td></td>
+		                            <td></td>
+		                            <td>いいえ</td>
+		                            <td>None</td>
+		                            <td></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td>適応終了年度</td>
+		                            <td><FONT FACE="Arial, Geneva" SIZE=3><strong>end_year</strong></FONT></td>
+		                            <td>date</td>
+		                            <td></td>
+		                            <td></td>
+		                            <td>いいえ</td>
+		                            <td>None</td>
+		                            <td></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td>削除フラグ</td>
+		                            <td><FONT FACE="Arial, Geneva" SIZE=3><strong>delete_flg</strong></FONT></td>
+		                            <td>char (1)</td>
+		                            <td>utf8_general_ci</td>
+		                            <td></td>
+		                            <td>いいえ</td>
+		                            <td>0</td>
+		                            <td></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td>更新日時</td>
+		                            <td><FONT FACE="Arial, Geneva" SIZE=3><strong>modified_date</strong></FONT></td>
+		                            <td>timestamp</td>
+		                            <td></td>
+		                            <td></td>
+		                            <td>はい</td>
+		                            <td>CURRENT_TIMESTAMP</td>
+		                            <td>on update CURRENT_TIMESTAMP</td>
+		                        </tr>
+		                    </tbody>
+						</table>
+						<br />
+						
+
+						<a name="m_job"></a>
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">テーブル：m_job 
+									<BUTTON  onclick="hist('back'); return false;">back</BUTTON>
+								</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							セットアップ終了時のデータベース<br />
+						</p>
+						
+						<table class="index2">
+							<div class="info">
+								<caption><b>テーブル構造</b></caption>
+							</div>
+		                    <thead valign="middle">
+		                        <tr valign="middle">
+		                            <th style="width: 20%;">フィールド名称</th>
+		                            <th style="width: 20%;">フィールドＩＤ</th>
+		                            <th style="width: 8%;">種別</th>
+		                            <th style="width: 8%;">照合順序</th>
+		                            <th style="width: 8%;">属性</th>
+		                            <th style="width: 8%;">ヌル</th>
+		                            <th style="width: 8%;">デフォルト値</th>
+		                            <th style="width: 8%;">その他</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody valign="middle" class="tbody">
+		                        <tr valign="middle">
+		                            <td>職名ＩＤ</td>
+		                            <td><FONT FACE="Arial, Geneva" SIZE=3><strong>job_id</strong></FONT></td>
+		                            <td>int (11)</td>
+		                            <td></td>
+		                            <td></td>
+		                            <td>いいえ</td>
+		                            <td>None</td>
+		                            <td>auto_increment、PRIMARY KEY</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td>職名</td>
+		                            <td><FONT FACE="Arial, Geneva" SIZE=3><strong>job_name</strong></FONT></td>
+		                            <td>varchar (16)</td>
+		                            <td>utf8_general_ci</td>
+		                            <td></td>
+		                            <td>いいえ</td>
+		                            <td>None</td>
+		                            <td></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td>削除フラグ</td>
+		                            <td><FONT FACE="Arial, Geneva" SIZE=3><strong>delete_flg</strong></FONT></td>
+		                            <td>char (1)</td>
+		                            <td>utf8_general_ci</td>
+		                            <td></td>
+		                            <td>いいえ</td>
+		                            <td>0</td>
+		                            <td></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td>更新日時</td>
+		                            <td><FONT FACE="Arial, Geneva" SIZE=3><strong>modified_date</strong></FONT></td>
+		                            <td>timestamp</td>
+		                            <td></td>
+		                            <td></td>
+		                            <td>はい</td>
+		                            <td>CURRENT_TIMESTAMP</td>
+		                            <td>on update CURRENT_TIMESTAMP</td>
+		                        </tr>
+		                    </tbody>
+						</table>
+						<br />
+												
+						
+						
+					<hr />
+					<div class="section">
+						<div class="info">
+							<h1 class="title">タイトル</h1>
+						</div>
+						
+					    <p class="para">
+							タイトル説明<br />
+						</p>
+						
+					</div>
+
+				    <p class="para">
+						タイトル説明２<br />
+			    	</p>
+
+
+					<div class="section">
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">サブタイトル</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							サブタイトル説明<br />
+						</p>
+						
+					</div>
+
+				</div>
+
+
+	<!-- "piaceBody" -->
+				<div class="piaceHeader">
+			  		<div class="title">テーブル　内部データ</div>
+				</div>
+
+
+
+				<div class="piaceBody">
+
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">テーブル：m_class</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							定義済み内部データを以下に示す<br />
+						</p>
+						
+						<table class="index2">
+							<div class="info">
+								<caption><b>テーブル情報</b></caption>
+							</div>
+		                    <thead valign="middle">
+		                        <tr valign="middle">
+		                            <th style="width: 20%;">class_id</th>
+		                            <th style="width: 20%;">class_name</th>
+		                            <th style="width: 20%;">group_id</th>
+		                            <th style="width: 20%;">grade</th>
+		                            <th style="width: 20%;">delete_flg</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody valign="middle" class="tbody">
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">1</td>
+		                            <td>１組</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">2</td>
+		                            <td>２組</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">3</td>
+		                            <td>３組</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">4</td>
+		                            <td>４組</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">5</td>
+		                            <td>●組</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td style="text-align:right;">1</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">6</td>
+		                            <td>２Ｍ</td>
+		                            <td style="text-align:right;">2</td>
+		                            <td style="text-align:right;">2</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">7</td>
+		                            <td>２Ｅ</td>
+		                            <td style="text-align:right;">3</td>
+		                            <td style="text-align:right;">2</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">8</td>
+		                            <td>２Ｓ</td>
+		                            <td style="text-align:right;">4</td>
+		                            <td style="text-align:right;">2</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">9</td>
+		                            <td>２Ｃ</td>
+		                            <td style="text-align:right;">5</td>
+		                            <td style="text-align:right;">2</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">10</td>
+		                            <td>２●</td>
+		                            <td style="text-align:right;">5</td>
+		                            <td style="text-align:right;">2</td>
+		                            <td style="text-align:right;">1</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">11</td>
+		                            <td>３Ｍ</td>
+		                            <td style="text-align:right;">2</td>
+		                            <td style="text-align:right;">3</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">12</td>
+		                            <td>３Ｅ</td>
+		                            <td style="text-align:right;">3</td>
+		                            <td style="text-align:right;">3</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">13</td>
+		                            <td>３Ｓ</td>
+		                            <td style="text-align:right;">4</td>
+		                            <td style="text-align:right;">3</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">14</td>
+		                            <td>３Ｃ</td>
+		                            <td style="text-align:right;">5</td>
+		                            <td style="text-align:right;">3</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">15</td>
+		                            <td>３●</td>
+		                            <td style="text-align:right;">6</td>
+		                            <td style="text-align:right;">3</td>
+		                            <td style="text-align:right;">1</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">16</td>
+		                            <td>４Ｍ</td>
+		                            <td style="text-align:right;">2</td>
+		                            <td style="text-align:right;">4</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">17</td>
+		                            <td>４Ｅ</td>
+		                            <td style="text-align:right;">3</td>
+		                            <td style="text-align:right;">4</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">18</td>
+		                            <td>４Ｓ</td>
+		                            <td style="text-align:right;">4</td>
+		                            <td style="text-align:right;">4</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">19</td>
+		                            <td>４Ｃ</td>
+		                            <td style="text-align:right;">5</td>
+		                            <td style="text-align:right;">4</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">20</td>
+		                            <td>４●</td>
+		                            <td style="text-align:right;">6</td>
+		                            <td style="text-align:right;">4</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">21</td>
+		                            <td>５Ｍ</td>
+		                            <td style="text-align:right;">2</td>
+		                            <td style="text-align:right;">5</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">22</td>
+		                            <td>５Ｅ</td>
+		                            <td style="text-align:right;">3</td>
+		                            <td style="text-align:right;">5</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">23</td>
+		                            <td>５Ｓ</td>
+		                            <td style="text-align:right;">4</td>
+		                            <td style="text-align:right;">5</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">24</td>
+		                            <td>５Ｃ</td>
+		                            <td style="text-align:right;">5</td>
+		                            <td style="text-align:right;">5</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">25</td>
+		                            <td>５●</td>
+		                            <td style="text-align:right;">6</td>
+		                            <td style="text-align:right;">5</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                    </tbody>
+						</table>
+						<br />
+					
+						
+				
+				
+
+
+				<div class="piaceBody">
+
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">テーブル：m_group</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							定義済み内部データを以下に示す<br />
+						</p>
+						
+						<table class="index2">
+							<div class="info">
+								<caption><b>テーブル情報</b></caption>
+							</div>
+		                    <thead valign="middle">
+		                        <tr valign="middle">
+		                            <th style="width: 10%;">group_id</th>
+		                            <th style="width: 20%;">group_name</th>
+		                            <th style="width: 10%;">group_kind</th>
+		                            <th style="width: 10%;">start_year</th>
+		                            <th style="width: 10%;">end_year</th>
+		                            <th style="width: 10%;">delete_flg</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody valign="middle" class="tbody">
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">1</td>
+		                            <td>一般教科</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>2009-04-01</td>
+		                            <td>9999-04-01</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">2</td>
+		                            <td>機械工学科</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>2009-04-01</td>
+		                            <td>9999-04-01</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">3</td>
+		                            <td>電気電子工学科</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>2009-04-01</td>
+		                            <td>9999-04-01</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">4</td>
+		                            <td>制御情報工学科</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>2009-04-01</td>
+		                            <td>9999-04-01</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">5</td>
+		                            <td>建設システム工学科</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>2009-04-01</td>
+		                            <td>9999-04-01</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">6</td>
+		                            <td>●●●●●●工学科</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>2009-04-01</td>
+		                            <td>9999-04-01</td>
+		                            <td style="text-align:right;">1</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">7</td>
+		                            <td>非常勤講師</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>2009-04-01</td>
+		                            <td>9999-04-01</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">8</td>
+		                            <td>teacher（教員）</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>2009-04-01</td>
+		                            <td>9999-04-01</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">9</td>
+		                            <td>寄附講座</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>2009-04-01</td>
+		                            <td>9999-04-01</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">10</td>
+		                            <td>staff（職員）</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>2009-04-01</td>
+		                            <td>9999-04-01</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">11</td>
+		                            <td>総務課</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>2009-04-01</td>
+		                            <td>9999-04-01</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">12</td>
+		                            <td>学生課</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>2009-04-01</td>
+		                            <td>9999-04-01</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">13</td>
+		                            <td>技術部</td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>2009-04-01</td>
+		                            <td>9999-04-01</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                    </tbody>
+						</table>
+						<br />
+					
+						
+				
+				
+
+
+				<div class="piaceBody">
+
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">テーブル：m_job</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							定義済み内部データを以下に示す<br />
+						</p>
+						
+						<table class="index2">
+							<div class="info">
+								<caption><b>テーブル情報</b></caption>
+							</div>
+		                    <thead valign="middle">
+		                        <tr valign="middle">
+		                            <th style="width: 20%;">job_id</th>
+		                            <th style="width: 20%;">job_name</th>
+		                            <th style="width: 20%;">delete_flg</th>
+		                            <th style="width: 20%;"></th>
+		                            <th style="width: 10%;"></th>
+		                            <th style="width: 10%;"></th>
+		                        </tr>
+		                    </thead>
+		                    <tbody valign="middle" class="tbody">
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">1</td>
+		                            <td>ー</td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">2</td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">3</td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">4</td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">5</td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">6</td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">7</td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">8</td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">9</td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">10</td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">11</td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                            <td></td>
+		                        </tr>
+		                    </tbody>
+						</table>
+						<br />
+					
+						
+				
+				
+
+
+				<div class="piaceBody">
+
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">テーブル：m_club</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							定義済み内部データを以下に示す<br />
+						</p>
+						
+						<table class="index2">
+							<div class="info">
+								<caption><b>テーブル情報</b></caption>
+							</div>
+		                    <thead valign="middle">
+		                        <tr valign="middle">
+		                            <th style="width: 10%;">club_id</th>
+		                            <th style="width: 20%;">club_name</th>
+		                            <th style="width: 10%;">club_kana</th>
+		                            <th style="width: 10%;">kind</th>
+		                            <th style="width: 10%;">adviser_id</th>
+		                            <th style="width: 10%;">delete_flg</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody valign="middle" class="tbody">
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">1</td>
+		                            <td>ソフトテニス部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">2</td>
+		                            <td>テニス部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">3</td>
+		                            <td>剣道部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">4</td>
+		                            <td>サッカー部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">5</td>
+		                            <td>バスケットボール部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">6</td>
+		                            <td>硬式野球部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">7</td>
+		                            <td>卓球部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">8</td>
+		                            <td>陸上競技部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">9</td>
+		                            <td>バレーボール部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">10</td>
+		                            <td>ラグビー部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">11</td>
+		                            <td>柔道部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">12</td>
+		                            <td>弓道部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">13</td>
+		                            <td>バトミントン部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">14</td>
+		                            <td>ハンドボール部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">15</td>
+		                            <td>ソフトボール部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">1</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">16</td>
+		                            <td>写真部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">2</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">17</td>
+		                            <td>落語研究部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">2</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">18</td>
+		                            <td>軽音楽部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">2</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">19</td>
+		                            <td>吹奏楽部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">2</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">20</td>
+		                            <td>茶道部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">2</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">21</td>
+		                            <td>ロボット研究部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">2</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">22</td>
+		                            <td>書道部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">2</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">23</td>
+		                            <td>碁道部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">2</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">24</td>
+		                            <td>ボランティア部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">2</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">25</td>
+		                            <td>演劇部</td>
+		                            <td></td>
+		                            <td style="text-align:right;">2</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">26</td>
+		                            <td>沖縄文化交流会</td>
+		                            <td></td>
+		                            <td style="text-align:right;">3</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">27</td>
+		                            <td>コンクリート研究会</td>
+		                            <td></td>
+		                            <td style="text-align:right;">3</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">･･･</td>
+		                            <td>・・・</td>
+		                            <td></td>
+		                            <td style="text-align:right;">3</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                        <tr valign="middle">
+		                            <td style="text-align:right;">41</td>
+		                            <td>空手道</td>
+		                            <td></td>
+		                            <td style="text-align:right;">3</td>
+		                            <td>NULL</td>
+		                            <td style="text-align:right;">0</td>
+		                        </tr>
+		                    </tbody>
+						</table>
+						<br />
+					
+						
+				
+				
+
+						
+
+
+	<!-- "piaceBody" -->
+				<div class="piaceBody">
+
+					<hr />
+					<div class="section">
+						<div class="info">
+							<h1 class="title">タイトル</h1>
+						</div>
+						
+					    <p class="para">
+							タイトル説明
+						</p>
+		
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">サブタイトル</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							サブタイトル説明
+						</p>
+		
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">サブタイトル</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							サブタイトル説明
+						</p>
+		
+					</div>
+
+
+				</div>
+
+				<div class="piaceFooter"></div>
+			</div>
+
+
+
+
+<!-- id="messages" -->
+
+
+			<div id="messages" class="piace">
+
+				<div class="piaceHeader">
+			  		<div class="title">枠タイトル</div>
+				</div>
+
+	<!-- "piaceBody" -->
+				<div class="piaceBody">
+
+					<hr />
+					<div id="learning.quickstart.create-project" class="section">
+						<div class="info">
+							<h1 class="title">タイトル</h1>
+						</div>
+				    	
+					    <p class="para">
+				        	タイトル説明
+				    	</p>
+		
+				    	<div class="section" id="learning.quickstart.create-project.install-zf" name="learning.quickstart.create-project.install-zf">
+							<div class="info">
+								<h1 class="title">サブタイトル</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							サブタイトル説明
+						</p>
+					</div>
+
+
+
+			        <p class="para">
+			            The default <span class="classname">IndexController</span> is as follows:
+			        </p>
+
+			        <div class="programlisting php">
+					<div class="phpcode">
+					<div class="php" style="font-family: monospace;">
+					<ol>
+						<li style=""><div>
+							<span style="color: #808080; font-style: italic; color: #006600;">// application/controllers/IndexController.php</span></div></li>
+						<li style=""><div>&nbsp;</div></li>
+						<li style=""><div>
+							<span style="color: #000000; font-weight: bold;">class</span> IndexController 
+							<span style="color: #000000; font-weight: bold;">extends</span> Zend_Controller_Action</div></li>
+						<li style=""><div>
+							<span style="color: #66cc66;">&#123;</span></div></li>
+						<li style=""><div>&nbsp;</div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #000000; font-weight: bold;">public</span> 
+							<span style="color: #000000; font-weight: bold;">function</span><span style="color: #ff0000;"> init</span>
+							<span style="color: #66cc66;">&#40;</span>
+							<span style="color: #66cc66;">&#41;</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #66cc66;">&#123;</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; 
+							<span style="color: #808080; font-style: italic;">/* Initialize action controller here */</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #66cc66;">&#125;</span></div></li>
+						<li style=""><div>&nbsp;</div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #000000; font-weight: bold;">public</span> 
+							<span style="color: #000000; font-weight: bold;">function</span> <span style="color: #0000ff;">indexAction </span><span style="color: #66cc66;">&#40;</span>
+							<span style="color: #66cc66;">&#41;</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #66cc66;">&#123;</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; 
+							<span style="color: #808080; font-style: italic;">// action body</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #66cc66;">&#125;</span></div></li>
+						<li style=""><div>
+							<span style="color: #66cc66;">&#125;</span></div></li>
+					</ol>
+					</div></div></div>
+
+
+
+
+
+			        <div class="comments">
+			        	<h3>更新情報</h3>
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                新規作成: gotoda                on: 2012-10-18 12:00:00
+							</div>
+			            	<div class="body">
+							ドキュメント資料として作成<br />
+							</div>
+			            </div>
+						
+					</div>
+
+				</div>
+				<div class="piaceFooter"></div>
+			</div>
+		
+		
+		<!-- /#contentBody --></div>
+		
+		<div id="contentFooter"></div>
+		
+	<!-- /#manual-container --></div>
+	<!-- /#contentContainer --></div>
+	<!-- /#content --></div>
+
+
+
+
+
+	<div id="menu">
+	<div id="menuContainer">
+		
+		<div id="naviConcept">
+			<ul class="level_0">
+			<li><a class="mark" href="#" onclick="$('concept_1').toggle(); return false;">＋</a>
+				<a href="http://www3.anan-nct.ac.jp/~gotouda/plan/training.html">【ananFD】</a>
+				<ul id="concept_1" class="level_1">
+				
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/gp/">ＦＤ高度化推進室</a></li>
+				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/">ＦＤ高度化推進室（学内）</a></li>
+				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/ananFD/">【ananFD】 モックアップ</a></li>
+				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/ananFD.doc/">【ananFD】 概要説明</a></li>
+				<li><a class="mark" href="#" onclick="$('concept_5').toggle(); return false;">＋</a>
+					<a href="">【ananFD】 デモサイト</a>
+					<ul id="concept_5" class="level_2">
+					<li><a class="mark" href="#" onclick="$('concept_9').toggle(); return false;">＋</a>
+						<a href="">テクノセンター</a>
+						<ul id="concept_9" class="level_2">
+						<li><span class="mark">‐</span><a href="http://192.168.11.102/ananfd/">【ananFD】 デモサイト1 （xenServer）</a></li>
+						<li><span class="mark">‐</span><a href="http://192.168.11.101/ananfd/">【ananFD】 デモサイト2 （xenServer）</a></li>
+						</ul>
+					</li>
+					<li><a class="mark" href="#" onclick="$('concept_9').toggle(); return false;">＋</a>
+						<a href="">学生課</a>
+						<ul id="concept_9" class="level_2">
+						<li><span class="mark">‐</span><a href="">教務係</a></li>
+						<li><span class="mark">‐</span><a href="">学生係</a></li>
+						<li><span class="mark">‐</span><a href="">料務係</a></li>
+						</ul>
+					</li>
+					</ul>
+				</li>
+				
+				</ul>
+			</li>
+			<li><a class="mark" href="#" onclick="$('concept_2').toggle(); return false;">＋</a>
+				<a href="http://www01.anan-nct.ac.jp/">阿南工業高等専門学校</a>
+				<ul id="concept_2" class="level_1">
+				
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/">トップページ</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/introduction">学校案内</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/department">学科案内</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/educationandresearch">教育・研究</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/cooperation">産学公・地域連携</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/campuslife">キャンパスライフ</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/sisetsu">付属施設・図書館</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/entranceexam">入試情報</a></li>
+				
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/m/">機械工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/e/">電気電子工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://s.anan-nct.ac.jp/">制御情報工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/c/">建設システム工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/i/">一般教科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/senkouka/">専攻科</a></li>
+				</ul>
+			</li>
+			</ul>
+		</div>
+		
+	<!-- /#menuContainer --></div>
+	<!-- /#menu --></div>
+
+<!-- /#main --></div>
+
+<div id="footer">
+<div id="footerContainer">
+
+<!-- /#footerContainer --></div>
+<!-- /#footer --></div>
+
+<!-- /#container --></div>
+
+</body>
+</html>
+

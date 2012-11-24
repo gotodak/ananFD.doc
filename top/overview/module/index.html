@@ -1,0 +1,536 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<title>ananFD</title>
+	<link href="../../../common/css/style.css" media="all" rel="stylesheet" type="text/css" />
+	<script src="../../../common/js/prototype.js" type="text/javascript"></script>
+	<script src="../../../common/js/form.js" type="text/javascript"></script>
+	<script src="../../../common/js/navi.js" type="text/javascript"></script>
+	
+<!--
+	<link href="/common/css/calendar_date_select/default.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="/common/js/calendar_date_select/calendar_date_select.js" type="text/javascript"></script>
+	<script src="/common/js/calendar_date_select/locale/ja.js" type="text/javascript"></script>
+	<script src="/common/js/calendar_date_select/format_iso_date.js" type="text/javascript"></script>
+-->
+</head>
+
+
+<body>
+
+<div id="container">
+
+
+
+
+	<div id="header">
+	<div id="headerContainer">
+		
+		<h1><a href="../../..">ananFD</a></h1>
+		<div class="menu">
+		    <span class="user">FD高度化推進室　後藤田浩二（admin）</span>
+		    <!--a class="web" href="http://www3.anan-nct.ac.jp/~gotouda/" target="_blank">公開画面</a-->
+		    <a class="logout" href="../../../login">ログイン</a>
+		</div>
+		
+	<!-- /#headerContainer --></div>
+	<!-- /#header --></div>
+
+
+
+
+	<div id="banner">
+	<div id="bannerContainer">
+	
+	<!-- /#bannerContainer --></div>
+	<!-- /#banner --></div>
+
+
+
+
+	<div id="navi">
+	<div id="naviContainer">
+		
+		<table>
+		<tr>
+			<td class="selector">
+		    	<div class="site">
+				    <script type="text/javascript">
+				//<![CDATA[
+				  function submitCmsNavigationSite(value) {
+				    document.getElementById('cmsNavigationSite').submit();
+				    return false;
+				  }
+				//]]>
+					</script>
+					
+					<form id="cmsNavigationSite" method="get" action="../../../../navigationSite">
+						<select id="cms_navi_site" name="navi_site" onchange="return submitCmsNavigationSite(this.value)">
+							<option value=""></option>
+							<option value="./ananFD">【ananFD】 モックアップ</option>
+							<option value="./ananFD.doc/" selected="selected" >【ananFD】 概要説明</option>
+							<option value="http://192.168.11.102/ananfd/" >【ananFD】 デモサイト1 （xenServer）</option>
+							<option value="http://192.168.11.101/ananfd/" >【ananFD】 デモサイト2 （xenServer）</option>
+						</select>
+					</form>
+				</div>
+				
+				
+			    <div class="concept">
+			      <p id="naviConceptCurrent" onclick="Cms_Admin_Navi.showNavi();">
+			        阿南工業高等専門学校</p>
+				</div>
+			</td>
+			<td class="menu">
+			    <div class="mainMenu">
+					<div class="mainMenu">
+						<a href="../../../learning" class="learning">学習支援</a>
+						<a href="../../../student" class="student">学生指導</a>
+						<a href="../../../entrust" class="entrust">担任指導</a>
+						<a href="../../../graduate" class="graduate">卒業生支援</a>
+						<a href="../../../tp" class="tp">ＴＰ支援</a>
+						<a href="../../../ir" class="ir">ＩＲ支援</a>
+						<a href="../../../master" class="master">マスタ設定</a>
+					</div>
+				</div>
+				
+				<div class="contentMenu">
+					<a href="../../../top/password">パスワード変更</a>
+					<a href="../../../top/userinfo">ユーザ情報</a>
+					<a href="../../../top/initpass">パスワード初期化</a>
+					<a href="../../../top/overview" class="current">ZF1 Overview</a>
+					<a href="../../../top/tool">運用ツール</a>
+				</div>
+			</td>
+	  	</tr>
+		</table>
+	
+	
+	<!-- /#naviContainer --></div>
+	</div><!-- /#navi -->
+
+
+
+
+<div id="main">
+	
+	<div id="content">
+	<div id="contentContainer">
+	<div id="manual-container">
+		
+		<div id="contentHeader">
+		 	<div class="navi">
+				<a href="../../../top">TOP</a>
+					 &gt; <a href="../../../top/overview">ZF1 Overview</a>
+					 &gt; <a href="../../../top/overview/module">Module</a>
+		  	</div>
+			
+			<div class="actionMenu">
+				<a href="../../../top/overview/controller">Controller</a>
+				<a href="../../../top/overview/view">View</a>
+				<a href="../../../top/overview/auth">Auth</a>
+				<a href="../../../top/overview/module">Module</a>
+				<a href="../../../top/overview/setup">Setup</a>
+			</div>
+					
+			<h2>Programmer's Reference Guide</h2>
+		</div>
+		
+		<div id="contentBody">
+			
+			
+
+
+<!-- id="maintenances" -->
+
+			<div id="maintenances" class="piace">
+
+				<div class="piaceHeader">
+			  		<div class="title">機能拡張を考えたアプリケーション</div>
+				</div>
+
+
+	<!-- "piaceBody" -->
+
+				<div class="piaceBody">
+
+					<hr />
+					<div class="section">
+						<div class="info">
+							<h1 class="title">Zend Framework での拡張化対応</h1>
+						</div>
+						
+					    <p class="para">
+							Zend Framework では、将来の機能拡張やカスタマイズを、手軽に実現するための工夫が施されています。<br />
+							それが、「モジュール構造」です。<br />
+							「モジュール構造」とは、アプリケーションの基本となるコントローラ、モデル、ビューを「モジュール」という１つのブロックとしてとらえ、<br />
+							その「モジュール」をいくつか組み合わせることにより、アプリケーションを構成するという思想です。
+						</p>
+				
+				       <blockquote><p>
+							<b class="note">Note</b>: <span class="info"><b>More Information</b><br /></span>
+				            
+							<div class="imageobject">
+								<img src="../../../images/zend_module.png" alt="zend_module.png" width="350" />
+							</div>
+							
+				        </p></blockquote>
+				
+			     		<blockquote style="background-color:#f5f5f5;"><p>
+							<span class="classname">ディレクトリ構成</span><br />					
+							<div class="text" style="font-family: monospace;">
+							├ <b>application</b>　　　　　　　……………………………………<b>アプリケーションディレクトリ</b><br />
+							│└ <b>modules</b>　　　　　　　 ……………………………………<b>モジュールディレクトリ</b><br />
+							│　├ <b>default</b>　　　　　　　……………………………………<b>ベースディレクトリ</b><br />
+							│　│├ controllers　　　　　<br />
+							│　│├ models　　　　　　　<br />
+							│　│└ views　　　　　　　<br />
+							│　├ <b>modules1</b> 　　　　　……………………………………<b>拡張モジュール１</b><br />
+							│　│├ controllers　　　　　<br />
+							│　│├ models　　　　　　　<br />
+							│　│└ views　　　　　　　<br />
+							│　└ <b>modules2</b> 　　　　　……………………………………<b>拡張モジュール２</b><br />
+							│　　├ controllers　　　　　<br />
+							│　　├ models　　　　　　　<br />
+							│　　└ views　　　　　　　<br />
+							└<b> html</b>　　　　　　　　　　 ……………………………………<b>公開ディレクトリ</b><br />
+							</div>
+			        	</p></blockquote>
+				
+				       	<blockquote><p>
+							<b class="note"></b><span class="info"><b>モジュール構造に対応したＵＲＬ書式</b><br /></span>
+				            
+							<div class="imageobject">
+								<img src="../../../images/zend_module_url.png" alt="zend_module_url.png" width="600" />
+							</div>
+							
+				        </p></blockquote>
+				        
+				        
+				
+					</div>
+
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+
+					<hr />
+					<div class="section">
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">既存システムに機能拡張対応</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							当初は機能拡張の予定が無かったにもかかわらず、後から機能拡張を行うことになった場合においても、<br />
+							Zend Framework では、次のように少し工夫をすれば、効率のよい機能拡張の仕組みを実現することができる。
+						</p>
+				
+				       <blockquote><p>
+							<b class="note">Note</b>: <span class="info"><b>More Information</b><br /></span>
+				            
+							<div class="imageobject">
+								<img src="../../../images/zend_subsys.png" alt="zend_subsys.png" width="300" />
+							</div>
+							
+				        </p></blockquote>
+						
+					    <p class="para">
+							既存システム部分を「ベースシステム」と位置づけ、機能拡張を「サブシステム」と位置づけます。<br />
+							サブシステム部分はモジュール構造を採用することで、元のシステムは触れずに、効率の良い機能拡張を可能になる。<br />
+							ここでは、この方式を「サブシステム方式」と呼ぶことにする。
+						</p>
+				
+			     		<blockquote style="background-color:#f5f5f5;"><p>
+							<span class="classname">ディレクトリ構成</span><br />					
+							<div class="text" style="font-family: monospace;">
+							├ <b>application</b>　　　　　　　……………………………………<b>アプリケーションディレクトリ</b><br />
+							│├ controllers　　　　　<br />
+							│├ models　　　　　　　<br />
+							│├ views　　　　　　　<br />
+							│└ <b>subsys</b> 　　　　　　　　……………………………………<b>サブシステムディレクトリ</b><br />
+							│　├ <b>modules1</b> 　　　　　 ……………………………………<b>拡張モジュール１</b><br />
+							│　│├ controllers　　　　　<br />
+							│　│├ models　　　　　　　<br />
+							│　│└ views　　　　　　　<br />
+							│　└ <b>modules2</b> 　　　　　 ……………………………………<b>拡張モジュール２</b><br />
+							│　　├ controllers　　　　　<br />
+							│　　├ models　　　　　　　<br />
+							│　　└ views　　　　　　　<br />
+							└<b> html</b> 　　　　　　　　　　 ……………………………………<b>公開ディレクトリ</b><br />
+							</div>
+			        	</p></blockquote>
+				
+				       	<blockquote><p>
+							<b class="note"></b><span class="info"><b>メインシステムへアクセスする場合のＵＲＬ書式</b><br /></span>
+				            
+							<div class="imageobject">
+								<img src="../../../images/zend_subsys_url3.png" alt="zend_subsys_url3.png" width="600" />
+							</div>
+							
+				        </p></blockquote>
+				
+				       	<blockquote><p>
+							<b class="note"></b><span class="info"><b>サブシステムへアクセスする場合のＵＲＬ書式</b><br /></span>
+				            
+							<div class="imageobject">
+								<img src="../../../images/zend_subsys_url4.png" alt="zend_subsys_url4.png" width="600" />
+							</div>
+							
+				        </p></blockquote>
+				
+					</div>
+
+
+
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					
+					
+					
+					
+					<hr />
+					<div class="section">
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">ananFD システム</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							ananFD は、「モジュール構造」（サブシステム方式）対応をしております。<br />
+						</p>
+				
+						
+					    <p class="para">
+							基本システム部分を「ベースシステム」と位置づけ、機能拡張を「サブシステム」と位置づけます。<br />
+							サブシステム部分はモジュール構造を採用することで、元のシステムは触れずに、効率の良い機能拡張を可能になる。<br />
+						</p>
+				
+			     		<blockquote style="background-color:#f5f5f5;"><p>
+							<span class="classname">ananfd ディレクトリ構成</span><br />					
+							<div class="text" style="font-family: monospace;">
+							└ <b>html</b> ……………………………………<b>公開ディレクトリ（ドキュメントルート）</b><br />
+							　│ <br />
+							　├ <b>ananfd.doc</b>　………………………<b>ananfd ドキュメントディレクトリ</b><br />
+							　│ <br />
+							　├ <b>application</b>　…………………………<b>ananfd アプリケーションディレクトリ</b><br />
+							　│ ├ <b>lib</b>　……………………………………<b>ライブラリディレクトリ</b><br />
+							　│ │ ├ config.ini　　　　　　　　　　　 ……………………………………データファイル<br />
+							　│ │ ├ anandef.php　　　　　　　　　　　……………………………………データファイル<br />
+							　│ │ ├ function.php　　　　　　　　　　 ……………………………………データファイル<br />
+							　│ │ ├ <b>data</b>　…………………………………<b>セットアップデータディレクトリ</b><br />
+							　│ │ │ ├ ananfd2011.sql　　　　　　　　……………………………………セットアップファイル<br />
+							　│ │ │ ├ user_2011.csv　　　　　　　　 ……………………………………セットアップファイル<br />
+							　│ │ │ ├ subject_2011.csv　　　　　　　……………………………………セットアップファイル<br />
+							　│ │ │ ├ subteacher_2011.csv　　　　　 ……………………………………セットアップファイル<br />
+							　│ │ │ ├ subfile_2011.csv　　　　　　　……………………………………セットアップファイル<br />
+							　│ │ │ ├ member_2011.csv　　　　　　　 ……………………………………セットアップファイル<br />
+							　│ │ │ └ job_2011.csv　　　　　　　　　……………………………………セットアップファイル<br />
+							　│ │ └ <b>IPAfont00203</b>　…………………<b>IPAフォントディレクトリ</b><br />
+							　│ │ 　 ├ ipag.ttf　　　　　　　　　　　……………………………………IPAフォント<br />
+							　│ │ 　 └ ipam.ttf　　　　　　　　　　　……………………………………IPAフォント<br />
+							　│ │ 　<br />
+							　│ └ <b>vers</b> …………………………………<b>モジュールディレクトリ</b><br />
+							　│　 ├ <b>default</b>　……………………………………<b>ベースディレクトリ</b><br />
+							　│ 　│ ├ <b>controllers</b>　……………………………………<b>コントローラスクリプトディレクトリ</b><br />
+							　│ 　│ │ ├ IndexController.php　　　　……………………………………アクションコントローラの実体<br />
+							　│ 　│ │ └ ErrorController.php　　　　……………………………………アクションコントローラの実体<br />
+							　│ 　│ ├ <b>modules</b>　　 ……………………………………<b>モデルスクリプトディレクトリ</b><br />
+							　│ 　│ │ ├ aciModel.php　　　　　　　 ……………………………………モデルスクリプト<br />
+							　│ 　│ │ └ userModel.php　　　　　　　……………………………………モデルスクリプト<br />
+							　│ 　│ └ <b>views</b>　　　　……………………………………<b>ビューディレクトリ</b><br />
+							　│ 　│ 　 └ <b>scripts</b>　　　　……………………………………<b>ビュースクリプトディレクトリ</b><br />
+							　│ 　│ 　 　 └ <b>index</b>　　　　　　……………………………………<b>コントローラ名</b><br />
+							　│ 　│ 　　　　 └ index.phtml　　　　　……………………………………ビュースクリプト（アクション名＋.phtml）<br />
+							　│ 　│ 　 　 └ <b>error</b>　　　　　　……………………………………<b>コントローラ名</b><br />
+							　│ 　│ 　　　　 └ error.phtml　　　　　……………………………………ビュースクリプト（アクション名＋.phtml）<br />
+							　│ 　│ 　<br />
+							　│　 ├ <b>ver2012</b>　…………………………………<b>2012 拡張モジュール</b><br />
+							　│ 　│ ├ controllers　………………………………………コントローラスクリプトディレクトリ<br />
+							　│ 　│ ├ modules　　　………………………………………モデルスクリプトディレクトリ<br />
+							　│ 　│ └ views　　　　………………………………………ビューディレクトリ<br />
+							　│ 　│ <br />
+							　│　 └ <b>ver2013</b>　…………………………………<b>2013 拡張モジュール</b><br />
+							　│　　　├ controllers　………………………………………コントローラスクリプトディレクトリ<br />
+							　│　　　├ modules　　　………………………………………モデルスクリプトディレクトリ<br />
+							　│　　　└ views　　　　………………………………………ビューディレクトリ<br />
+							　│ <br />
+							　└ <b>ananfd</b>　……………………………………<b>ananfd 公開ディレクトリ</b><br />
+							　　├ .htaccess　　　　　……………………………………すべてのリクエストを index.php に渡す設定<br />
+							　　├ index.php　　　　　……………………………………<b>フロントコントローラ</b><br />
+							　　├ <b>common</b>　　……………………………………<b>コモンディレクトリ</b><br />
+							　　├ <b>docs</b>　　…………………………………………<b>ドキュメントディレクトリ</b><br />
+							　　└ <b>movies</b>　…………………………………………<b>動画ファイルディレクトリ</b><br />
+							</div>
+			        	</p></blockquote>
+				
+				        
+				
+				
+				       	<blockquote><p>
+							<b class="note"></b><span class="info"><b>メインシステムへアクセスする場合のＵＲＬ書式</b><br /></span>
+				            
+							<div class="imageobject">
+								<img src="../../../images/zend_subsys_url3.png" alt="zend_subsys_url3.png" width="600" />
+							</div>
+							
+				        </p></blockquote>
+				
+				       	<blockquote><p>
+							<b class="note"></b><span class="info"><b>サブシステムへアクセスする場合のＵＲＬ書式</b><br /></span>
+				            
+							<div class="imageobject">
+								<img src="../../../images/zend_subsys_url4.png" alt="zend_subsys_url4.png" width="600" />
+							</div>
+							
+				        </p></blockquote>
+				
+					</div>
+				</div>
+
+				<div class="piaceFooter"></div>
+
+
+
+
+	<!-- id="messages" -->
+
+
+				<div id="messages" class="piace">
+
+	<!-- "piaceBody" -->
+				<div class="piaceBody">
+
+			        <div class="comments">
+			        	<h3>更新情報</h3>
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                新規作成: gotoda                on: 2012-11-08 12:00:00
+							</div>
+			            	<div class="body">
+							ドキュメント資料として作成<br />
+							</div>
+			            </div>
+						
+					</div>
+
+				</div>
+				<div class="piaceFooter"></div>
+			</div>
+		
+			<!-- /#maintenances --></div>
+		
+		<!-- /#contentBody --></div>
+			
+		<div id="contentFooter"></div>
+		
+	<!-- /#manual-container --></div>
+	<!-- /#contentContainer --></div>
+	<!-- /#content --></div>
+
+
+	<div id="menu">
+	<div id="menuContainer">
+		
+		<div id="naviConcept">
+			<ul class="level_0">
+			<li><a class="mark" href="#" onclick="$('concept_1').toggle(); return false;">＋</a>
+				<a href="http://www3.anan-nct.ac.jp/~gotouda/plan/training.html">【ananFD】</a>
+				<ul id="concept_1" class="level_1">
+				
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/gp/">ＦＤ高度化推進室</a></li>
+				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/">ＦＤ高度化推進室（学内）</a></li>
+				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/ananFD/">【ananFD】 モックアップ</a></li>
+				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/ananFD.doc/">【ananFD】 概要説明</a></li>
+				<li><a class="mark" href="#" onclick="$('concept_5').toggle(); return false;">＋</a>
+					<a href="">【ananFD】 デモサイト</a>
+					<ul id="concept_5" class="level_2">
+					<li><a class="mark" href="#" onclick="$('concept_8').toggle(); return false;">＋</a>
+						<a href="">テクノセンター</a>
+						<ul id="concept_8" class="level_2">
+						<li><span class="mark">‐</span><a href="http://192.168.11.102/ananfd/">【ananFD】 デモサイト1 （xenServer）</a></li>
+						<li><span class="mark">‐</span><a href="http://192.168.11.101/ananfd/">【ananFD】 デモサイト2 （xenServer）</a></li>
+						</ul>
+					</li>
+					<li><a class="mark" href="#" onclick="$('concept_9').toggle(); return false;">＋</a>
+						<a href="">学生課</a>
+						<ul id="concept_9" class="level_2">
+						<li><span class="mark">‐</span><a href="">教務係</a></li>
+						<li><span class="mark">‐</span><a href="">学生係</a></li>
+						<li><span class="mark">‐</span><a href="">料務係</a></li>
+						</ul>
+					</li>
+					</ul>
+				</li>
+				
+				</ul>
+			</li>
+			<li><a class="mark" href="#" onclick="$('concept_2').toggle(); return false;">＋</a>
+				<a href="http://www01.anan-nct.ac.jp/">阿南工業高等専門学校</a>
+				<ul id="concept_2" class="level_1">
+				
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/">トップページ</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/introduction">学校案内</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/department">学科案内</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/educationandresearch">教育・研究</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/cooperation">産学公・地域連携</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/campuslife">キャンパスライフ</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/sisetsu">付属施設・図書館</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/entranceexam">入試情報</a></li>
+				
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/m/">機械工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/e/">電気電子工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://s.anan-nct.ac.jp/">制御情報工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/c/">建設システム工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/i/">一般教科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/senkouka/">専攻科</a></li>
+				</ul>
+			</li>
+			</ul>
+		</div>
+		
+	<!-- /#menuContainer --></div>
+	<!-- /#menu --></div>
+
+<!-- /#main --></div>
+
+<div id="footer">
+<div id="footerContainer">
+
+<!-- /#footerContainer --></div>
+<!-- /#footer --></div>
+
+<!-- /#container --></div>
+
+</body>
+</html>
+
