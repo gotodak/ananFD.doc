@@ -69,7 +69,7 @@
 				//]]>
 					</script>
 					
-					<form id="cmsNavigationSite" method="get" action="../../../../navigationSite">
+					<form id="cmsNavigationSite" method="get" action="../../../navigationSite">
 						<select id="cms_navi_site" name="navi_site" onchange="return submitCmsNavigationSite(this.value)">
 							<option value=""></option>
 							<option value="./ananFD">【ananFD】 モックアップ</option>
@@ -89,25 +89,22 @@
 			<td class="menu">
 			    <div class="mainMenu">
 					<div class="mainMenu">
-						<a href="../../../learning" class="learning">学習支援</a>
+						<a href="../../../learning" class="learning current">学習支援</a>
 						<a href="../../../student" class="student">学生指導</a>
 						<a href="../../../entrust" class="entrust">担任指導</a>
 						<a href="../../../graduate" class="graduate">卒業生支援</a>
 						<a href="../../../tp" class="tp">ＴＰ支援</a>
 						<a href="../../../ir" class="ir">ＩＲ支援</a>
-						<a href="../../../master" class="master current">マスタ設定</a>
+						<a href="../../../master" class="master">マスタ設定</a>
 					</div>
 				</div>
 				
 				<div class="contentMenu">
-					<a href="../../../master/master_student"    >学生管理</a>
-					<a href="../../../master/master_information">学生情報</a>
-					<a href="../../../master/master_education"  class="current">教務管理</a>
-					<a href="../../../master/master_user">ユーザ管理</a>
-					<a href="../../../master/master_access"     >アクセス管理</a>
-					<a href="../../../master/master_section">組織管理</a>
-					<a href="../../../master/master_db">ＤＢ</a>
-					<!--a href="../../../master/master_attendance" >出欠簿管理</a-->
+					<a href="../../../learning" class="current">学習支援</a>
+					<a href="../../../learning/support">サポート</a>
+					<a href="../../../learning/inquire">要望</a>
+					<a href="../../../learning/view">面談一覧</a>
+					<a href="../../../learning/db">ＤＢ</a>
 				</div>
 			</td>
 	  	</tr>
@@ -129,32 +126,25 @@
 		<div id="contentHeader">
 		 	<div class="navi">
 				<a href="../../../top">TOP</a>
-					 &gt; <a href="../../../master">マスタ設定</a>
-					 &gt; <a href="../../../master/master_education">教務管理</a>
-					 &gt; <a href="../../../master/master_education/subject">授業科目管理</a>
+					 &gt; <a href="../../../learning/learning">学習支援</a>
+					 &gt; <a href="../../../learning/learning/new">新規作成</a>
 		  	</div>
 			
 			<div class="actionMenu">
-				<a href="../../../master/master_education/subject/new">新規作成</a>
-				<span class='separator'></span>
-				<a href="../../../master/master_education/subject/import">一括読込</a>
+				<a href="../../../learning/learning">一覧</a>
 			</div>
 			
 			<h2>Programmer's Reference Guide</h2>
 		</div>
 		
-	<div id="contentBody">
-			
+		<div id="contentBody">
 
-		<!-- id="maintenances" -->
+			<!-- id="maintenances" -->
 
-		<div id="maintenances" class="piace">
-
-
+			<div id="maintenances" class="piace">
 
 				<div class="piaceHeader">
-				
-			  		<div class="title">授業科目管理</div>
+			  		<div class="title">新規作成</div>
 				</div>
 
 
@@ -172,7 +162,7 @@
 -->
 						
 					    <p class="para">
-							ログインユーザの設定されているロール権限により、表示するメニューは変更される。<br />
+							運用ツールは、未完です。<br />
 						</p>
 						
 					</div>
@@ -181,60 +171,26 @@
 					<div class="section">
 				    	<div class="section">
 							<div class="info">
-								<h1 class="title">授業科目管理・一覧</h1>
+								<h1 class="title">新規作成</h1>
 							</div>
 						</div>
 						
 						<blockquote><p>
-							<b class="note">授業科目管理・一覧</b><br />
+							<b class="note">新規作成</b><br />
 			            
-							<div class="imageobject">
-							<img src="../../../images/sc0024.png" alt="component.png" width="520" />
-							</div>
+							<img src="../../../images/sc0065.png" alt="component.png" width="520" />
+							
 						
 						</p></blockquote>
 						
 					</div>
 					
-					<div class="section">
-				    	<div class="section">
-							<div class="info">
-								<h1 class="title">授業科目管理・詳細</h1>
-							</div>
-						</div>
-						
-						<blockquote><p>
-							<b class="note">授業科目管理・詳細</b><br />
-			            
-							<div class="imageobject">
-							<img src="../../../images/sc0027.png" alt="component.png" width="520" />
-							</div>
-						
-						</p></blockquote>
-						
-					</div>
-					
-					<div class="section">
-				    	<div class="section">
-							<div class="info">
-								<h1 class="title">授業科目管理・編集</h1>
-							</div>
-						</div>
-						
-						<blockquote><p>
-							<b class="note">授業科目管理・編集</b><br />
-			            
-							<div class="imageobject">
-							<img src="../../../images/sc0028.png" alt="component.png" width="520" />
-							</div>
-						
-						</p></blockquote>
-						
-					</div>
 					
 					
 
 				</div>	<!-- #piaceBody -->
+
+
 
 
 
@@ -252,9 +208,9 @@
 
 			</div> <!-- /#maintenances -->
 				
-		<div class="piaceFooter"></div>
-												
-	</div><!-- /#contentBody -->
+			<div class="piaceFooter"></div>
+											
+		</div><!-- /#contentBody -->
 		
 		<div id="contentFooter"></div>
 		
