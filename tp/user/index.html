@@ -93,21 +93,19 @@
 						<a href="../../student" class="student">学生指導</a>
 						<a href="../../entrust" class="entrust">担任指導</a>
 						<a href="../../graduate" class="graduate">卒業生支援</a>
-						<a href="../../tp" class="tp">ＴＰ支援</a>
+						<a href="../../tp" class="tp current">ＴＰ支援</a>
 						<a href="../../ir" class="ir">ＩＲ支援</a>
-						<a href="../../master" class="master current">マスタ設定</a>
+						<a href="../../master" class="master">マスタ設定</a>
 					</div>
 				</div>
 				
 				<div class="contentMenu">
-					<a href="../../master/master_student"    >学生管理</a>
-					<a href="../../master/master_information"  class="current">学生情報</a>
-					<a href="../../master/master_education"  >教務管理</a>
-					<a href="../../master/master_user"       >ユーザ管理</a>
-					<a href="../../master/master_access"     >アクセス管理</a>
-					<a href="../../master/master_section">組織管理</a>
-					<a href="../../master/master_db">ＤＢ</a>
-					<!--a href="../../master/master_attendance" >出欠簿管理</a-->
+					<a href="../../tp/tp" class="current">ＴＰ支援</a>
+					<a href="../../tp/view">ＴＰ一覧</a>
+					<a href="../../tp/syllabus">シラバス一覧</a>
+					<a href="../../tp/value">授業評価一覧</a>
+					<a href="../../tp/visit">授業参観一覧</a>
+					<a href="../../tp/db">ＤＢ</a>
 				</div>
 			</td>
 	  	</tr>
@@ -129,30 +127,30 @@
 		<div id="contentHeader">
 		 	<div class="navi">
 				<a href="../../top">TOP</a>
-					 &gt; <a href="../../master">マスタ設定</a>
-					 &gt; <a href="../../master/master_information">学生情報</a>
+					 &gt; <a href="../../tp">ＴＰ支援</a>
+					 &gt; <a href="../../tp/user" >[教員氏名]</a>
 		  	</div>
 			
 			<div class="actionMenu">
-				<a href="../../master/master_information/club">クラブ管理</a>
-				<a href="../../master/master_information/job">就職先管理</a>
+				<a href="../../tp/user/new">ＴＰ新規作成</a>
 			</div>
 			
 			<h2>Programmer's Reference Guide</h2>
 		</div>
 		
-		<div id="contentBody">
+
+	<!-- id="contentBody" -->
+	<div id="contentBody">
 			
-			
+
+		<!-- id="maintenances" -->
+		<div id="maintenances" class="piace">
 
 
-			<!-- id="maintenances" -->
-			<div id="maintenances" class="piace">
 
-				<div class="piaceHeader">
-			  		<div class="title">学生情報</div>
+				<div class="piaceHeader">			
+			  		<div class="title">ＴＰ支援・授業科目一覧</div>
 				</div>
-
 
 				<!-- "piaceBody" -->
 				<div class="piaceBody">
@@ -167,35 +165,52 @@
 -->
 						
 					    <p class="para">
-							学生情報のＴＯＰ画面です。<br />
-							項目が増えた場合には、コマンドを増やします。<br />
+							ログインユーザの設定されているロール権限により、表示するメニューは変更される。<br />
 						</p>
 						
 					</div>
 
 
+					
 					<div class="section">
 				    	<div class="section">
 							<div class="info">
-								<h1 class="title">学生情報</h1>
+								<h1 class="title">ＴＰ支援・授業科目一覧</h1>
 							</div>
 						</div>
 						
 						<blockquote><p>
-							<b class="note">学生情報</b><br />
+							<b class="note">ＴＰ支援・授業科目一覧</b><br />
 			            
-							<img src="../../images/sc0013.png" alt="component.png" width="521" />
-							
+							<div class="imageobject">
+							<img src="../../images/sc0100.png" alt="component.png" width="520" />
+							</div>
 						
 						</p></blockquote>
 						
 					</div>
 					
-					
+					<div class="section">
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">ＴＰ支援・授業科目詳細</h1>
+							</div>
+						</div>
+						
+						<blockquote><p>
+							<b class="note">ＴＰ支援・授業科目詳細</b><br />
+			            
+							<div class="imageobject">
+							<img src="../../images/sc0102.png" alt="component.png" width="520" />
+							</div>
+						
+						</p></blockquote>
+						
+					</div>					
 					
 
-				</div>	<!-- #piaceBody -->
-
+				</div>	
+				<!-- #piaceBody -->
 
 
 
@@ -212,12 +227,14 @@
 			        </div>						
 			    </div>
 
-			</div> <!-- /#maintenances -->
+			</div> 
+			<!-- /#maintenances -->
 				
-			<div class="piaceFooter"></div>
-								
-				
-		</div><!-- /#contentBody -->
+		<div class="piaceFooter"></div>
+												
+	</div>
+	<!-- /#contentBody -->
+
 		
 		<div id="contentFooter"></div>
 		

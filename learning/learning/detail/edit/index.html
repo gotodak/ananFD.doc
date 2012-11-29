@@ -7,10 +7,10 @@
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />
 	<title>ananFD</title>
-	<link href="../../common/css/style.css" media="all" rel="stylesheet" type="text/css" />
-	<script src="../../common/js/prototype.js" type="text/javascript"></script>
-	<script src="../../common/js/form.js" type="text/javascript"></script>
-	<script src="../../common/js/navi.js" type="text/javascript"></script>
+	<link href="../../../../common/css/style.css" media="all" rel="stylesheet" type="text/css" />
+	<script src="../../../../common/js/prototype.js" type="text/javascript"></script>
+	<script src="../../../../common/js/form.js" type="text/javascript"></script>
+	<script src="../../../../common/js/navi.js" type="text/javascript"></script>
 	
 <!--
 	<link href="/common/css/calendar_date_select/default.css" media="screen" rel="stylesheet" type="text/css" />
@@ -31,11 +31,11 @@
 	<div id="header">
 	<div id="headerContainer">
 		
-		<h1><a href="../..">ananFD</a></h1>
+		<h1><a href="../../../..">ananFD</a></h1>
 		<div class="menu">
 		    <span class="user">FD高度化推進室　後藤田浩二（admin）</span>
 		    <!--a class="web" href="http://www3.anan-nct.ac.jp/~gotouda/" target="_blank">公開画面</a-->
-		    <a class="logout" href="../../login">ログイン</a>
+		    <a class="logout" href="../../../../login">ログイン</a>
 		</div>
 		
 	<!-- /#headerContainer --></div>
@@ -89,25 +89,22 @@
 			<td class="menu">
 			    <div class="mainMenu">
 					<div class="mainMenu">
-						<a href="../../learning" class="learning">学習支援</a>
-						<a href="../../student" class="student">学生指導</a>
-						<a href="../../entrust" class="entrust">担任指導</a>
-						<a href="../../graduate" class="graduate">卒業生支援</a>
-						<a href="../../tp" class="tp">ＴＰ支援</a>
-						<a href="../../ir" class="ir">ＩＲ支援</a>
-						<a href="../../master" class="master current">マスタ設定</a>
+						<a href="../../../../learning" class="learning current">学習支援</a>
+						<a href="../../../../student" class="student">学生指導</a>
+						<a href="../../../../entrust" class="entrust">担任指導</a>
+						<a href="../../../../graduate" class="graduate">卒業生支援</a>
+						<a href="../../../../tp" class="tp">ＴＰ支援</a>
+						<a href="../../../../ir" class="ir">ＩＲ支援</a>
+						<a href="../../../../master" class="master">マスタ設定</a>
 					</div>
 				</div>
 				
 				<div class="contentMenu">
-					<a href="../../master/master_student"    >学生管理</a>
-					<a href="../../master/master_information"  class="current">学生情報</a>
-					<a href="../../master/master_education"  >教務管理</a>
-					<a href="../../master/master_user"       >ユーザ管理</a>
-					<a href="../../master/master_access"     >アクセス管理</a>
-					<a href="../../master/master_section">組織管理</a>
-					<a href="../../master/master_db">ＤＢ</a>
-					<!--a href="../../master/master_attendance" >出欠簿管理</a-->
+					<a href="../../../../learning" class="current">学習支援</a>
+					<a href="../../../../learning/support">サポート</a>
+					<a href="../../../../learning/inquire">要望</a>
+					<a href="../../../../learning/view">面談一覧</a>
+					<a href="../../../../learning/db">ＤＢ</a>
 				</div>
 			</td>
 	  	</tr>
@@ -128,29 +125,30 @@
 		
 		<div id="contentHeader">
 		 	<div class="navi">
-				<a href="../../top">TOP</a>
-					 &gt; <a href="../../master">マスタ設定</a>
-					 &gt; <a href="../../master/master_information">学生情報</a>
+				<a href="../../../../top">TOP</a>
+					 &gt; <a href="../../../../learning">学習支援</a>
+					 &gt; <a href="../../../../learning/learning">[学生氏名]</a>
+					 &gt; <a href="../../../../learning/learning/detail">[2012-11-11]</a>
+					 &gt; <a href="../../../../learning/learning/detail/edit">編集</a>
 		  	</div>
 			
 			<div class="actionMenu">
-				<a href="../../master/master_information/club">クラブ管理</a>
-				<a href="../../master/master_information/job">就職先管理</a>
+				<a href="../../../../learning/learning">一覧</a>
+				<a href="../../../../learning/learning/detail">詳細</a>
 			</div>
 			
 			<h2>Programmer's Reference Guide</h2>
 		</div>
 		
-		<div id="contentBody">
-			
-			
 
+		<!-- id="contentBody" -->		
+		<div id="contentBody">
 
 			<!-- id="maintenances" -->
 			<div id="maintenances" class="piace">
 
 				<div class="piaceHeader">
-			  		<div class="title">学生情報</div>
+			  		<div class="title">編集</div>
 				</div>
 
 
@@ -167,8 +165,7 @@
 -->
 						
 					    <p class="para">
-							学生情報のＴＯＰ画面です。<br />
-							項目が増えた場合には、コマンドを増やします。<br />
+							運用ツールは、未完です。<br />
 						</p>
 						
 					</div>
@@ -177,27 +174,17 @@
 					<div class="section">
 				    	<div class="section">
 							<div class="info">
-								<h1 class="title">学生情報</h1>
+								<h1 class="title">編集</h1>
 							</div>
 						</div>
 						
 						<blockquote><p>
-							<b class="note">学生情報</b><br />
-			            
-							<img src="../../images/sc0013.png" alt="component.png" width="521" />
-							
-						
-						</p></blockquote>
-						
+							<b class="note">編集</b><br />
+							<img src="../../../../images/sc0081.png" alt="component.png" width="520" />								</p></blockquote>					
 					</div>
 					
-					
-					
-
-				</div>	<!-- #piaceBody -->
-
-
-
+				</div>	
+				<!-- #piaceBody -->
 
 
 			    <div class="comments">
@@ -212,12 +199,14 @@
 			        </div>						
 			    </div>
 
-			</div> <!-- /#maintenances -->
+			</div> 
+			<!-- /#maintenances -->
 				
 			<div class="piaceFooter"></div>
-								
-				
-		</div><!-- /#contentBody -->
+											
+		</div>
+		<!-- /#contentBody -->
+
 		
 		<div id="contentFooter"></div>
 		
