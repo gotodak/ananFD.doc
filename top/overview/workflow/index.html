@@ -141,516 +141,108 @@
 					
 			<h2>Programmer's Reference Guide</h2>
 		</div>
-		
+
+
+		<!-- id="contentBody" -->
 		<div id="contentBody">
-			
-			
 
-
-<!-- id="maintenances" -->
-
+			<!-- id="maintenances" -->
 			<div id="maintenances" class="piace">
 
 				<div class="piaceHeader">
-			  		<div class="title">Zend_Controller－コントローラ</div>
+			  		<div class="title">運用フロー</div>
 				</div>
 
 
-	<!-- "piaceBody" -->
-
+				<!-- "piaceBody" -->
 				<div class="piaceBody">
 
-					<hr />
+					<!--hr /-->
 					<div class="section">
-						<div class="info">
-							<h1 class="title">Zend_Controller の構造</h1>
-						</div>
-						
+											
 					    <p class="para">
-							Zend_Controller は、Zend Framework の中で、ＭＶＣモデルを実現しているコンポーネントです。
-							Zend Framework は、ＭＶＣモデルを使わずに各コンポーネントをライブラリのように単体で扱うこともできますが、
-							ＭＶＣモデルを使用するなら、Zend_Controller を理解することは必須事項です。<br />
+							学生情報のＴＯＰ画面です。<br />
+							項目が増えた場合には、コマンドを増やします。<br />
 						</p>
 						
 					</div>
 
-				    <p class="para">
-						Zend_Controller は、多数のサブコンポーネントから構成されています。
-						Zend_Controller をはじめとするコンポーネント群は小さな部品で構成されており、
-						拡張性と柔軟性に富み、同時に高速な動作を実現しています。<br />
-			    	</p>
-
-		            <!--table class="doctable table"-->
-		            <!--table class="show"-->
-		            <table class="index2">
-						<div class="info">
-							<caption><b>Zend_Controller の構成要素</b></caption>
-						</div>
-	                    <thead valign="middle">
-	                        <tr valign="middle">
-	                            <th style="width: 25%;">コントローラ名</th>
-	                            <th style="width: 75%;">役割</th>
-	                        </tr>
-	                    </thead>
-	                    <tbody valign="middle" class="tbody">
-	                        <tr valign="middle">
-	                            <td align="left"><span class="classname">フロントコントローラ</span></td>
-	                            <td align="left">全リクエストを受け付け、処理を各機能に依頼し、レスポンスを返す</td>
-	                        </tr>
-	                        <tr valign="middle">
-	                            <td align="left"><span class="classname">ルータ</span></td>
-	                            <td align="left">リクエスト内容から処理の手順を決める</td>
-	                        </tr>
-	                        <tr valign="middle">
-	                            <td align="left"><span class="classname">ディスパッチャ</span></td>
-	                            <td align="left">処理を担当するアクションコントローラを決め、アクションコントローラを呼び出す</td>
-	                        </tr>
-	                        <tr valign="middle">
-	                            <td align="left"><span class="classname">アクションコントローラ</span></td>
-	                            <td align="left">実際の処理を行うビジネスロジックと呼ばれる部分</td>
-	                        </tr>
-	                        <tr valign="middle">
-	                            <td align="left"><span class="classname">リクエストオブジェクト</span></td>
-	                            <td align="left">リクエストされた全ての情報を管理する</td>
-	                        </tr>
-	                        <tr valign="middle">
-	                            <td align="left"><span class="classname">レスポンスオブジェクト</span></td>
-	                            <td align="left">レスポンスする全ての助補を管理する</td>
-	                        </tr>
-	                        <tr valign="middle">
-	                            <td align="left"><span class="classname">アクションヘルパー</span></td>
-	                            <td align="left">アクションコントローラに機能を追加する</td>
-	                        </tr>
-	                        <tr valign="middle">
-	                            <td align="left"><span class="classname">プラグイン</span></td>
-	                            <td align="left">イベント発生時の処理を追加する</td>
-	                        </tr>
-	                    </tbody>
-	            	</table>
 
 					<div class="section">
 				    	<div class="section">
 							<div class="info">
-								<h1 class="title">ブートストラップ・アーキテクチャ</h1>
+								<h1 class="title">運用フロー</h1>
 							</div>
 						</div>
 						
-					    <p class="para">
-							Zend Framework のブートストラップ・アーキテクチャを図式化すると、下図の様になります。<br />
-						</p>
+						<!--blockquote><p-->
+							<b class="note">運用フロー</b><br />
+							<img src="../../../common/images/workflow.png" alt="component.png" width="520" />
+						<!--/p></blockquote-->
 						
 					</div>
+				</div>	
+				<!-- #piaceBody -->
+				<br/>
+				
 
-			       <blockquote><p>
-						<b class="note"></b><span class="info"><b>Zend Framework のブートストラップ・アーキテクチャ</b><br /></span>
-			            
-						<div>
-							<img src="../../../images/zend_boot.png" alt="zend_boot.png" width="580" /></a>　　
-							<img src="../../../images/zend_circus.png" alt="zend_circus.png" width="250" /></a>
-						</div>
-						
-			        </p></blockquote>
-
+				<div class="piaceHeader">
+			  		<div class="title">学習支援PDCA</div>
 				</div>
 
 
-	<!-- "piaceBody" -->
+				<!-- "piaceBody" -->
 				<div class="piaceBody">
 
-					<hr />
+					<!--hr /-->
 					<div class="section">
-						<div class="info">
-							<h1 class="title">標準的なディレクトリ構成</h1>
-						</div>
-						
+											
 					    <p class="para">
-							Zend_Controller を使用する際には、まずＭＶＣモデルに対応したディレクトリ構成にする必要があります。
-							下図に標準的なディレクトリ構成を示します。
+							学生情報のＴＯＰ画面です。<br />
+							項目が増えた場合には、コマンドを増やします。<br />
 						</p>
 						
 					</div>
 
-		     		<blockquote style="background-color:#f5f5f5;"><p>
-						<span class="classname">標準的なディレクトリ構成</span><br />					
-						<div class="text" style="font-family: monospace;">
-						├ <b>application</b>　　　　　……………………………………<b>アプリケーションディレクトリ</b><br />
-						│├ <b>controllers</b>　　　　　　　　 ……………………………<b>コントローラディレクトリ</b><br />
-						││├ IndexController.php　　　　……………………………………アクションコントローラ<br />
-						││└ ErrorController.php　　　　……………………………………アクションコントローラ<br />
-						│├ <b>models</b>　　　　　　　　　　 ……………………………<b>モデルディレクトリ</b><br />
-						││├ aclModel.php 　　　　　　　……………………………………モデル<br />
-						││└ userModel.php　　　　　　　……………………………………モデル<br />
-						│└ <b>views</b> 　　　　　　　　　　　……………………………<b>ビューディレクトリ</b><br />
-						│　└ <b>scripts</b>　　　　　　　　　　……………………………………ビュースクリプトディレクトリ<br />
-						│　　├ index　　　　　　　　　　………………………………コントローラ名<br />
-						│　　│└ index.phtml　　　　　　……………………………………ビュースクリプト（アクション名＋.phtml）<br />
-						│　　└ error　　　　　　　　　　………………………………コントローラ名<br />
-						│　　　└ error.phtml　　　　　　……………………………………ビュースクリプト（アクション名＋.phtml）<br />
-						└ <b>html</b> 　　　　　　　　……………………………………<b>公開ディレクトリ</b><br />
-						　├ .htaccess　　　　　　　　　　……………………………………すべてのリクエストを index.php に渡す設定<br />
-						　└ index.php　　　　　　　　　　……………………………………<b>フロントコントローラ</b><br />
-						</div>
-		        	</p></blockquote>
 
-					<hr />
 					<div class="section">
-						<div class="info">
-							<h1 class="title">アクセス方法</h1>
-						</div>
-						
-					    <p class="para">
-							通常はブラウザからアクセスするにはＰＨＰスクリプトのファイル名を指定しますが、
-							Zend Framework ではブラウザからアクセスする際のＵＲＬの書式も厳格なルールがあります。
-						</p>
-						
-					</div>
-
-			       	<blockquote><p>
-						<b class="note"></b><span class="info"><b>Zend Framework のＵＲＬ形式</b><br /></span>
-			            
-						<div>
-							<img src="../../../images/zend_url.png" alt="zend_url.png" width="600" /></a>
-						</div>
-						
-			        </p></blockquote>
-
-				    <p class="para">
-						例えば「http://www.example.com」の場合、
-						FQDN に続いてコントローラ名とアクション名を指定します。<br />
-						アクションにパラメータを渡したい場合には、アクション名に続けて「名前/値」のペアで記述します。
-						パラメータはいくつでも指定可能です。<br /><br />
-						「Hoge」コントローラの「piyo」アクションを指定するには、以下の様なＵＲＬ記述になります。
-			    	</p>
-					
-			        <div class="programlisting shell">
-						<div class="shellcode">
-							<div style="font-family: monospace;">
-								http://www.example.com/hoge/piyo
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-
-	<!-- "piaceBody" -->
-				<div class="piaceBody">
-
-					<hr />
-					<div class="section">
-						<div class="info">
-							<h1 class="title">フロントコントローラ</h1>
-						</div>
-						
-					    <p class="para">
-							ＭＶＣモデルでも、いくつかの種類が存在します。
-							その中でも ZendFramework では「フロントコントローラ方式」を採用しています。
-							フロントコントローラ方式とは、外部との出入り口を１つにし、必ずそこを通過させる方式のことで、
-							公開ディレクトリ上に置かれるＰＨＰスクリプトは、このファイルのみになります。<br />
-							この外部との橋渡し役になるプログラムファイルのことを「フロントコントローラ」と呼ぶ。
-							フロントコントローラは、単に橋渡しという役割にとどまらず、システム全体のコントロールも行う。<br />
-							フロントコントローラについて．以下に図式化して説明します。
-						</p>
-						
-				       	<blockquote><p>
-							<b class="note"></b><span class="info"><b>外部からのリクエスト</b><br /></span>
-				            
-							<div>
-								<img src="../../../images/zend_controller.png" alt="zend_controller.png" width="421" /></a>
-							</div>
-							
-				           	<br />
-		                    <p class="para">
-	                        	外部からのリクエスト時は、まずフロントコントローラが受け取り、
-								リクエスト内容を解析して担当アクションコントローラへ渡す。<br />
-								次に、アクションコントローラがリクエスト内容を解析して担当アクションへ渡します。
-								実際に処理を行うのは、アクションです。
-		                    </p>
-				            
-				        </p></blockquote>
-
-
-					</div>
-
-					<hr />
-					<div class="section">
-						<div class="info">
-							<h1 class="title">アクションコントローラ</h1>
-						</div>
-						
-					    <p class="para">
-							アクションコントローラは、実際の処理を記述するプログラムファイルです。<br />
-							アクションコントローラは、フロントコントローラからコールされます。
-							役割としては、実際にアプリケーションのメイン処理を担当するもので、
-							いわゆる「ビジネスロジック」とあたるものです。
-						</p>
-		
 				    	<div class="section">
 							<div class="info">
-								<h1 class="title">アクションコントローラの構造</h1>
+								<h1 class="title">学習支援PDCA</h1>
 							</div>
 						</div>
 						
-					    <p class="para">
-							アクションコントローラは、Zend_Controller_Action コンポーネントを継承した１つのクラス定義です。<br />
-							このクラスの中には、実際に処理を行うアクションがメソッドとして記述されます。
-						</p>
-						
-				        <table class="index2">
-							<div class="info">
-								<caption><b>アクションコントローラの構造</b></caption>
-							</div>
-		                    <thead valign="middle">
-		                        <tr valign="middle">
-		                            <th style="width: 20%;">メソッド</th>
-		                            <th style="width: 5%;">必須</th>
-		                            <th style="width: 75%;">概要</th>
-		                        </tr>
-		                    </thead>
-		                    <tbody valign="middle" class="tbody">
-		                        <tr valign="middle">
-		                            <td align="left">init()</td>
-		                            <td align="left">　</td>
-		                            <td align="left">コントローラの初期化を行うメソッド。アクションが呼ばれる前に必ず実行される。</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">xxxxxAction()</td>
-		                            <td align="left">○</td>
-		                            <td align="left">アクションの実体。「xxxxx」の部分はアクション名により異なる。</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">preDispatch()</td>
-		                            <td align="left">　</td>
-		                            <td align="left">アクションが呼ばれる直前んい実行される。init() の実行よりは後。</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">postDispatch()</td>
-		                            <td align="left">　</td>
-		                            <td align="left">アクションの処理が終了した直後に実行される。</td>
-		                        </tr>
-		                    </tbody>
-	            		</table>
-					
-					    <p class="para">
-							<br />アクションコントローラの設置場所は、「controllers」ディレクトリ内です（標準的なディレクトリ構成では「application/controllers」）。<br />
-							システム内に１つ以上存在します。<br />
-							ファイル名は、クラス名と同一にしなければなりません。クラス名やアクションメソッド名には、命名規則がありますので注意して下さい。
-						</p>
-						
-				        <table class="index2">
-							<div class="info">
-								<caption><b>クラス名、ファイル名、メソッド名の命名規則</b></caption>
-							</div>
-		                    <thead valign="middle">
-		                        <tr valign="middle">
-		                            <th style="width: 10%;">対象</th>
-		                            <th style="width: 25%;">例</th>
-		                            <th style="width: 65%;">規則</th>
-		                        </tr>
-		                    </thead>
-		                    <tbody valign="middle" class="tbody">
-		                        <tr valign="middle">
-		                            <td align="left">クラス名</td>
-		                            <td align="left">IndexController</td>
-		                            <td align="left">「Index」の部分は任意、「Controller」は定型。頭文字は大文字。</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">ファイル名</td>
-		                            <td align="left">IndexController.php</td>
-		                            <td align="left">クラス名と同一にする。</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">メソッド名</td>
-		                            <td align="left">piyoAction</td>
-		                            <td align="left">「piyo」の部分は任意、「Action」は定型。「camelCase」形式で命名。</td>
-		                        </tr>
-		                    </tbody>
-	            		</table>
-		
-				    	<div class="section">
-							<div class="info">
-								<h1 class="title">基本的なアクションコントローラ</h1>
-							</div>
-						</div>
-						
-					    <p class="para">
-							基本的なアクションコントローラの構成は、「初期化メソッド」と複数の「アクション」で構成されます。<br />
-							基本的なサンプルを下図で説明します。
-						</p>
-						
-				        <div class="programlisting php">
-						<div class="phpcode">
-						<div class="php" style="font-family: monospace;">
-						Hoge コントローラ　　　（/application/controllers/HogeController.php）<br /><br />
-						<ol>
-							<li style=""><div>&lt;?php</div></li>
-							<li style=""><div>
-								<span style="color: #808080; font-style: italic; color: #006600;">// コンポーネントをロードする</span></div></li>
-							<li style=""><div>require_once 'Zend/Controller/Action.php';</div></li>
-							<li style=""><div>&nbsp;</div></li>
-							<li style=""><div>
-								<span style="color: #000000; font-weight: bold;">class</span> HogeController 
-								<span style="color: #000000; font-weight: bold;">extends</span> Zend_Controller_Action</div></li>
-							<li style=""><div>
-								<span style="color: #66cc66;">&#123;</span></div></li>
-							<li style=""><div>&nbsp; &nbsp; /**</div></li>
-							<li style=""><div>&nbsp; &nbsp; &nbsp; * 初期化メソッド</div></li>
-							<li style=""><div>&nbsp; &nbsp; &nbsp; */</div></li>
-							<li style=""><div>&nbsp; &nbsp; 
-								<span style="color: #000000; font-weight: bold;">public</span> 
-								<span style="color: #000000; font-weight: bold;">function</span><span style="color: #ff0000;"> init</span>
-								<span style="color: #66cc66;">&#40;</span>
-								<span style="color: #66cc66;">&#41;</span></div></li>
-							<li style=""><div>&nbsp; &nbsp; 
-								<span style="color: #66cc66;">&#123;</span></div></li>
-							<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; 
-								<span style="color: #808080; font-style: italic;">/* ここに初期化処理ロジックを記述します。 */</span></div></li>
-							<li style=""><div>&nbsp; &nbsp; 
-								<span style="color: #66cc66;">&#125;</span></div></li>
-							<li style=""><div>&nbsp;</div></li>
-							<li style=""><div>&nbsp; &nbsp; /**</div></li>
-							<li style=""><div>&nbsp; &nbsp; &nbsp; * index アクション</div></li>
-							<li style=""><div>&nbsp; &nbsp; &nbsp; */</div></li>
-							<li style=""><div>&nbsp; &nbsp; 
-								<span style="color: #000000; font-weight: bold;">public</span> 
-								<span style="color: #000000; font-weight: bold;">function</span> <span style="color: #0000ff;">indexAction </span><span style="color: #66cc66;">&#40;</span>
-								<span style="color: #66cc66;">&#41;</span></div></li>
-							<li style=""><div>&nbsp; &nbsp; 
-								<span style="color: #66cc66;">&#123;</span></div></li>
-							<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; 
-								<span style="color: #808080; font-style: italic;">// ここに処理ロジックを記述します</span></div></li>
-							<li style=""><div>&nbsp; &nbsp; 
-								<span style="color: #66cc66;">&#125;</span></div></li>
-							<li style=""><div>&nbsp;</div></li>
-							<li style=""><div>&nbsp; &nbsp; /**</div></li>
-							<li style=""><div>&nbsp; &nbsp; &nbsp; * piyo アクション</div></li>
-							<li style=""><div>&nbsp; &nbsp; &nbsp; */</div></li>
-							<li style=""><div>&nbsp; &nbsp; 
-								<span style="color: #000000; font-weight: bold;">public</span> 
-								<span style="color: #000000; font-weight: bold;">function</span> <span style="color: #0000ff;">piyoAction </span><span style="color: #66cc66;">&#40;</span>
-								<span style="color: #66cc66;">&#41;</span></div></li>
-							<li style=""><div>&nbsp; &nbsp; 
-								<span style="color: #66cc66;">&#123;</span></div></li>
-							<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; 
-								<span style="color: #808080; font-style: italic;">// ここに処理ロジックを記述します</span></div></li>
-							<li style=""><div>&nbsp; &nbsp; 
-								<span style="color: #66cc66;">&#125;</span></div></li>
-							<li style=""><div>
-								<span style="color: #66cc66;">&#125;</span></div></li>
-						</ol>
-						</div></div></div>
-		
-				    	<div class="section">
-							<div class="info">
-								<h1 class="title">ビュースクリプト</h1>
-							</div>
-						</div>
-						
-					    <p class="para">
-							ビュースクリプトは、ブラウザに表示させる画面（HTML）を記述したスクリプトファイルで、<br />
-							ＭＶＣモデルの中の「Ｖ(View)」を担当する部分です。<br />
-							ビュースクリプトの処理は。「Zend_View」が担当するものですが、<br />
-							デフォルト設定では、自動的にビュースクリプトが起動されるようになっています（自動レンダリングモードが有効）。
-						</p>
-		
-				        <p class="para">
-				            ビュースクリプトを使用する場合（自動レンダリングモードが有効）<br />
-							ビュースクリプトは、１アクションにつき１ファイル必要です。<br />
-							ファイル名は、アクション名と同等で、拡張子は「<span class="classname">.phtm</span>」になります。<br />
-							「views/scripts」ディレクトリ内に<span class="classname">コントローラ名のディレクトリを作成</span>し、その中にビュースクリプトファイルを設置します。
-							<br /><br />
-							アクションの処理終了時に、自動的にビュースクリプトが実行されます。
-				        </p>
-
-				        <div class="programlisting php">
-						<div class="phpcode">
-						<div class="php" style="font-family: monospace;">
-						piyo アクションのビュースクリプト　　　（/application/views/scripts/hoge/piyo.phtml）<br /><br />
-						<ol>
-							<li style=""><div>&lt;html&gt;</div></li>
-							<li style=""><div>&nbsp; &nbsp; &lt;head&gt;</div></li>
-							<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt; </div></li>
-							<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; &lt;title&gt;Zend_Controllerサンプル&lt;/title&gt; </div></li>
-							<li style=""><div>&nbsp; &nbsp; &lt;/head&gt;</div></li>
-							<li style=""><div>&nbsp; &nbsp; &lt;body&gt;</div></li>
-							<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000; font-weight: bold;">このファイルは「Hogeコントローラ」の「piyoアクション」のビュースクリプトです。</span></div></li>
-							<li style=""><div>&nbsp; &nbsp; &lt;/body&gt;</div></li>
-							<li style=""><div>&lt;/html&gt;</div></li>
-						</ol>
-						</div></div></div>
-		
-					</div>
-
-					<hr />
-					<div class="section">
-						<div class="info">
-							<h1 class="title">リクエストオブジェクト</h1>
-						</div>
-						
-					    <p class="para">
-							リクエストオブジェクトとは、
-						</p>
+						<!--blockquote><p-->
+							<b class="note">学習支援PDCA</b><br />
+							<img src="../../../common/images/PDCA.png" alt="component.png" width="520" />
+						<!--/p></blockquote-->
 						
 					</div>
+				</div>	
+				<!-- #piaceBody -->
+				
 
-					<hr />
-					<div class="section">
-						<div class="info">
-							<h1 class="title">レスポンスオブジェクト</h1>
+
+			    <div class="comments">
+			        <h3>更新情報</h3>						
+			        <div class="comment">
+			            <div class="metadata">
+			            新規作成: gotoda                on: 2012-11-22 12:00:00
 						</div>
-						
-					    <p class="para">
-							レスポンスオブジェクトとは、
-						</p>
-						
-					</div>
-
-					<hr />
-					<div class="section">
-						<div class="info">
-							<h1 class="title">コントローラチェーン</h1>
+			            <div class="body">
+						ドキュメント資料として作成<br />
 						</div>
-						
-					    <p class="para">
-							コントローラチェーンとは、
-						</p>
-						
-					</div>
-				<div class="piaceFooter"></div>
-			</div>
+			        </div>						
+			    </div>
 
-
-
-	<!-- id="messages" -->
-
-
-				<div id="messages" class="piace">
-
-	<!-- "piaceBody" -->
-					<div class="piaceBody">
-
-			        <div class="comments">
-			        	<h3>更新情報</h3>
-						
-			        	<div class="comment">
-			            	<div class="metadata">
-			                新規作成: gotoda                on: 2012-11-08 12:00:00
-							</div>
-			            	<div class="body">
-							ドキュメント資料として作成<br />
-							</div>
-			            </div>
-						
-					</div>
-
-				</div>
-					<div class="piaceFooter"></div>
-				</div>
-					
-
-		<!-- /#maintenances --></div>
-		
-		<!-- /#contentBody --></div>
+			</div> 
+			<!-- /#maintenances -->
+				
+			<div class="piaceFooter"></div>
+								
+				
+		</div>
+		<!-- /#contentBody -->
 
 	
 		<div id="contentFooter"></div>

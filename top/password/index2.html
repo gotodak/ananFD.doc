@@ -133,666 +133,233 @@
 			<h2>Programmer's Reference Guide</h2>
 		</div>
 		
+		
+		<!-- id="contentBody" -->
 		<div id="contentBody">
-			
-			
 
-
-<!-- id="maintenances" -->
-
+			<!-- id="maintenances" -->
 			<div id="maintenances" class="piace">
 
 				<div class="piaceHeader">
-			  		<div class="title">ユーザ認証・アクセス制御</div>
+			  		<div class="title">枠タイトル</div>
 				</div>
 
 
-	<!-- "piaceBody" -->
-
+				<!-- "piaceBody" -->
 				<div class="piaceBody">
 
 					<hr />
 					<div class="section">
 						<div class="info">
-							<h1 class="title">Zend_Auth－ユーザ認証</h1>
+							<h1 class="title">タイトル</h1>
 						</div>
 						
 					    <p class="para">
-							Zend_Auth は、ユーザ認証を行うことができるコンポーネントです。
-							認証とは､アクセスしてきたユーザが正規ユーザか否かをチェックする機能です。<br />
-							正規ユーザでは無い場合は画面を見せない、などといった「アクセス制御」の機能は一切持っていませんので、注意してください。<br />
+							タイトル説明<br />
 						</p>
 						
 					</div>
 
 				    <p class="para">
-						Zend_Auth は、認証方式として次のような方法を提供しています。
+						タイトル説明２<br />
 			    	</p>
 
-		            <table class="index2">
-						<div class="info">
-							<caption><b>Zend_Auth が提供している認証方式</b></caption>
+
+					<div class="section">
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">サブタイトル</h1>
+							</div>
 						</div>
-	                    <thead valign="middle">
-	                        <tr valign="middle">
-	                            <th style="width: 25%;">認証方式</th>
-	                            <th style="width: 75%;">概要</th>
-	                        </tr>
-	                    </thead>
-	                    <tbody valign="middle" class="tbody">
-	                        <tr valign="middle">
-	                            <td align="left"><span class="classname">データベースを利用した認証</span></td>
-	                            <td align="left">データベースに保存されている ID とパスワードで認証を行う</td>
-	                        </tr>
-	                        <tr valign="middle">
-	                            <td align="left"><span class="classname">独自実装による認証</span></td>
-	                            <td align="left">ファイルなどに保存されている ID とパスワードで認証を行う</td>
-	                        </tr>
-	                        <tr valign="middle">
-	                            <td align="left"><span class="classname">Basic 認証を利用した認証</span></td>
-	                            <td align="left">Web サーバのBasic 認証機能を利用する</td>
-	                        </tr>
-	                        <tr valign="middle">
-	                            <td align="left"><span class="classname">ダイジェスト認証を利用した認証</span></td>
-	                            <td align="left">Web サーバのダイジェスト認証機能を利用する</td>
-	                        </tr>
-	                        <tr valign="middle">
-	                            <td align="left"><span class="classname">OpenID を利用した認証</span></td>
-	                            <td align="left">OpneID サーバの認証機能を利用する</td>
-	                        </tr>
-	                        <tr valign="middle">
-	                            <td align="left"><span class="classname">LDAP を利用した認証</span></td>
-	                            <td align="left">LDAP サーバの認証機能を利用する</td>
-	                        </tr>
-	                    </tbody>
-	            	</table>
+						
+					    <p class="para">
+							サブタイトル説明<br />
+						</p>
+						
+					</div>
 
 				</div>
+				<!-- #piaceBody -->
 
-
-	<!-- "piaceBody" -->
+				<!-- "piaceBody" -->
 				<div class="piaceBody">
 
 					<hr />
 					<div class="section">
 						<div class="info">
-							<h1 class="title">Zend_Acl－アクセス制御リスト</h1>
+							<h1 class="title">タイトル</h1>
 						</div>
 						
 					    <p class="para">
-							Zend_Acl は、アクセス制御を行うコンポーネントです。<br />
-							アクセス制御とは、そのユーザがこのページにアクセスする権限があるかをチェックをし、
-							適切に処理を行う機能のことです。<br />
-							Zend_Acl には、「リソース」と「ロール」という２つの概念があります。<br />
-							「リソース」はアクセス制御を行う対象になるオブジェクトのことで、
-							ＷＥＢページそのものや登録などの機能のことを指します。<br />
-							「ロール」は、リソースに対してアクセスを要求するオブジェクトのことで、
-							アクセス権限の種類を定義しているもののことです。<br />
+							タイトル説明
 						</p>
+						
+					</div>
 
-			            <table class="index2">
-							<div class="info">
-								<caption><b>リソースとロール</b></caption>
-							</div>
-		                    <thead valign="middle">
-		                        <tr valign="middle">
-		                            <th style="width: 10%;">名称</th>
-		                            <th style="width: 45%;">概要</th>
-		                            <th style="width: 45%;">例</th>
-		                        </tr>
-		                    </thead>
-		                    <tbody valign="middle" class="tbody">
-		                        <tr valign="middle">
-		                            <td align="left"><span class="classname">リソース</span></td>
-		                            <td align="left">アクセス制御を行う対象になるオブジェクト</td>
-		                            <td align="left">ＷＥＢページそのもの、登録などの機能</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left"><span class="classname">ロール</span></td>
-		                            <td align="left">リソースに対してアクセスを要求するオブジェクト</td>
-		                            <td align="left">アクセス権限の種類を定義しているもの</td>
-		                        </tr>
-		                    </tbody>
-		            	</table>
-
-	
+					<div class="section">
 				    	<div class="section">
 							<div class="info">
-								<h1 class="title">使用方法</h1>
+								<h1 class="title">サブタイトル</h1>
 							</div>
 						</div>
 						
 					    <p class="para">
-							今回、以下のようなパターンでのアクセス制御を説明します。<br />
+							サブタイトル説明<br />
 						</p>
-	
-			            <!--table-->
-			            <!--table class="show"-->
-			            <!--table class="index"-->
-						<table class="index2">
-							<div class="info">
-								<caption><b>今回の想定（アクセス制御）</b></caption>
-							</div>
-		                    <thead valign="middle">
-		                        <tr valign="middle">
-		                            <th style="width: 10%;">コントローラ</th>
-		                            <th style="width: 10%;">アクション</th>
-		                            <th style="width: 10%;">ビュー</th>
-		                            <th style="width: 15%;">処理概要</th>
-		                            <th style="width: 8%;">guest</th>
-		                            <th style="width: 8%;">staff</th>
-		                            <th style="width: 8%;">teacher</th>
-		                            <th style="width: 8%;">manager</th>
-		                            <th style="width: 8%;">master</th>
-		                            <th style="width: 8%;">admin</th>
-		                        </tr>
-		                    </thead>
-		                    <tbody valign="middle" class="tbody">
-		                        <tr valign="middle">
-		                            <td align="left">CoachtrustController</td>
-		                            <td align="left">indexAction</td>
-		                            <td align="left">index.phtml</td>
-		                            <td align="left">担任指導－一覧表示</td>
-		                            <td align="center">×</td>
-		                            <td align="center">×</td>
-		                            <td align="center">○</td>
-		                            <td align="center">○</td>
-		                            <td align="center">○</td>
-		                            <td align="center">○</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">CoachtrustController</td>
-		                            <td align="left">classAction</td>
-		                            <td align="left">class.phtml</td>
-		                            <td align="left">担任指導－担任編集</td>
-		                            <td align="center">×</td>
-		                            <td align="center">×</td>
-		                            <td align="center">△</td>
-		                            <td align="center">○</td>
-		                            <td align="center">○</td>
-		                            <td align="center">○</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">CoachtrustController</td>
-		                            <td align="left">gradeAction</td>
-		                            <td align="left">grade.phtml</td>
-		                            <td align="left">担任指導－学年編集</td>
-		                            <td align="center">×</td>
-		                            <td align="center">×</td>
-		                            <td align="center">△</td>
-		                            <td align="center">○</td>
-		                            <td align="center">○</td>
-		                            <td align="center">○</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">CoachtrustController</td>
-		                            <td align="left">courseAction</td>
-		                            <td align="left">course.phtml</td>
-		                            <td align="left">担任指導－学科編集</td>
-		                            <td align="center">×</td>
-		                            <td align="center">×</td>
-		                            <td align="center">△</td>
-		                            <td align="center">○</td>
-		                            <td align="center">○</td>
-		                            <td align="center">○</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">CoachtrustController</td>
-		                            <td align="left">editAction</td>
-		                            <td align="left">edit.phtml</td>
-		                            <td align="left">担任指導－全学年編集</td>
-		                            <td align="center">×</td>
-		                            <td align="center">×</td>
-		                            <td align="center">×</td>
-		                            <td align="center">△</td>
-		                            <td align="center">○</td>
-		                            <td align="center">○</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">CoachtrustController</td>
-		                            <td align="left">deleteAction</td>
-		                            <td align="left">delete.phtml</td>
-		                            <td align="left">担任指導－削除</td>
-		                            <td align="center">×</td>
-		                            <td align="center">×</td>
-		                            <td align="center">×</td>
-		                            <td align="center">×</td>
-		                            <td align="center">○</td>
-		                            <td align="center">○</td>
-		                        </tr>
-		                    </tbody>
-		            	</table>
+						
+					</div>
 
-
-
-
+					<div class="section">
 				    	<div class="section">
 							<div class="info">
-								<h1 class="title">ロールの定義</h1>
+								<h1 class="title">サブタイトル</h1>
 							</div>
 						</div>
 						
 					    <p class="para">
-							ロールの定義<br />
-						</p>
-	
-						<table class="index2">
-							<div class="info">
-								<caption><b>今回の想定（ロール）</b></caption>
-							</div>
-		                    <thead valign="middle">
-		                        <tr valign="middle">
-		                            <th style="width: 20%;">ロール</th>
-		                            <th style="width: 20%;">概要</th>
-		                        </tr>
-		                    </thead>
-		                    <tbody valign="middle" class="tbody">
-		                        <tr valign="middle">
-		                            <td align="left">guest</td>
-		                            <td align="left">ゲスト</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">staff</td>
-		                            <td align="left">スタッフ</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">teacher</td>
-		                            <td align="left">教員</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">manager</td>
-		                            <td align="left">主任・担任</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">master</td>
-		                            <td align="left">校長・校長補佐</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">admin</td>
-		                            <td align="left">管理者</td>
-		                        </tr>
-		                    </tbody>
-		            	</table>
-	
-				    	<div class="section">
-							<div class="info">
-								<h1 class="title">リソースの定義</h1>
-							</div>
-						</div>
-						
-					    <p class="para">
-							リソースの定義<br />
-						</p>
-	
-						<table class="index2">
-							<div class="info">
-								<caption><b>今回の想定（リソース）</b></caption>
-							</div>
-		                    <thead valign="middle">
-		                        <tr valign="middle">
-		                            <th style="width: 10%;">リソース</th>
-		                            <th style="width: 30%;">概要</th>
-		                        </tr>
-		                    </thead>
-		                    <tbody valign="middle" class="tbody">
-		                        <tr valign="middle">
-		                            <td align="left">guestPage</td>
-		                            <td align="left">「guest」ロール以上がアクセスできるリソース</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">staffPage</td>
-		                            <td align="left">「staff」ロール以上がアクセスできるリソース</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">teacherPage</td>
-		                            <td align="left">「teacher」ロール以上がアクセスできるリソース</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">managerPage</td>
-		                            <td align="left">「manager」ロール以上がアクセスできるリソース</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">masterPage</td>
-		                            <td align="left">「master」ロール以上がアクセスできるリソース</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">adminPage</td>
-		                            <td align="left">「admin」ロール以上がアクセスできるリソース</td>
-		                        </tr>
-		                    </tbody>
-		            	</table>
-	
-				    	<div class="section">
-							<div class="info">
-								<h1 class="title">アクセス制御の定義</h1>
-							</div>
-						</div>
-						
-					    <p class="para">
-							今回は、ロールの種類によってアクセス制御を行っていますが、
-							ロールの中でさらに細かい設定を追加することもできます。<br />
-							例えば、「閲覧は許可するが、新規登録は許可しない」などの設定が可能です。<br />
-							今回、各画面の機能における仕様（ユーザごとアクセス制御の詳細仕様…）が分からない部分が多々あり、<br />
-							そのため、ロール、リソースを細分化してアクセス制御の仕様変更柔軟に対応できるようにするため、
-							アクセス制御の定義は使用しておりません。
+							サブタイトル説明<br />
 						</p>
 						
-						<table class="index2">
-							<div class="info">
-								<caption><b>想定（アクセス制御）</b></caption>
-							</div>
-		                    <thead valign="middle">
-		                        <tr valign="middle">
-		                            <th style="width: 10%;">ロール</th>
-		                            <th style="width: 30%;">利用権限</th>
-		                        </tr>
-		                    </thead>
-		                    <tbody valign="middle" class="tbody">
-		                        <tr valign="middle">
-		                            <td align="left">guest</td>
-		                            <td align="left">閲覧のみ</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">staff</td>
-		                            <td align="left">閲覧のみ</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">teacher</td>
-		                            <td align="left">閲覧・新規作成</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">manager</td>
-		                            <td align="left">閲覧・新規作成・編集</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">master</td>
-		                            <td align="left">閲覧・新規作成・編集・削除</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">admin</td>
-		                            <td align="left">閲覧・新規作成・編集・削除・復活</td>
-		                        </tr>
-		                    </tbody>
-		            	</table>
-						<br />
-				
-						<table class="index2">
-							<div class="info">
-								<caption><b>アクセス制御の定義</b></caption>
-							</div>
-		                    <thead valign="middle">
-		                        <tr valign="middle">
-		                            <th style="width: 20%;">定義</th>
-		                            <th style="width: 20%;">概要</th>
-		                        </tr>
-		                    </thead>
-		                    <tbody valign="middle" class="tbody">
-		                        <tr valign="middle">
-		                            <td align="left">view</td>
-		                            <td align="left">閲覧</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">new</td>
-		                            <td align="left">新規作成</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">edit</td>
-		                            <td align="left">編集</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">delete</td>
-		                            <td align="left">削除</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">redo</td>
-		                            <td align="left">復活</td>
-		                        </tr>
-		                    </tbody>
-		            	</table>
-	
-	
-				    	<div class="section">
-							<div class="info">
-								<h1 class="title">アクセス権限の設定</h1>
-							</div>
-						</div>
-						
-					    <p class="para">
-							アクセス権限の設定<br />
-						</p>
-						
-						<table class="index2">
-							<div class="info">
-								<caption><b>今回の想定（アクセス権限）</b></caption>
-							</div>
-		                    <thead valign="middle">
-		                        <tr valign="middle">
-		                            <th style="width: 20%;">リソース</th>
-		                            <th style="width: 8%;">「guest」ロール</th>
-		                            <th style="width: 8%;">「staff」ロール</th>
-		                            <th style="width: 8%;">「teacher」ロール</th>
-		                            <th style="width: 8%;">「chief」ロール</th>
-		                            <th style="width: 8%;">「manager」ロール</th>
-		                            <th style="width: 8%;">「master」ロール</th>
-		                            <th style="width: 8%;">「admin」ロール</th>
-		                        </tr>
-		                    </thead>
-		                    <tbody valign="middle" class="tbody">
-		                        <tr valign="middle">
-		                            <td align="left">guestPage</td>
-		                            <td align="left">○</td>
-		                            <td align="left">○</td>
-		                            <td align="left">○</td>
-		                            <td align="left">○</td>
-		                            <td align="left">○</td>
-		                            <td align="left">○</td>
-		                            <td align="left">○</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">staffPage</td>
-		                            <td align="left">×</td>
-		                            <td align="left">○</td>
-		                            <td align="left">○</td>
-		                            <td align="left">○</td>
-		                            <td align="left">○</td>
-		                            <td align="left">○</td>
-		                            <td align="left">○</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">teacherPage</td>
-		                            <td align="left">×</td>
-		                            <td align="left">×</td>
-		                            <td align="left">○</td>
-		                            <td align="left">○</td>
-		                            <td align="left">○</td>
-		                            <td align="left">○</td>
-		                            <td align="left">○</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">chiefPage</td>
-		                            <td align="left">×</td>
-		                            <td align="left">×</td>
-		                            <td align="left">×</td>
-		                            <td align="left">○</td>
-		                            <td align="left">○</td>
-		                            <td align="left">○</td>
-		                            <td align="left">○</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">managerPage</td>
-		                            <td align="left">×</td>
-		                            <td align="left">×</td>
-		                            <td align="left">×</td>
-		                            <td align="left">×</td>
-		                            <td align="left">○</td>
-		                            <td align="left">○</td>
-		                            <td align="left">○</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">masterPage</td>
-		                            <td align="left">×</td>
-		                            <td align="left">×</td>
-		                            <td align="left">×</td>
-		                            <td align="left">×</td>
-		                            <td align="left">×</td>
-		                            <td align="left">○</td>
-		                            <td align="left">○</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">adminPage</td>
-		                            <td align="left">×</td>
-		                            <td align="left">×</td>
-		                            <td align="left">×</td>
-		                            <td align="left">×</td>
-		                            <td align="left">×</td>
-		                            <td align="left">×</td>
-		                            <td align="left">○</td>
-		                        </tr>
-		                    </tbody>
-						</table>
-						<br />
+					</div>
+
 					
-						
-				    	<div class="section">
-							<div class="info">
-								<h1 class="title">ACL 参照テーブルの設定</h1>
-							</div>
-						</div>
-						
-					    <p class="para">
-							ACL 参照テーブルの設定<br />
-						</p>
-						
-						<table class="index2">
-							<div class="info">
-								<caption><b>今回の想定（ACL 参照テーブル）</b></caption>
-							</div>
-		                    <thead valign="middle">
-		                        <tr valign="middle">
-		                            <th style="width: 20%;">controller</th>
-		                            <th style="width: 20%;">action</th>
-		                            <th style="width: 20%;">resource</th>
-		                        </tr>
-		                    </thead>
-		                    <tbody valign="middle" class="tbody">
-		                        <tr valign="middle">
-		                            <td align="left">coachtrust</td>
-		                            <td align="left">index</td>
-		                            <td align="left">teacherPage</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">coachtrust</td>
-		                            <td align="left">class</td>
-		                            <td align="left">teacherPage</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">coachtrust</td>
-		                            <td align="left">grade</td>
-		                            <td align="left">teacherPage</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">coachtrust</td>
-		                            <td align="left">course</td>
-		                            <td align="left">teacherPage</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">coachtrust</td>
-		                            <td align="left">edit</td>
-		                            <td align="left">managerPage</td>
-		                        </tr>
-		                        <tr valign="middle">
-		                            <td align="left">coachtrust</td>
-		                            <td align="left">delete</td>
-		                            <td align="left">adminPage</td>
-		                        </tr>
-		                    </tbody>
-						</table>
-
-					</div>
-	
 				</div>
+				<!-- #piaceBody -->
 
-
-	<!-- "piaceBody" -->
+				<!-- "piaceBody" -->
 				<div class="piaceBody">
 
 					<hr />
 					<div class="section">
 						<div class="info">
-							<h1 class="title">Zend_Session－セッション管理</h1>
+							<h1 class="title">タイトル</h1>
 						</div>
 						
 					    <p class="para">
-							Web プログラミングにおいて、最もよく利用されている機能の１つに「セッション」があります。<br />
-							サーバプログラムでは、クライアントを識別するために、
-							セッション識別子と呼ばれる一意なコードをサーバ／クライアントでやりとりして、<br />
-							各ユーザを個別に管理できるようにしています。<br />
-							<a href="http://kyomu01.anan-nct.ac.jp/~kyomu/binput.php">参考</a>
-							<a href="http://kyomu01.anan-nct.ac.jp/~kyomu/work">参考</a>
-							<a href="http://kyomu01.anan-nct.ac.jp/kyomu/user/sankan/index.jsp?ctl=0">参考</a>
+							タイトル説明
 						</p>
 		
 				    	<div class="section">
 							<div class="info">
-								<h1 class="title">セッション関連のセキュリティ対策</h1>
+								<h1 class="title">サブタイトル</h1>
 							</div>
 						</div>
 						
 					    <p class="para">
-							
+							サブタイトル説明
 						</p>
 		
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">サブタイトル</h1>
+							</div>
+						</div>
 						
-						<ol type="1">
-		  				  <li>ユーザごとのセッション管理</li>
-		  				  <li>ユーザの多重ログインの禁止</li>
-		  				  <li>セッション識別子の振り直し</li>
-						</ol>
-						
-						
+					    <p class="para">
+							サブタイトル説明
+						</p>
+		
 					</div>
 
+
 				</div>
-
-
-
-
-
-
-
-
-
+				<!-- #piaceBody -->
 
 				<div class="piaceFooter"></div>
 			</div>
+			<!-- /#maintenances -->
 
 
-
-
-
-
-
-
-
-
-
-<!-- id="messages" -->
-
-
+			<!-- id="messages" -->
 			<div id="messages" class="piace">
 
-	<!-- "piaceBody" -->
+				<div class="piaceHeader">
+			  		<div class="title">枠タイトル</div>
+				</div>
+
+				<!-- "piaceBody" -->
 				<div class="piaceBody">
+
+					<hr />
+					<div id="learning.quickstart.create-project" class="section">
+						<div class="info">
+							<h1 class="title">タイトル</h1>
+						</div>
+				    	
+					    <p class="para">
+				        	タイトル説明
+				    	</p>
+		
+				    	<div class="section" id="learning.quickstart.create-project.install-zf" name="learning.quickstart.create-project.install-zf">
+							<div class="info">
+								<h1 class="title">サブタイトル</h1>
+							</div>
+						</div>
+						
+					    <p class="para">
+							サブタイトル説明
+						</p>
+					</div>
+
+
+
+			        <p class="para">
+			            The default <span class="classname">IndexController</span> is as follows:
+			        </p>
+
+			        <div class="programlisting php">
+					<div class="phpcode">
+					<div class="php" style="font-family: monospace;">
+					<ol>
+						<li style=""><div>
+							<span style="color: #808080; font-style: italic; color: #006600;">// application/controllers/IndexController.php</span></div></li>
+						<li style=""><div>&nbsp;</div></li>
+						<li style=""><div>
+							<span style="color: #000000; font-weight: bold;">class</span> IndexController 
+							<span style="color: #000000; font-weight: bold;">extends</span> Zend_Controller_Action</div></li>
+						<li style=""><div>
+							<span style="color: #66cc66;">&#123;</span></div></li>
+						<li style=""><div>&nbsp;</div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #000000; font-weight: bold;">public</span> 
+							<span style="color: #000000; font-weight: bold;">function</span><span style="color: #ff0000;"> init</span>
+							<span style="color: #66cc66;">&#40;</span>
+							<span style="color: #66cc66;">&#41;</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #66cc66;">&#123;</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; 
+							<span style="color: #808080; font-style: italic;">/* Initialize action controller here */</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #66cc66;">&#125;</span></div></li>
+						<li style=""><div>&nbsp;</div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #000000; font-weight: bold;">public</span> 
+							<span style="color: #000000; font-weight: bold;">function</span> <span style="color: #0000ff;">indexAction </span><span style="color: #66cc66;">&#40;</span>
+							<span style="color: #66cc66;">&#41;</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #66cc66;">&#123;</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; 
+							<span style="color: #808080; font-style: italic;">// action body</span></div></li>
+						<li style=""><div>&nbsp; &nbsp; 
+							<span style="color: #66cc66;">&#125;</span></div></li>
+						<li style=""><div>
+							<span style="color: #66cc66;">&#125;</span></div></li>
+					</ol>
+					</div></div></div>
+
+
+
+
 
 			        <div class="comments">
 			        	<h3>更新情報</h3>
 						
 			        	<div class="comment">
 			            	<div class="metadata">
-			                新規作成: gotoda                on: 2011-07-03 12:00:00
+			                新規作成: gotoda                on: 2012-10-25 12:00:00
 							</div>
 			            	<div class="body">
-							定期進捗資料として作成<br />
+							ドキュメント資料として作成<br />
 							</div>
 			            </div>
 						
@@ -801,9 +368,12 @@
 				</div>
 				<div class="piaceFooter"></div>
 			</div>
+			<!-- /#messages -->
 		
 		
-		<!-- /#contentBody --></div>
+		</div>
+		<!-- /#contentBody -->
+		
 		
 		<div id="contentFooter"></div>
 		
@@ -831,9 +401,9 @@
 				<li><a class="mark" href="#" onclick="$('concept_5').toggle(); return false;">＋</a>
 					<a href="">【ananFD】 デモサイト</a>
 					<ul id="concept_5" class="level_2">
-					<li><a class="mark" href="#" onclick="$('concept_9').toggle(); return false;">＋</a>
+					<li><a class="mark" href="#" onclick="$('concept_8').toggle(); return false;">＋</a>
 						<a href="">テクノセンター</a>
-						<ul id="concept_9" class="level_2">
+						<ul id="concept_8" class="level_2">
 						<li><span class="mark">‐</span><a href="http://192.168.11.102/ananfd/">【ananFD】 デモサイト1 （xenServer）</a></li>
 						<li><span class="mark">‐</span><a href="http://192.168.11.101/ananfd/">【ananFD】 デモサイト2 （xenServer）</a></li>
 						</ul>

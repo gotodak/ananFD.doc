@@ -7,19 +7,12 @@
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />
 	<title>ananFD</title>
-	<link href="../../../common/css/style.css" media="all" rel="stylesheet" type="text/css" />
-	<script src="../../../common/js/prototype.js" type="text/javascript"></script>
-	<script src="../../../common/js/form.js" type="text/javascript"></script>
-	<script src="../../../common/js/navi.js" type="text/javascript"></script>
-	
-<!--
-	<link href="/common/css/calendar_date_select/default.css" media="screen" rel="stylesheet" type="text/css" />
-	<script src="/common/js/calendar_date_select/calendar_date_select.js" type="text/javascript"></script>
-	<script src="/common/js/calendar_date_select/locale/ja.js" type="text/javascript"></script>
-	<script src="/common/js/calendar_date_select/format_iso_date.js" type="text/javascript"></script>
--->
-</head>
+	<link href="./common/css/style.css" media="all" rel="stylesheet" type="text/css" />
+	<script src="./common/js/prototype.js" type="text/javascript"></script>
+	<script src="./common/js/form.js" type="text/javascript"></script>
+	<script src="./common/js/navi.js" type="text/javascript"></script>
 
+</head>
 
 <body>
 
@@ -30,34 +23,37 @@
 
 	<div id="header">
 	<div id="headerContainer">
-		
-		<h1><a href="../../..">ananFD</a></h1>
+
+		<h1><a href=".">ananFD</a></h1>
 		<div class="menu">
-		    <span class="user">FD高度化推進室　システム管理者（admin）</span>
+		    <span class="user">FD高度化推進室　後藤田浩二（admin）</span>
 		    <!--a class="web" href="http://www3.anan-nct.ac.jp/~gotouda/" target="_blank">公開画面</a-->
-		    <a class="logout" href="../../../login">ログイン</a>
+		    <a class="logout" href="./login">ログイン</a>
 		</div>
-		
-	<!-- /#headerContainer --></div>
-	<!-- /#header --></div>
+
+	</div><!-- /#headerContainer -->
+	</div>
+	<!-- /#header -->
 
 
 
 
 	<div id="banner">
 	<div id="bannerContainer">
-	
-	<!-- /#bannerContainer --></div>
-	<!-- /#banner --></div>
+
+	</div>
+	<!-- /#bannerContainer -->
+	</div>
+	<!-- /#banner -->
 
 
 
 
 	<div id="navi">
 	<div id="naviContainer">
-		
+
 		<table>
-		<tr>
+			<tr>
 			<td class="selector">
 		    	<div class="site">
 				    <script type="text/javascript">
@@ -68,81 +64,81 @@
 				  }
 				//]]>
 					</script>
-					
-					<form id="cmsNavigationSite" method="get" action="../../../../navigationSite">
+
+					<form id="cmsNavigationSite" method="get" action="../ananfd">
 						<select id="cms_navi_site" name="navi_site" onchange="return submitCmsNavigationSite(this.value)">
 							<option value=""></option>
-							<option value="./ananFD">【ananFD】 モックアップ</option>
-							<option value="./ananFD.doc/" selected="selected" >【ananFD】 概要説明</option>
+							<option value="/ananFD.doc">【ananFD】 モックアップ</option>
+							<option value="/ananFD.doc/" selected="selected" >【ananFD】 概要説明</option>
 							<option value="http://192.168.11.102/ananfd/" >【ananFD】 デモサイト1 （xenServer）</option>
 							<option value="http://192.168.11.101/ananfd/" >【ananFD】 デモサイト2 （xenServer）</option>
 						</select>
 					</form>
 				</div>
-				
-				
+
+
 			    <div class="concept">
 			      <p id="naviConceptCurrent" onclick="Cms_Admin_Navi.showNavi();">
 			        阿南工業高等専門学校</p>
 				</div>
 			</td>
 			<td class="menu">
-			    <div class="mainMenu">
+	    		<div class="mainMenu">
+
 					<div class="mainMenu">
-						<a href="../../../learning" class="learning">学習支援</a>
-						<a href="../../../student" class="student">学生指導</a>
-						<a href="../../../entrust" class="entrust">担任指導</a>
-						<a href="../../../graduate" class="graduate">卒業生支援</a>
-						<a href="../../../tp" class="tp">ＴＰ支援</a>
-						<a href="../../../ir" class="ir">ＩＲ支援</a>
-						<a href="../../../master" class="master current">マスタ設定</a>
+						<a href="./learning" class="learning">学習支援</a>
+						<a href="./student" class="student">学生指導</a>
+						<a href="./entrust" class="entrust">担任指導</a>
+						<a href="./graduate" class="graduate">卒業生支援</a>
+						<a href="./tp" class="tp">ＴＰ支援</a>
+						<a href="./ir" class="ir">ＩＲ支援</a>
+						<a href="./master" class="master">マスタ設定</a>
 					</div>
+
 				</div>
-				
+
+
 				<div class="contentMenu">
-					<a href="../../../master/master_student"  class="current">学生管理</a>
-					<a href="../../../master/master_information">学生情報</a>
-					<a href="../../../master/master_education"  >教務管理</a>
-					<a href="../../../master/master_user"       >ユーザ管理</a>
-					<a href="../../../master/master_access"     >アクセス管理</a>
-					<a href="../../../master/master_section">組織管理</a>
-					<!--a href="../../../master/master_attendance" >出欠簿管理</a-->
+					<a href="./top/password">パスワード変更</a>
+					<a href="./top/userinfo">ユーザ情報</a>
+					<a href="./top/initpass">パスワード初期化</a>
+					<a href="./top/overview">ZF1 Overview</a>
+					<a href="./top/tool">運用ツール</a>
 				</div>
+
 			</td>
-	  	</tr>
+	  		</tr>
 		</table>
-	
-	
-	<!-- /#naviContainer --></div>
-	<!-- /#navi --></div>
+
+
+	</div><!-- /#naviContainer -->
+	</div><!-- /#navi -->
 
 
 
 
-<div id="main">
-	
-	<div id="content">
-	<div id="contentContainer">
-	<div id="manual-container">
-		
+	<div id="main">
+
+		<div id="content">
+		<div id="contentContainer">
+		<div id="manual-container">
+
 		<div id="contentHeader">
+
 		 	<div class="navi">
-				<a href="../../../top">TOP</a>
-						 &gt; <a href="../../../master">マスタ設定</a>
-						 &gt; <a href="../../../master/master_student">学生管理</a>
-						 &gt; <a href="../../../master/master_student/contact">学生連絡先</a>
+				<a href="./top">TOP</a>
 		  	</div>
-			
+
 			<div class="actionMenu">
 				<!--a href="../student/new">新規作成</a-->
 			</div>
-			
-			<h2>Programmer's Reference Guide</h2>
+
+			<h2>Programmer's Reference Guide (index)</h2>
 		</div>
-		
+
 		<div id="contentBody">
-			
-			
+
+
 
 
 <!-- id="maintenances" -->
@@ -163,11 +159,11 @@
 						<div class="info">
 							<h1 class="title">タイトル</h1>
 						</div>
-						
+
 					    <p class="para">
 							タイトル説明<br />
 						</p>
-						
+
 					</div>
 
 				    <p class="para">
@@ -181,11 +177,11 @@
 								<h1 class="title">サブタイトル</h1>
 							</div>
 						</div>
-						
+
 					    <p class="para">
 							サブタイトル説明<br />
 						</p>
-						
+
 					</div>
 
 				</div>
@@ -199,11 +195,11 @@
 						<div class="info">
 							<h1 class="title">タイトル</h1>
 						</div>
-						
+
 					    <p class="para">
 							タイトル説明
 						</p>
-						
+
 					</div>
 
 					<div class="section">
@@ -212,11 +208,11 @@
 								<h1 class="title">サブタイトル</h1>
 							</div>
 						</div>
-						
+
 					    <p class="para">
 							サブタイトル説明<br />
 						</p>
-						
+
 					</div>
 
 					<div class="section">
@@ -225,14 +221,14 @@
 								<h1 class="title">サブタイトル</h1>
 							</div>
 						</div>
-						
+
 					    <p class="para">
 							サブタイトル説明<br />
 						</p>
-						
+
 					</div>
 
-					
+
 				</div>
 
 
@@ -246,31 +242,31 @@
 						<div class="info">
 							<h1 class="title">タイトル</h1>
 						</div>
-						
+
 					    <p class="para">
 							タイトル説明
 						</p>
-		
+
 				    	<div class="section">
 							<div class="info">
 								<h1 class="title">サブタイトル</h1>
 							</div>
 						</div>
-						
+
 					    <p class="para">
 							サブタイトル説明
 						</p>
-		
+
 				    	<div class="section">
 							<div class="info">
 								<h1 class="title">サブタイトル</h1>
 							</div>
 						</div>
-						
+
 					    <p class="para">
 							サブタイトル説明
 						</p>
-		
+
 					</div>
 
 
@@ -299,17 +295,17 @@
 						<div class="info">
 							<h1 class="title">タイトル</h1>
 						</div>
-				    	
+
 					    <p class="para">
 				        	タイトル説明
 				    	</p>
-		
+
 				    	<div class="section" id="learning.quickstart.create-project.install-zf" name="learning.quickstart.create-project.install-zf">
 							<div class="info">
 								<h1 class="title">サブタイトル</h1>
 							</div>
 						</div>
-						
+
 					    <p class="para">
 							サブタイトル説明
 						</p>
@@ -329,32 +325,32 @@
 							<span style="color: #808080; font-style: italic; color: #006600;">// application/controllers/IndexController.php</span></div></li>
 						<li style=""><div>&nbsp;</div></li>
 						<li style=""><div>
-							<span style="color: #000000; font-weight: bold;">class</span> IndexController 
+							<span style="color: #000000; font-weight: bold;">class</span> IndexController
 							<span style="color: #000000; font-weight: bold;">extends</span> Zend_Controller_Action</div></li>
 						<li style=""><div>
 							<span style="color: #66cc66;">&#123;</span></div></li>
 						<li style=""><div>&nbsp;</div></li>
-						<li style=""><div>&nbsp; &nbsp; 
-							<span style="color: #000000; font-weight: bold;">public</span> 
+						<li style=""><div>&nbsp; &nbsp;
+							<span style="color: #000000; font-weight: bold;">public</span>
 							<span style="color: #000000; font-weight: bold;">function</span><span style="color: #ff0000;"> init</span>
 							<span style="color: #66cc66;">&#40;</span>
 							<span style="color: #66cc66;">&#41;</span></div></li>
-						<li style=""><div>&nbsp; &nbsp; 
+						<li style=""><div>&nbsp; &nbsp;
 							<span style="color: #66cc66;">&#123;</span></div></li>
-						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; 
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;
 							<span style="color: #808080; font-style: italic;">/* Initialize action controller here */</span></div></li>
-						<li style=""><div>&nbsp; &nbsp; 
+						<li style=""><div>&nbsp; &nbsp;
 							<span style="color: #66cc66;">&#125;</span></div></li>
 						<li style=""><div>&nbsp;</div></li>
-						<li style=""><div>&nbsp; &nbsp; 
-							<span style="color: #000000; font-weight: bold;">public</span> 
+						<li style=""><div>&nbsp; &nbsp;
+							<span style="color: #000000; font-weight: bold;">public</span>
 							<span style="color: #000000; font-weight: bold;">function</span> <span style="color: #0000ff;">indexAction </span><span style="color: #66cc66;">&#40;</span>
 							<span style="color: #66cc66;">&#41;</span></div></li>
-						<li style=""><div>&nbsp; &nbsp; 
+						<li style=""><div>&nbsp; &nbsp;
 							<span style="color: #66cc66;">&#123;</span></div></li>
-						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp; 
+						<li style=""><div>&nbsp; &nbsp; &nbsp; &nbsp;
 							<span style="color: #808080; font-style: italic;">// action body</span></div></li>
-						<li style=""><div>&nbsp; &nbsp; 
+						<li style=""><div>&nbsp; &nbsp;
 							<span style="color: #66cc66;">&#125;</span></div></li>
 						<li style=""><div>
 							<span style="color: #66cc66;">&#125;</span></div></li>
@@ -367,7 +363,7 @@
 
 			        <div class="comments">
 			        	<h3>更新情報</h3>
-						
+
 			        	<div class="comment">
 			            	<div class="metadata">
 			                新規作成: gotoda                on: 2011-07-03 12:00:00
@@ -376,35 +372,33 @@
 							定期進捗資料として作成<br />
 							</div>
 			            </div>
-						
+
 					</div>
 
 				</div>
 				<div class="piaceFooter"></div>
 			</div>
-		
-		
-		<!-- /#contentBody --></div>
-		
+
+
+		</div><!-- /#contentBody -->
+
 		<div id="contentFooter"></div>
-		
-	<!-- /#manual-container --></div>
-	<!-- /#contentContainer --></div>
-	<!-- /#content --></div>
 
+		</div><!-- /#manual-container -->
+		</div><!-- /#contentContainer -->
+		</div>
+		<!-- /#content -->
 
+		<div id="menu">
 
+		<div id="menuContainer">
 
-
-	<div id="menu">
-	<div id="menuContainer">
-		
 		<div id="naviConcept">
 			<ul class="level_0">
 			<li><a class="mark" href="#" onclick="$('concept_1').toggle(); return false;">＋</a>
 				<a href="http://www3.anan-nct.ac.jp/~gotouda/plan/training.html">【ananFD】</a>
 				<ul id="concept_1" class="level_1">
-				
+
 				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/gp/">ＦＤ高度化推進室</a></li>
 				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/">ＦＤ高度化推進室（学内）</a></li>
 				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/ananFD/">【ananFD】 モックアップ</a></li>
@@ -412,12 +406,11 @@
 				<li><a class="mark" href="#" onclick="$('concept_5').toggle(); return false;">＋</a>
 					<a href="">【ananFD】 デモサイト</a>
 					<ul id="concept_5" class="level_2">
-					<li><a class="mark" href="#" onclick="$('concept_9').toggle(); return false;">＋</a>
+					<li><a class="mark" href="#" onclick="$('concept_8').toggle(); return false;">＋</a>
 						<a href="">テクノセンター</a>
-						<ul id="concept_9" class="level_2">
+						<ul id="concept_8" class="level_2">
 						<li><span class="mark">‐</span><a href="http://192.168.11.102/ananfd/">【ananFD】 デモサイト1 （xenServer）</a></li>
 						<li><span class="mark">‐</span><a href="http://192.168.11.101/ananfd/">【ananFD】 デモサイト2 （xenServer）</a></li>
-						<li><span class="mark">‐</span><a href="http://192.168.11.111/ananfd/">【ananFD】 デモサイト3 （lenovo）</a></li>
 						</ul>
 					</li>
 					<li><a class="mark" href="#" onclick="$('concept_9').toggle(); return false;">＋</a>
@@ -430,13 +423,13 @@
 					</li>
 					</ul>
 				</li>
-				
+
 				</ul>
 			</li>
 			<li><a class="mark" href="#" onclick="$('concept_2').toggle(); return false;">＋</a>
 				<a href="http://www01.anan-nct.ac.jp/">阿南工業高等専門学校</a>
 				<ul id="concept_2" class="level_1">
-				
+
 				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/">トップページ</a></li>
 				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/introduction">学校案内</a></li>
 				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/department">学科案内</a></li>
@@ -445,7 +438,7 @@
 				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/campuslife">キャンパスライフ</a></li>
 				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/sisetsu">付属施設・図書館</a></li>
 				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/entranceexam">入試情報</a></li>
-				
+
 				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/m/">機械工学科</a></li>
 				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/e/">電気電子工学科</a></li>
 				<li><span class="mark">‐</span><a href="http://s.anan-nct.ac.jp/">制御情報工学科</a></li>
@@ -456,19 +449,26 @@
 			</li>
 			</ul>
 		</div>
-		
-	<!-- /#menuContainer --></div>
-	<!-- /#menu --></div>
 
-<!-- /#main --></div>
+		</div>
+		<!-- /#menuContainer -->
 
-<div id="footer">
-<div id="footerContainer">
+		</div>
+		<!-- /#menu -->
 
-<!-- /#footerContainer --></div>
-<!-- /#footer --></div>
+	</div>
+	<!-- /#main -->
 
-<!-- /#container --></div>
+	<div id="footer">
+	<div id="footerContainer">
+
+	</div>
+	<!-- /#footerContainer -->
+	</div>
+	<!-- /#footer -->
+
+</div>
+<!-- /#container -->
 
 </body>
 </html>
