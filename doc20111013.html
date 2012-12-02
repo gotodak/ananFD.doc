@@ -1,0 +1,513 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<title>ananFD</title>
+	<link href="./common/css/style.css" media="all" rel="stylesheet" type="text/css" />
+	<script src="./common/js/prototype.js" type="text/javascript"></script>
+	<script src="./common/js/form.js" type="text/javascript"></script>
+	<script src="./common/js/navi.js" type="text/javascript"></script>
+	
+<!--
+	<link href="/common/css/calendar_date_select/default.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="/common/js/calendar_date_select/calendar_date_select.js" type="text/javascript"></script>
+	<script src="/common/js/calendar_date_select/locale/ja.js" type="text/javascript"></script>
+	<script src="/common/js/calendar_date_select/format_iso_date.js" type="text/javascript"></script>
+-->
+</head>
+
+
+<body>
+
+<div id="container">
+
+
+
+
+	<div id="header">
+	<div id="headerContainer">
+		
+		<h1><a href=".">ananFD</a></h1>
+		<div class="menu">
+<!--
+		    <span class="user">FD高度化推進室　システム管理者（admin）</span>
+-->
+		    <!--a class="web" href="http://www3.anan-nct.ac.jp/~gotouda/" target="_blank">公開画面</a-->
+		    <a class="logout" href="./login">ログイン</a>
+		</div>
+		
+	<!-- /#headerContainer --></div>
+	<!-- /#header --></div>
+
+
+
+
+	<div id="banner">
+	<div id="bannerContainer">
+	
+	<!-- /#bannerContainer --></div>
+	<!-- /#banner --></div>
+
+
+
+
+	<div id="navi">
+	<div id="naviContainer">
+		
+		<table>
+			<tr>
+			<td class="selector">
+		    	<div class="site">
+				    <script type="text/javascript">
+				//<![CDATA[
+				  function submitCmsNavigationSite(value) {
+				    document.getElementById('cmsNavigationSite').submit();
+				    return false;
+				  }
+				//]]>
+					</script>
+					
+					<form id="cmsNavigationSite" method="get" action="../navigationSite">
+						<select id="cms_navi_site" name="navi_site" onchange="return submitCmsNavigationSite(this.value)">
+							<option value=""></option>
+							<option value="./ananFD">【ananFD】 モックアップ</option>
+							<option value="./ananFD.doc/" selected="selected" >【ananFD】 概要説明</option>
+							<option value="http://192.168.11.102/ananfd/" >【ananFD】 デモサイト1 （xenServer）</option>
+							<option value="http://192.168.11.101/ananfd/" >【ananFD】 デモサイト2 （xenServer）</option>
+						</select>
+					</form>
+				</div>
+				
+				
+			    <div class="concept">
+			      <p id="naviConceptCurrent" onclick="Cms_Admin_Navi.showNavi();">
+			        阿南工業高等専門学校</p>
+				</div>
+			</td>
+			<td class="menu">
+	    		<div class="mainMenu">
+					
+					<div class="mainMenu">
+						<a href="./learning" class="learning">学習支援</a>
+						<a href="./student" class="student">学生指導</a>
+						<a href="./entrust" class="entrust">担任指導</a>
+						<a href="./graduate" class="graduate">卒業生支援</a>
+						<a href="./tp" class="tp">ＴＰ支援</a>
+						<a href="./ir" class="ir">ＩＲ支援</a>
+						<a href="./master" class="master">マスタ設定</a>
+					</div>
+					
+				</div>
+				
+
+				<div class="contentMenu">
+					<!--a href="./top/password" >パスワード変更</a-->
+				</div>
+
+			</td>
+	  		</tr>
+		</table>
+	
+	
+	<!-- /#naviContainer --></div>
+	<!-- /#navi --></div>
+
+
+
+
+<div id="main">
+	
+	<div id="content">
+	<div id="contentContainer">
+	<div id="manual-container">
+		
+		<div id="contentHeader">
+			
+		 	<div class="navi">
+				<a href="./top">2011年10月13日　教学分野ＤＢの定期進捗報告</a>
+		  	</div>
+			
+			<div class="actionMenu">
+				<!--a href="../student/new">新規作成</a-->
+			</div>
+			
+			<h2>報告資料</h2>
+		</div>
+		
+		<div id="contentBody">
+			
+			
+			<div id="maintenances" class="piace">
+
+				<div class="piaceHeader">
+			  		<div class="title">はじめに</div>
+				</div>
+
+				<div class="piaceBody">
+
+					<hr />
+					<div class="section">
+						<div class="info">
+							<h1 class="title">今回の内容</h1>
+						</div>
+						
+					    <p class="para">
+							前回８月報告において、簡単な内部処理を紹介致しましたので、今回は現状の機能・操作性を紹介します。<br />
+							大まかな機能・操作性を説明して、機能や使い勝手について、指摘して頂きたいと考えております。<br />
+							当初の予定では、既に公開サーバにて、学習支援をテスト運用して頂き、ご意見を頂く予定でしたが、申し訳ありません。<br />
+							今回は、ＦＤ高度化推進室の開発サーバで稼働している開発版にて、現状の機能・操作性を説明させて頂きます。<br />
+							操作性については、各自が動かさないとよく分からないと思いますが、今回はご了承いただきますようお願いします。<br />
+							<br />
+							分からない点、おかしな点があれば、すぐ指摘して下さい。（私自身が知らない部分が多々あります。その都度、確認させて下さい。）<br />
+							必要のない機能や追加して欲しい機能・画面があれば指摘して下さい。（次回までに考えてきます。）<br />
+							<br />
+							また、教学分野ＤＢサーバの状況や今後の予定について、現時点のスケジュールを説明させて頂きます。<br />
+							スケジュールについて変更する箇所があれば、分かっている範囲でお願い致します。<br />
+						</p>
+						
+					</div>
+
+
+				    <p class="para">
+				   	</p>
+
+
+
+
+				</div>
+				<div class="piaceFooter"></div>
+			</div>
+			
+			
+			<div id="messages" class="piace">
+
+
+				<div class="piaceHeader">
+				  	<div class="title">教学分野ＤＢの機能説明</a--></div>
+				</div>
+				<div class="piaceBody">
+
+
+					<hr />
+					<div class="section">
+						<div class="info">
+							<h1 class="title">教学分野ＤＢの機能説明</h1>
+						</div>
+						
+					    <p class="para">
+							開発している教学分野ＤＢの稼働している機能について、説明させて頂きます。
+						</p>
+						
+					</div>
+
+
+			        <div class="comments">
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                ログイン
+							</div>
+			            	<div class="body">
+							１．パスワード変更<br />
+							２．ユーザ情報<br />
+							</div>
+			            </div>
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                セキュリティ
+							</div>
+			            	<div class="body">
+							評価委員である小林先生より、セキュリティを考慮して下さいと指摘があり、ＷＥＢアプリで対応できるものを対応しました。<br />
+							１．妥当性チェック<br />
+							　　　　必修入力チェック<br />
+							　　　　入力内容チェック<br />
+							　　　　エラーメッセージ<br />
+							２．権限設定<br />
+							　　　　（ログイン、メニュー表示、アクションコントロールでのアクセス禁止）<br />
+							３．ＳＱＬインジェクション対策<br />
+							４．セッションハイジャック対策<br />
+							５．ファイルアップロード対策<br />
+							</div>
+			            </div>
+
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                組織管理
+							</div>
+			            	<div class="body">
+							１．クラス管理<br />
+							　　　　（現在、まだ利用していません）<br />
+							２．グループ管理<br />
+							　　　　（ユーザは必ず１つのグループに属する必要があります）<br />
+							３．委員会管理<br />
+							　　　　（グループ以外にユーザをグループ分けする場合に利用します。現在、まだ利用していません）<br />
+							</div>
+			            </div>
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                ユーザ管理
+							</div>
+			            	<div class="body">
+							ログインして利用する教職員リストです。<br />
+							　　（e-mailアドレスをログイン名に利用しているため、非常勤講師も仮作成しています。）<br />
+							</div>
+			            </div>
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                教務管理
+							</div>
+			            	<div class="body">
+							授業科目を管理しています。（シラバス、担当教員も管理しています。）
+							</div>
+			            </div>
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                学生情報
+							</div>
+			            	<div class="body">
+							１．クラブ管理<br />
+							　　　　（現在、学習支援で利用しています）<br />
+							２．就職先管理<br />
+							　　　　卒業生で就職した会社名を管理する予定です（求人ではありません）<br />
+							　　　　（現在、学習支援で利用しています）<br />
+							</div>
+			            </div>
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                学生管理
+							</div>
+			            	<div class="body">
+							参照利用する学生を管理しています。
+							</div>
+			            </div>
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                学習支援
+							</div>
+			            	<div class="body">
+							Zend Framework は、他のフレームワークと異なり、各コンポーネントの独立性を高めた設計になっています。
+							そのため、Zend Framework の一部のコンポーネントのみをロードして利用することができます。<br />
+							非常に高機能で信頼性の高い多種多様なライブラリが、Zend Framework だけで手に入るのも大きな魅力の一つです。<br />
+							</div>
+			            </div>
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                ＴＰ支援
+							</div>
+			            	<div class="body">
+							多分、ＴＰＷＳにおいて担当教員がＴＰ作成するときのシラバス参照にのみ利用する。<br />
+							また、作成したＴＰファイルをアップロードして管理する。（管理する必要があるのか？）<br />
+							作成したＴＰのＰＤＦファイルは、アップロードする担当教員により公開・非公開が選択できる。<br />
+							他にも、個々の授業科目における各年度のシラバス一覧参照も利用可能になる予定。（他の用途は？）<br />
+							</div>
+			            </div>
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                ＩＲ支援
+							</div>
+			            	<div class="body">
+							授業評価アンケート、学生実態調査を実施して、集計結果や分析結果のＰＤＦファイルをアップロードして管理する。<br />
+							調査・分析ファイルの参照アクセス制御は必要か？<br />
+							</div>
+			            </div>
+					</div>
+
+
+
+					<hr />
+					<div class="section">
+						
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">ＩＲ支援での調査・分析ファイルの参照アクセス制御の仕様について</h1>
+							</div>
+							
+						    <p class="para">
+							授業評価アンケート、学生実態調査を実施して、集計結果や分析結果のＰＤＦファイルをアップロードして管理する。<br />
+							調査・分析ファイルの参照アクセス制御は必要か？<br />
+					    	</p>
+							
+						</div>
+					</div>
+
+
+					<hr />
+					<div class="section">
+						
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">教学分野ＤＢサーバの状況について</h1>
+							</div>
+							
+						    <p class="para">
+					        	既に報告済みかも知れませんが、サーバ管理者からの説明をお願いします。<br />
+					    	</p>
+							
+						</div>
+					</div>
+
+
+
+					<hr />
+					<div class="section">
+						
+				    	<div class="section">
+							<div class="info">
+								<h1 class="title">今後の予定について</h1>
+							</div>
+							
+						    <p class="para">
+					        	今後の予定について、以下に述べます。<br />
+								<br />
+								１．サーバを仮想化させるためのソフトの選定調査報告（２０１１年１２月）<br />
+										　　　　＞＞サーバ管理者が調査して利用しやすいソフトを選定・報告して頂きたい。<br />
+										　　　　　　　　　　　　　（担当上司が欠席の場合、担当上司への連絡を必要があると思われます。）<br />
+								<br />
+								２．サーバのセットアップ（２０１２年１月）<br />
+										<br />
+								<br />
+								３．教学分野ＤＢのセットアップ（２０１２年１月）<br />
+										<br />
+								<br />
+								４．教学分野ＤＢを公開して、使い勝手や不具合調査後、対応（２０１２年２月）<br />
+										　　　　＞＞この段階で、サポートメンバー様に不具合、使い勝手などの意見を頂き、改善・改修・次期対応について調整します。<br />
+										　　　　　　　（お忙しいところすみませんが、サポートメンバー様にはここまでお付き合い頂きたいと考えておりので、よろしくお願い致しますす。）<br />
+								<br />
+								５．教学分野ＤＢの仮運用開始（２０１２年７月？）<br />
+										　　　　＞＞当初の予定である３月仮運用開始（第１目標）が若干遅れておりますので、ご了承ください。<br />
+										　　　　　　　（当初の予定では、１０月ごろ教学分野ＤＢを公開予定して不具合対応、３月仮運用開始）<br />
+								<br />
+								６．（第２目標）教職員が開発できる協働体制の推進（２０１２年４月予定）<br />
+										　　　　＞＞２０１２年４月までに開発案件の選定を終了して、２０１２年４月以降の学内開発スタッフのソフト開発開始する。<br />
+										　　　　＞＞要件定義、基本設計（モックアップ等作成）、開発コーディングして学内開発スタッフの作業工程の進捗具合を上司が見極める。<br />
+										<br />
+										　　　　＞＞開発環境などの知識習得等の目的もあるので、既存のＷＥＢアプリのリニューアルでも良いのかも知れません？<br />
+										　　　　＞＞また、教学分野ＤＢとは別件なので、開発環境および開発案件の選定が決まり次第、サポートメンバーを選定して、開発案件に着手することも可能。<br />
+								<br />
+					    	</p>
+						
+						</div>
+					</div>
+
+
+			        <div class="comments">
+			        	<h3>更新情報</h3>
+						
+			        	<div class="comment">
+			            	<div class="metadata">
+			                新規作成: gotoda                on: 2011-10-13 12:00:00
+							</div>
+			            	<div class="body">
+							定期進捗資料として作成<br />
+							</div>
+			            </div>
+						
+					</div>
+
+
+				</div>
+				<div class="piaceFooter"></div>
+			</div>
+		
+		
+		<!-- /#contentBody --></div>
+		
+		<div id="contentFooter"></div>
+		
+	<!-- /#manual-container --></div>
+	<!-- /#contentContainer --></div>
+	<!-- /#content --></div>
+
+
+
+
+
+	<div id="menu">
+	<div id="menuContainer">
+		
+		<div id="naviConcept">
+			<ul class="level_0">
+			<li><a class="mark" href="#" onclick="$('concept_1').toggle(); return false;">＋</a>
+				<a href="http://www3.anan-nct.ac.jp/~gotouda/plan/training.html">【ananFD】</a>
+				<ul id="concept_1" class="level_1">
+				
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/gp/">ＦＤ高度化推進室</a></li>
+				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/">ＦＤ高度化推進室（学内）</a></li>
+				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/ananFD/">【ananFD】 モックアップ</a></li>
+				<li><span class="mark">‐</span><a href="http://www3.anan-nct.ac.jp/~gotouda/ananFD.doc/">【ananFD】 概要説明</a></li>
+				<li><a class="mark" href="#" onclick="$('concept_5').toggle(); return false;">＋</a>
+					<a href="">【ananFD】 デモサイト</a>
+					<ul id="concept_5" class="level_2">
+					<li><a class="mark" href="#" onclick="$('concept_9').toggle(); return false;">＋</a>
+						<a href="">テクノセンター</a>
+						<ul id="concept_9" class="level_2">
+						<li><span class="mark">‐</span><a href="http://192.168.11.102/ananfd/">【ananFD】 デモサイト1 （xenServer）</a></li>
+						<li><span class="mark">‐</span><a href="http://192.168.11.101/ananfd/">【ananFD】 デモサイト2 （xenServer）</a></li>
+						</ul>
+					</li>
+					<li><a class="mark" href="#" onclick="$('concept_9').toggle(); return false;">＋</a>
+						<a href="">学生課</a>
+						<ul id="concept_9" class="level_2">
+						<li><span class="mark">‐</span><a href="">教務係</a></li>
+						<li><span class="mark">‐</span><a href="">学生係</a></li>
+						<li><span class="mark">‐</span><a href="">料務係</a></li>
+						</ul>
+					</li>
+					</ul>
+				</li>
+				
+				</ul>
+			</li>
+			<li><a class="mark" href="#" onclick="$('concept_2').toggle(); return false;">＋</a>
+				<a href="http://www01.anan-nct.ac.jp/">阿南工業高等専門学校</a>
+				<ul id="concept_2" class="level_1">
+				
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/">トップページ</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/introduction">学校案内</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/department">学科案内</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/educationandresearch">教育・研究</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/cooperation">産学公・地域連携</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/campuslife">キャンパスライフ</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/sisetsu">付属施設・図書館</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/entranceexam">入試情報</a></li>
+				
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/m/">機械工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/e/">電気電子工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://s.anan-nct.ac.jp/">制御情報工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/c/">建設システム工学科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/i/">一般教科</a></li>
+				<li><span class="mark">‐</span><a href="http://www01.anan-nct.ac.jp/senkouka/">専攻科</a></li>
+				</ul>
+			</li>
+			</ul>
+		</div>
+		
+	<!-- /#menuContainer --></div>
+	<!-- /#menu --></div>
+
+<!-- /#main --></div>
+
+<div id="footer">
+<div id="footerContainer">
+
+<!-- /#footerContainer --></div>
+<!-- /#footer --></div>
+
+<!-- /#container --></div>
+
+</body>
+</html>
+
