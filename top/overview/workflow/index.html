@@ -31,11 +31,11 @@
 	<div id="header">
 	<div id="headerContainer">
 		
-		<h1><a href="../../..">ananFD</a></h1>
+		<h1><a href="javascript:jump('../../..')">ananFD</a></h1>
 		<div class="menu">
 		    <span class="user">FD高度化推進室　後藤田浩二（admin）</span>
 		    <!--a class="web" href="http://www3.anan-nct.ac.jp/~gotouda/" target="_blank">公開画面</a-->
-		    <a class="logout" href="../../../login">ログイン</a>
+		    <a class="logout" href="javascript:jump('../../../login')">ログイン</a>
 		</div>
 		
 	<!-- /#headerContainer --></div>
@@ -89,22 +89,22 @@
 			<td class="menu">
 			    <div class="mainMenu">
 					<div class="mainMenu">
-						<a href="../../../learning" class="learning">学習支援</a>
-						<a href="../../../student" class="student">学生指導</a>
-						<a href="../../../entrust" class="entrust">担任指導</a>
-						<a href="../../../graduate" class="graduate">卒業生支援</a>
-						<a href="../../../tp" class="tp">ＴＰ支援</a>
-						<a href="../../../ir" class="ir">ＩＲ支援</a>
-						<a href="../../../master" class="master">マスタ設定</a>
+						<a href="javascript:jump('../../../learning')" class="learning">学習支援</a>
+						<a href="javascript:jump('../../../student')" class="student">学生指導</a>
+						<a href="javascript:jump('../../../entrust')" class="entrust">担任指導</a>
+						<a href="javascript:jump('../../../graduate')" class="graduate">卒業生支援</a>
+						<a href="javascript:jump('../../../tp')" class="tp">ＴＰ支援</a>
+						<a href="javascript:jump('../../../ir')" class="ir">ＩＲ支援</a>
+						<a href="javascript:jump('../../../master')" class="master">マスタ設定</a>
 					</div>
 				</div>
 				
 				<div class="contentMenu">
-					<a href="../../../top/password">パスワード変更</a>
-					<a href="../../../top/userinfo">ユーザ情報</a>
-					<a href="../../../top/initpass">パスワード初期化</a>
-					<a href="../../../top/overview" class="current">ZF1 Overview</a>
-					<a href="../../../top/tool">運用ツール</a>
+					<a href="javascript:jump('../../../top/password')">パスワード変更</a>
+					<a href="javascript:jump('../../../top/userinfo')">ユーザ情報</a>
+					<a href="javascript:jump('../../../top/initpass')">パスワード初期化</a>
+					<a href="javascript:jump('../../../top/overview')" class="current">ZF1 Overview</a>
+					<a href="javascript:jump('../../../top/tool')">運用ツール</a>
 				</div>
 			</td>
 	  	</tr>
@@ -125,18 +125,18 @@
 		
 		<div id="contentHeader">
 		 	<div class="navi">
-				<a href="../../../top">TOP</a>
-					 &gt; <a href="../../../top/overview">ZF1 Overview</a>
-					 &gt; <a href="../../../top/overview/workflow">運用フロー</a>
+				<a href="javascript:jump('../../../top')">TOP</a>
+					 &gt; <a href="javascript:jump('../../../top/overview')">ZF1 Overview</a>
+					 &gt; <a href="javascript:jump('../../../top/overview/workflow')">運用フロー</a>
 		  	</div>
 			
 			<div class="actionMenu">
-				<a href="../../../top/overview/controller">Controller</a>
-				<a href="../../../top/overview/view">View</a>
-				<a href="../../../top/overview/auth">Auth</a>
-				<a href="../../../top/overview/module">Module</a>
-				<a href="../../../top/overview/setup">Setup</a>
-				<a href="../../../top/overview/workflow">運用フロー</a>
+				<a href="javascript:jump('../../../top/overview/controller')">Controller</a>
+				<a href="javascript:jump('../../../top/overview/view')">View</a>
+				<a href="javascript:jump('../../../top/overview/auth')">Auth</a>
+				<a href="javascript:jump('../../../top/overview/module')">Module</a>
+				<a href="javascript:jump('../../../top/overview/setup')">Setup</a>
+				<a href="javascript:jump('../../../top/overview/workflow')">運用フロー</a>
 			</div>
 					
 			<h2>Programmer's Reference Guide</h2>
@@ -161,8 +161,24 @@
 					<div class="section">
 											
 					    <p class="para">
-							学生情報のＴＯＰ画面です。<br />
-							項目が増えた場合には、コマンドを増やします。<br />
+							ananfdの運用フローを操作順に以下に示す。<br /><br />
+							１．卒業生対応<br />
+							　1)．未登録の就職先会社の登録（キャリア支援室、admin権限ユーザ）<br />
+							　2)．５学年生の進級処理（卒業）<br />
+							　3)．随時、卒業生の管理（キャリア支援室）<br />
+							３．学生の進級<br />
+							　1)．４学年生の進級処理<br />
+							　2)．３学年生の進級処理<br />
+							　3)．２学年生の進級処理<br />
+							　4)．１学年生の進級処理<br />
+							４．教職員の登録削除<br />
+							　1)．退職した教職員の削除（admin権限ユーザ）<br />
+							　2)．就職した教職員の追加（admin権限ユーザ）<br />
+							　3)．アクセス管理グループ・役職の登録削除（登録ユーザ）<br />
+							５．新年度の授業科目の登録<br />
+							　1)．授業科目の登録（admin権限ユーザ）<br />
+							　2)．シラバスの追加（admin権限ユーザ）<br />
+							６．新年度の運用開始<br />
 						</p>
 						
 					</div>
@@ -198,8 +214,7 @@
 					<div class="section">
 											
 					    <p class="para">
-							学生情報のＴＯＰ画面です。<br />
-							項目が増えた場合には、コマンドを増やします。<br />
+							学生に対して、学習支援、担任指導、担任指導を行う。<br />
 						</p>
 						
 					</div>

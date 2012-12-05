@@ -38,6 +38,12 @@ function disp(url){
 
 }
 
+function jump(url){
+
+//	location.href =  url + '/index.html';
+	location.href =  url ;
+
+}
 
 
 
