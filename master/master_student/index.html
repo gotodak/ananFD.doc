@@ -134,13 +134,13 @@
 		  	</div>
 			
 			<div class="actionMenu">
-				<a href="javascript:jump('../../master/master_student/dormitory')">寮生管理</a>
-				<a href="javascript:jump('../../master/master_student/director')">役員寮生</a>
-				<a href="javascript:jump('../../master/master_student/contact')">学生連絡先</a>
-				<span class='separator'></span>
 				<a href="javascript:jump('../../master/master_student/new')">新規作成</a>
 				<a href="javascript:jump('../../master/master_student/import')">一括読込</a>
 				<a href="javascript:jump('../../master/master_student/promotion')">一括進級</a>
+				<span class='separator'></span>
+				<a href="javascript:jump('../../master/master_student/dormitory')">寮生管理</a>
+				<a href="javascript:jump('../../master/master_student/director')">役員寮生</a>
+				<a href="javascript:jump('../../master/master_student/contact')">学生連絡先</a>
 			</div>
 			
 			<h2>Programmer's Reference Guide</h2>
@@ -170,12 +170,17 @@
 -->
 						
 					    <p class="para">
-							学生管理として以下の処理ができる。<br /><br />
-							・学生の登録処理<br />
-							・学生の進級処理<br />
+							入学した学生を卒業するまで管理する。<br />
+							・１年生のグループは、一般教科のグループに属する仕様である。（現時点）<br />
+							・１年生が進級する場合には、グループ設定を行う。<br />
+							・５年生が進級処理を行った場合は、卒業生となり、卒業生支援に移行する。<br /><br />
+							学生管理として以下の処理ができる。<br />
+							・学生の参照<br />
+							・学生の登録・編集・削除処理（admin権限）<br />
+							・学生の進級処理（admin権限）<br />
 							・学生の寮生管理（未完）<br />
 							・学生の役員管理（未完）<br />
-							・学生の連絡先管理（未完）<br />
+							・学生の連絡先管理（未完）<br /><br />
 						</p>
 						
 					</div>
@@ -186,6 +191,11 @@
 							<div class="info">
 								<h1 class="title">学生管理・一覧</h1>
 							</div>
+							<p class="para">
+								登録してある学生の一覧が参照できる。<br />
+								・登録できるのは、１学年から５学年までの学生である。<br />
+								・検索条件を設定して、学生を検索できる。<br />
+							</p>
 						</div>
 						
 						<blockquote><p>
@@ -205,6 +215,12 @@
 							<div class="info">
 								<h1 class="title">学生管理・詳細</h1>
 							</div>
+							<p class="para">
+								指定した学生の詳細情報が参照できる。<br />
+								・現在参照できる詳細情報としては、出身学校、性別である。<br />
+								・admin権限ユーザは、編集・削除ができる。<br />
+								　　　（削除には、退学・転学など卒業以外理由が考えられるが、現在削除すると一覧から参照できなくなる）<br />
+							</p>
 						</div>
 						
 						<blockquote><p>
@@ -224,6 +240,9 @@
 							<div class="info">
 								<h1 class="title">学生管理・編集</h1>
 							</div>
+							<p class="para">
+								admin権限ユーザは、指定した学生の学籍番号以外の詳細情報を編集できる。<br />
+							</p>
 						</div>
 						
 						<blockquote><p>
