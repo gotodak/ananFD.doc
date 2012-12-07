@@ -31,11 +31,11 @@
 	<div id="header">
 	<div id="headerContainer">
 		
-		<h1><a href="../../..">ananFD</a></h1>
+		<h1><a href="javascript:jump('../../..')">ananFD</a></h1>
 		<div class="menu">
 		    <span class="user">FD高度化推進室　後藤田浩二（admin）</span>
 		    <!--a class="web" href="http://www3.anan-nct.ac.jp/~gotouda/" target="_blank">公開画面</a-->
-		    <a class="logout" href="../../../login">ログイン</a>
+		    <a class="logout" href="javascript:jump('../../../login')">ログイン</a>
 		</div>
 		
 	<!-- /#headerContainer --></div>
@@ -89,24 +89,24 @@
 			<td class="menu">
 			    <div class="mainMenu">
 					<div class="mainMenu">
-						<a href="../../../learning" class="learning">学習支援</a>
-						<a href="../../../student" class="student">学生指導</a>
-						<a href="../../../entrust" class="entrust">担任指導</a>
-						<a href="../../../graduate" class="graduate">卒業生支援</a>
-						<a href="../../../tp" class="tp">ＴＰ支援</a>
-						<a href="../../../ir" class="ir">ＩＲ支援</a>
-						<a href="../../../master" class="master current">マスタ設定</a>
+						<a href="javascript:jump('../../../learning')" class="learning">学習支援</a>
+						<a href="javascript:jump('../../../student')" class="student">学生指導</a>
+						<a href="javascript:jump('../../../entrust')" class="entrust">担任指導</a>
+						<a href="javascript:jump('../../../graduate')" class="graduate">卒業生支援</a>
+						<a href="javascript:jump('../../../tp')" class="tp">ＴＰ支援</a>
+						<a href="javascript:jump('../../../ir')" class="ir">ＩＲ支援</a>
+						<a href="javascript:jump('../../../master')" class="master current">マスタ設定</a>
 					</div>
 				</div>
 				
 				<div class="contentMenu">
-					<a href="../../../master/master_student"    >学生管理</a>
-					<a href="../../../master/master_information">学生情報</a>
-					<a href="../../../master/master_education"  class="current">教務管理</a>
-					<a href="../../../master/master_user">ユーザ管理</a>
-					<a href="../../../master/master_access"     >アクセス管理</a>
-					<a href="../../../master/master_section">組織管理</a>
-					<a href="../../../master/master_db">ＤＢ</a>
+					<a href="javascript:jump('../../../master/master_student')"    >学生管理</a>
+					<a href="javascript:jump('../../../master/master_information')">学生情報</a>
+					<a href="javascript:jump('../../../master/master_education')"  class="current">教務管理</a>
+					<a href="javascript:jump('../../../master/master_user')"	   >ユーザ管理</a>
+					<a href="javascript:jump('../../../master/master_access')"     >アクセス管理</a>
+					<a href="javascript:jump('../../../master/master_section')"	   >組織管理</a>
+					<a href="javascript:jump('../../../master/master_db')"		   >ＤＢ</a>
 					<!--a href="../../../master/master_attendance" >出欠簿管理</a-->
 				</div>
 			</td>
@@ -128,16 +128,16 @@
 		
 		<div id="contentHeader">
 		 	<div class="navi">
-				<a href="../../../top">TOP</a>
-					 &gt; <a href="../../../master">マスタ設定</a>
-					 &gt; <a href="../../../master/master_education">教務管理</a>
-					 &gt; <a href="../../../master/master_education/subject">授業科目管理</a>
+				<a href="javascript:jump('../../../top')">TOP</a>
+					 &gt; <a href="javascript:jump('../../../master')">マスタ設定</a>
+					 &gt; <a href="javascript:jump('../../../master/master_education')">教務管理</a>
+					 &gt; <a href="javascript:jump('../../../master/master_education/subject')">授業科目管理</a>
 		  	</div>
 			
 			<div class="actionMenu">
-				<a href="../../../master/master_education/subject/new">新規作成</a>
+				<a href="javascript:jump('../../../master/master_education/subject/new')">新規作成</a>
 				<span class='separator'></span>
-				<a href="../../../master/master_education/subject/import">一括読込</a>
+				<a href="javascript:jump('../../../master/master_education/subject/import')">一括読込</a>
 			</div>
 			
 			<h2>Programmer's Reference Guide</h2>
@@ -170,7 +170,9 @@
 -->
 						
 					    <p class="para">
-							ログインユーザの設定されているロール権限により、表示するメニューは変更される。<br />
+							科目コード、授業科目名、適応教育課程、適応入学年度、適応学年に関連づけて、授業科目を管理する。<br />
+							・個々の授業科目において、シラバスを年度ごとに管理できる。<br />
+							・個々の授業科目において、複数の教員を管理できる。<br />
 						</p>
 						
 					</div>
@@ -181,6 +183,12 @@
 							<div class="info">
 								<h1 class="title">授業科目管理・一覧</h1>
 							</div>
+							<p class="para">
+								登録してある授業科目の一覧が参照できる。<br />
+								・検索条件を設定して、授業科目を検索できる。<br />
+								・参照できるのは、留年を考慮して１０年間分である。（予定）<br />
+								　　　（資料の都合上、適応入学年度は2009年度から作成している）
+							</p>
 						</div>
 						
 						<blockquote><p>
@@ -199,6 +207,12 @@
 							<div class="info">
 								<h1 class="title">授業科目管理・詳細</h1>
 							</div>
+							<p class="para">
+								指定した授業科目の詳細情報が参照できる。<br />
+								・現在参照できる詳細情報としては、前述以外に、必須選択、単位数、開講時期、シラバス、担当教員である。<br />
+								・admin権限ユーザは、編集・削除ができる。<br />
+
+							</p>
 						</div>
 						
 						<blockquote><p>
@@ -217,6 +231,11 @@
 							<div class="info">
 								<h1 class="title">授業科目管理・編集</h1>
 							</div>
+							<p class="para">
+								admin権限ユーザは、指定した授業科目の科目コード以外の詳細情報を編集できる。<br />
+								・授業科目の担当教員が変更になった場合には、授業科目の担当教員を変更する。<br />
+								　　（授業科目の担当教員は、年度ごとに管理していない）
+							</p>
 						</div>
 						
 						<blockquote><p>
