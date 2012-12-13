@@ -40,7 +40,6 @@ function disp(url){
 
 function jump(url){
 
-//	location.href =  url + '/index.html';
 	location.href =  url ;
 
 }
@@ -49,7 +48,7 @@ function jump(url){
 
 /**
  * 「戻る」「進む」の処理
- */ 
+ */
 function hist(goback){
 
 	if(goback == 'back'){
